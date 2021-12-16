@@ -45,6 +45,6 @@ as admin I can:
 ## profile page
 ![profile img](https://github.com/MP-Project-Nouf/client/blob/main/profile.png)
 
-## challenge page
-![profile img](https://github.com/MP-Project-Nouf/client/blob/main/profile.png)
+## challenges page
+![challenge img](https://github.com/MP-Project-Nouf/client/blob/main/challenge.png)
 
