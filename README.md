@@ -51,5 +51,7 @@ as admin I can:
 ## challenge page
 ![oneChalleng img](https://github.com/MP-Project-Nouf/client/blob/main/oneChalleng.png)
 
+## comment page
+
 
 
