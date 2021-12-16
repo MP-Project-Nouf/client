@@ -55,7 +55,7 @@ as admin I can:
 ![comment img](https://github.com/MP-Project-Nouf/client/blob/main/comment.png)
 
 ## solutions page
-![comment img](https://github.com/MP-Project-Nouf/client/blob/main/comment.png)
+![solutions img](https://github.com/MP-Project-Nouf/client/blob/main/solutions.png)
 
 
 
