@@ -38,6 +38,10 @@ as admin I can:
 
 ![uml-frontend img](https://github.com/MP-Project-Nouf/client/blob/main/uml-frontend.png)
 
-# 
+# Wireframe
+## Home page
+![home img](https://github.com/MP-Project-Nouf/client/blob/main/home.png)
+
+## profile page
 ![home img](https://github.com/MP-Project-Nouf/client/blob/main/home.png)
 
