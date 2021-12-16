@@ -43,5 +43,5 @@ as admin I can:
 ![home img](https://github.com/MP-Project-Nouf/client/blob/main/home.png)
 
 ## profile page
-![home img](https://github.com/MP-Project-Nouf/client/blob/main/home.png)
+![profile img](https://github.com/MP-Project-Nouf/client/blob/main/profile.png)
 
