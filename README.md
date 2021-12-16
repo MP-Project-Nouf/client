@@ -48,3 +48,8 @@ as admin I can:
 ## challenges page
 ![challenge img](https://github.com/MP-Project-Nouf/client/blob/main/challenge.png)
 
+## challenge page
+![oneChalleng img](https://github.com/MP-Project-Nouf/client/blob/main/oneChalleng.png)
+
+
+
