@@ -54,6 +54,9 @@ as admin I can:
 ## comment page
 ![comment img](https://github.com/MP-Project-Nouf/client/blob/main/comment.png)
 
+## solutions page
+![comment img](https://github.com/MP-Project-Nouf/client/blob/main/comment.png)
+
 
 
 
