@@ -1,3 +1,8 @@
+# Coding challenge
+This is a site where those interested in programming can select the programming language they are interested in, make programming challenges and get points.
+
+Heroku Link:
+While running locally:
 # Visitor story
 as visitor I can:
 
