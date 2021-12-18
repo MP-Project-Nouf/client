@@ -34,6 +34,54 @@ as admin I can:
 * delete any comment
 * confirm challenge that created by user
 
+# Getting Started
+## Installing Dependencies
+### Node js
+Follow instructions to install the latest version of Node js for your platform in the [ Node js docs](https://nodejs.org/en/)
+### NPM Dependencies
+Once you have the project in your local machine, install dependencies by running:
+```
+ npm install
+  ```
+  This will install all of the required packages.
+### Key Dependencies
+* [ React](https://reactjs.org/)  A JavaScript library for building user interfaces.
+* [ firebase ](https://www.npmjs.com/package/firebase)  provides the tools and infrastructure you need to develop, grow, and earn money from your app.
+*  [ axios ](https://www.npmjs.com/package/axios) is a promise based HTTP client for the browser and node.js.
+* [ redux](https://www.npmjs.com/package/redux) is a predictable state container for JavaScript apps.
+* [ react-redux ](https://www.npmjs.com/package/react-redux) is a React bindings for Redux.
+* [ redux-devtools-extension](https://www.npmjs.com/package/redux-devtools-extension) is a debugging platform for Redux apps.
+* [ react-icons ](https://react-icons.github.io/react-icons/) Include popular icons in your React projects easily with react-icons.
+# Running the server
+To run the server, execute:
+```
+npm start
+```
+# Router Routes
+Path   | Component     |    Permissions                                |  Behavior
+------------- | -----------   | ---------------------------            |----------------------
+POST          | everyone      |`/user/create`                          |{email, password, role}
+POST          | everyone      |`/user/log`                             |{email, password}
+GET           | admin only    |`/user/`                                |
+DELETE        | admin only    |`/user/`                                |
+GET           | everyone      |`/user/confirmation/:email/:token`      |
+PUT           | everyone      |`/user/forgetPassword`                  |{email}
+PUT           | everyone      |`/user/resetPassword`                   |{resetLink, newPassword}
+GET           | user+admin    |`/user/:_id”`                           |
+POST          | everyone      |`/user/googlelogin`                     |{idToken}
+PUT           | admin + user  |`/likes/`                               |{by, onPost}
+GET           | admin + user  |`/likes/:onPost`                        |
+POST          | admin + user  |`/comment/create`                       |{title, by, onPost}
+PUT           | admin + user  |`/comment/update`                       |{id, title}
+DELETE        | admin + user  |`/comment/delete/:_id`                  |
+GET           | admin + user  |`/posts/`                               |
+GET           | admin + user  |`/posts/userPost/:postedBy`             |
+GET           | admin + user  |`/posts/onePost/:_id`                   |
+POST          | admin + user  |`/posts/create`                         |{img, describe, postedBy}
+PUT           | admin + user  |`/posts/archivePost/:_id`               |{id}
+DELETE        | admin + user  |`/posts/delete/:_id`                    |
+PUT           | admin + user  |`/posts/update`                         |{id, newdescribe}
+
 # UML
 
 ![uml-frontend img](https://github.com/MP-Project-Nouf/client/blob/main/uml-frontend.png)
