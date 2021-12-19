@@ -87,20 +87,13 @@ Path   | Component     |   premision
 /signin           | Signin      | visitor
 /register           | Register      |  visitor
 /forgit           | Forgit      |  visitor                 
-/change           | Change    |  visitor                           |
-/profile          | P      |`/user/googlelogin`                     |{idToken}
-PUT           | admin + user  |`/likes/`                               |{by, onPost}
-GET           | admin + user  |`/likes/:onPost`                        |
-POST          | admin + user  |`/comment/create`                       |{title, by, onPost}
-PUT           | admin + user  |`/comment/update`                       |{id, title}
-DELETE        | admin + user  |`/comment/delete/:_id`                  |
-GET           | admin + user  |`/posts/`                               |
-GET           | admin + user  |`/posts/userPost/:postedBy`             |
-GET           | admin + user  |`/posts/onePost/:_id`                   |
-POST          | admin + user  |`/posts/create`                         |{img, describe, postedBy}
-PUT           | admin + user  |`/posts/archivePost/:_id`               |{id}
-DELETE        | admin + user  |`/posts/delete/:_id`                    |
-PUT           | admin + user  |`/posts/update`                         |{id, newdescribe}
+/change           | Change    |  visitor                           
+/profile/:id          | Profile      |  user
+/logout           |  Logout  | user                              
+/users           | Users  |  admin                       
+/comment/challId          | Comment  | user                       
+/solution/challId           | Soulution  | user                       
+
 
 # UML
 
