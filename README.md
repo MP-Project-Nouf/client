@@ -78,17 +78,17 @@ npm start
 * leaderboards
 
 # Router Routes
-Path   | Component     |    Permissions                                |  Behavior
-------------- | -----------   | ---------------------------            |----------------------
-POST          | everyone      |`/user/create`                          |{email, password, role}
-POST          | everyone      |`/user/log`                             |{email, password}
-GET           | admin only    |`/user/`                                |
-DELETE        | admin only    |`/user/`                                |
-GET           | everyone      |`/user/confirmation/:email/:token`      |
-PUT           | everyone      |`/user/forgetPassword`                  |{email}
-PUT           | everyone      |`/user/resetPassword`                   |{resetLink, newPassword}
-GET           | user+admin    |`/user/:_id”`                           |
-POST          | everyone      |`/user/googlelogin`                     |{idToken}
+Path   | Component     |   premision                             
+------------- | -----------   |  -----------         
+/          | Home      |     visitor                   
+/leaderbord          | Leaderbord      |  user
+/challenges        | Challenges    |  admin                               
+/challenge/:level        | Challenge    |  user                              
+/signin           | Signin      | visitor
+/register           | Register      |  visitor
+/forgit           | Forgit      |  visitor                 
+/change           | Change    |  visitor                           |
+/profile          | P      |`/user/googlelogin`                     |{idToken}
 PUT           | admin + user  |`/likes/`                               |{by, onPost}
 GET           | admin + user  |`/likes/:onPost`                        |
 POST          | admin + user  |`/comment/create`                       |{title, by, onPost}
