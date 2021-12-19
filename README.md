@@ -130,6 +130,9 @@ PUT           | admin + user  |`/posts/update`                         |{id, new
 ![signin img](https://github.com/MP-Project-Nouf/client/blob/main/signin.png)
 
 ## forgitpass page
-![signin img](https://github.com/MP-Project-Nouf/client/blob/main/signin.png)
+![forgit img](https://github.com/MP-Project-Nouf/client/blob/main/forgit.png)
+
+## changepass page
+![forgit img](https://github.com/MP-Project-Nouf/client/blob/main/forgit.png)
 
 
