@@ -1,11 +1,19 @@
 # Coding challenge
 This is a site where those interested in programming can select the programming language they are interested in, make programming challenges and get points.
+## repo server 
+server Link :[server](https://github.com/MP-Project-Nouf/server)
+## repo client 
+client Link :[client](https://github.com/MP-Project-Nouf/client)
 # Heroku:
 Heroku Link:
+
 While running locally:
 
 # Trello:
 Trello Link :[trello](https://trello.com/b/yelGfTJ9/teaching-weekly-planning)
+
+# slides
+presentation slides Link :[prezi](https://prezi.com/p/edit/4wyaz0nyy0v7/)
 
 # Visitor story
 as visitor I can:
@@ -81,21 +89,21 @@ npm start
 * leaderboards
 
 # Router Routes
-Path   | Component     |   premision                             
-------------- | -----------   |  -----------         
-/          | Home      |     visitor                   
-/leaderbord          | Leaderbord      |  user
-/challenges        | Challenges    |  admin                               
-/challenge/:level        | Challenge    |  user                              
-/signin           | Signin      | visitor
-/register           | Register      |  visitor
-/forgit           | Forgit      |  visitor                 
-/change           | Change    |  visitor                           
-/profile/:id          | Profile      |  user
-/logout           |  Logout  | user                              
-/users           | Users  |  admin                       
-/comment/challId          | Comment  | user                       
-/solution/challId           | Soulution  | user                       
+Path   | Component     |   Permissions     |  Behavior                             
+------------- | -----------   |  -----------   |  -----------      
+/          | Home      |     visitor  |  Home page,link to /challenge/:level                 
+/leaderbord          | Leaderbord      |  user  | navigate to leaderbord profile 
+/challenges        | Challenges    |  admin |show all challenge,navigate to challenge bage                                
+/challenge/:level        | Challenge    |  user |link to comment bage navigate to soulutions when to run                              
+/signin           | Signin      | visitor |Login form, link to register, navigate to homepage after login
+/register           | Register      |  visitor |Register form, link to login, navigate to log in page after register
+/forgit           | Forgit      |  visitor   | forgit form, link to login, navigate to changepass after send              
+/change           | Change    |  visitor   |change form,, link to login, navigate to login after send                        
+/profile/:id          | Profile      |  user |Multiple forms
+/logout           |  Logout  | user   | navigate to home page                           
+/users           | Users  |  admin    | show all users,navegate to user profile when click on user div                   
+/comment/challId          | Comment  | user  | comment form,navigate to challeng page when click back to challenge                     
+/solution/challId           | Soulution  | user  | navegate to next challenge when click next challenge                    
 
 
 # UML
