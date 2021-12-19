@@ -137,6 +137,6 @@ PUT           | admin + user  |`/posts/update`                         |{id, new
 ![changepass img](https://github.com/MP-Project-Nouf/client/blob/main/changepass.png)
 
 ## users page
-![changepass img](https://github.com/MP-Project-Nouf/client/blob/main/changepass.png)
+![users img](https://github.com/MP-Project-Nouf/client/blob/main/users.png)
 
 
