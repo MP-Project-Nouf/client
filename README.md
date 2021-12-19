@@ -124,6 +124,6 @@ PUT           | admin + user  |`/posts/update`                         |{id, new
 ![solutions img](https://github.com/MP-Project-Nouf/client/blob/main/solutions.png)
 
 ## register page
-![solutions img](https://github.com/MP-Project-Nouf/client/blob/main/solutions.png)
+![register img](https://github.com/MP-Project-Nouf/client/blob/main/register.png)
 
 
