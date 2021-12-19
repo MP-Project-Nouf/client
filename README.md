@@ -141,6 +141,6 @@ PUT           | admin + user  |`/posts/update`                         |{id, new
 ![users img](https://github.com/MP-Project-Nouf/client/blob/main/users.png)
 
 ## leaderboards page
-![users img](https://github.com/MP-Project-Nouf/client/blob/main/users.png)
+![leaderboards img](https://github.com/MP-Project-Nouf/client/blob/main/leaderboards.png)
 
 
