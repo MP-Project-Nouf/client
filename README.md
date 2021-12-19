@@ -64,16 +64,17 @@ To run the server, execute:
 npm start
 ```
 # components
-* home
-* profile
-* challenges
-* challenge
-* comments
-* solutions
-* signin
-* register
-* forgit
-* users
+* Home
+* Profile
+* Challenges
+* Challenge
+* Comments
+* Solutions
+* Signin
+* Register
+* Forgit
+* Users
+* ChangePass
 
 # Router Routes
 Path   | Component     |    Permissions                                |  Behavior
@@ -133,6 +134,9 @@ PUT           | admin + user  |`/posts/update`                         |{id, new
 ![forgit img](https://github.com/MP-Project-Nouf/client/blob/main/forgit.png)
 
 ## changepass page
+![changepass img](https://github.com/MP-Project-Nouf/client/blob/main/changepass.png)
+
+## users page
 ![changepass img](https://github.com/MP-Project-Nouf/client/blob/main/changepass.png)
 
 
