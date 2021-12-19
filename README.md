@@ -126,4 +126,10 @@ PUT           | admin + user  |`/posts/update`                         |{id, new
 ## register page
 ![register img](https://github.com/MP-Project-Nouf/client/blob/main/register.png)
 
+## signin page
+![signin img](https://github.com/MP-Project-Nouf/client/blob/main/signin.png)
+
+## forgitpass page
+![signin img](https://github.com/MP-Project-Nouf/client/blob/main/signin.png)
+
 
