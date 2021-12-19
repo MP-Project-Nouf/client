@@ -3,6 +3,7 @@ This is a site where those interested in programming can select the programming 
 
 Heroku Link:
 While running locally:
+Trello Link :[trello](https://trello.com/b/yelGfTJ9/teaching-weekly-planning)
 # Visitor story
 as visitor I can:
 
@@ -62,6 +63,18 @@ To run the server, execute:
 ```
 npm start
 ```
+# components
+* home
+* profile
+* challenges
+* challenge
+* comments
+* solutions
+* signin
+* register
+* forgit
+* users
+
 # Router Routes
 Path   | Component     |    Permissions                                |  Behavior
 ------------- | -----------   | ---------------------------            |----------------------
@@ -108,6 +121,9 @@ PUT           | admin + user  |`/posts/update`                         |{id, new
 ![comment img](https://github.com/MP-Project-Nouf/client/blob/main/comment.png)
 
 ## solutions page
+![solutions img](https://github.com/MP-Project-Nouf/client/blob/main/solutions.png)
+
+## register page
 ![solutions img](https://github.com/MP-Project-Nouf/client/blob/main/solutions.png)
 
 
