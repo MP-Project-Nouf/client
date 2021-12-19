@@ -104,7 +104,7 @@ PUT           | admin + user  |`/posts/update`                         |{id, new
 
 # UML
 
-![uml-frontend img](https://github.com/MP-Project-Nouf/client/blob/main/uml-frontend.png)
+![uml-Frontend%20(1) img](https://github.com/MP-Project-Nouf/client/blob/main/uml-Frontend%20(1).png)
 
 # Wireframe
 ## Home page
