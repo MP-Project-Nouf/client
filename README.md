@@ -75,6 +75,7 @@ npm start
 * Forgit
 * Users
 * ChangePass
+* leaderboards
 
 # Router Routes
 Path   | Component     |    Permissions                                |  Behavior
@@ -137,6 +138,9 @@ PUT           | admin + user  |`/posts/update`                         |{id, new
 ![changepass img](https://github.com/MP-Project-Nouf/client/blob/main/changepass.png)
 
 ## users page
+![users img](https://github.com/MP-Project-Nouf/client/blob/main/users.png)
+
+## leaderboards page
 ![users img](https://github.com/MP-Project-Nouf/client/blob/main/users.png)
 
 
