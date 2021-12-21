@@ -24,7 +24,8 @@ function Signin() {
         const data={
             role:role,
             token:user.data.token,
-            userId:user.data.result._id
+            userId:user.data.result._id,
+            userName:user.data.result.username
 
         }
         dispatch(login(data));

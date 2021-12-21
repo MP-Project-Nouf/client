@@ -15,10 +15,12 @@ import {
 } from '@chakra-ui/react'
 import { ChevronDownIcon } from '@chakra-ui/icons'
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import {  useDispatch,useSelector } from "react-redux";
+import {logout} from "./../../reducer/login"
 
 import './style.css';
 function Header() {
+  const dispatch = useDispatch();
   const state = useSelector((state) => {
    
     return state;
@@ -26,16 +28,17 @@ function Header() {
   const navigate = useNavigate();
 
    const goProfile=()=>{
-    navigate(`/user/gehe`);
+    navigate(`/user/${state.signIn.userId}`);
    }
    const out=()=>{
+    dispatch(logout({ role: "", token: "",userId:"",useName:"" }));
     navigate(`/`);
    }
    const gosignin=()=>{
     navigate(`/signin`);
    }
    const goregister=()=>{
-    navigate(`/`);
+    navigate(`/register`);
    }
 
     
@@ -46,12 +49,17 @@ function Header() {
             
       <Link to="/" className="header-item">الرئيسية</Link>
       <Link to="/leaderbord" className="header-item" >المتصدرون</Link>
+      {state.signIn.role==="admin"&&
+      <>
       <Link to="/challenges" className="header-item">التحديات</Link>
       <Link to="/Users" className="header-item">المستخدمين</Link>
+      </>
+      }
+      
       {state.signIn.token ? 
         <Menu>
         <MenuButton as={Button} rightIcon={<ChevronDownIcon />}className="profile" >
-          مرحبا نوف
+          <><p>مرحبا</p><p>{state.signIn.userName}</p></>
         </MenuButton>
         <MenuList>
           <MenuItem onClick={goProfile}>الملف الشخصي</MenuItem>
