@@ -16,14 +16,14 @@ function Home() {
           <div className="content">
             <div className="lang">
               <Stack direction="row" spacing={4} align="center">
-              <Button colorScheme="teal" variant="ghost">
+              <Button colorScheme="gray" variant="ghost">
                   javascript
                 </Button>
-                <Button colorScheme="teal" variant="ghost">
+                <Button colorScheme="gray" variant="ghost">
                   java
                 </Button>
-                <Button colorScheme="teal" variant="ghost">
-                  C++
+                <Button colorScheme="gray" variant="ghost">
+                  ++c
                 </Button>
                 
               </Stack>
