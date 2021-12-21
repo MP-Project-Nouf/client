@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from "react"
 import Header from "../Header";
 import Image from "./bghome.webp";
+import { useDispatch, useSelector } from "react-redux";
 import './style.css'
 
 import { Button, ButtonGroup,Stack } from "@chakra-ui/react";
 
 function Home() {
+    const state = useSelector((state) => {
+        console.log("state", state);
+        return state;
+      });
     const [image] = useState(Image);
   return (
     <>

@@ -5,6 +5,7 @@ import Leaderbord from './components/Leaderbord';
 import Challenges from './components/Challenges';
 import Users from './components/Users';
 import Profile from './components/Profile';
+import Signin from './components/Siginin';
 
 import './App.css';
 
@@ -15,8 +16,8 @@ function App() {
         <Route exact path="/leaderbord" element={<Leaderbord />} />
         <Route exact path="/challenges" element={<Challenges />} />
         <Route exact path="/" element={<Home />} />
-        {/* <Route exact path="/register" element={<Register />} />
-        <Route exact path="/signin" element={<SignIn />} /> */}
+        {/* <Route exact path="/register" element={<Register />} /> */}
+        <Route exact path="/signin" element={<Signin />} />
         <Route exact path="/Users" element={<Users />} />
         <Route exact path="/user/:id" element={<Profile />} />
       </Routes>

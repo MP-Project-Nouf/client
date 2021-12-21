@@ -11,6 +11,7 @@
     text-decoration: none;
     color: white;
     margin-top: 20px;
+    font-size: 1vw;
     
     
 }
@@ -24,4 +25,5 @@
 }  */
 .profile{
     margin-top: 15px;
+    size: 2vw;
 }
