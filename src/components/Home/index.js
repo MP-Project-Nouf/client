@@ -44,7 +44,7 @@ function Home() {
             </div>
             <div className="startChall" onClick={goChallege}>
                 <h1>إبدأ التحدي</h1>
-                <ArrowRightIcon />
+                <ArrowRightIcon  />
             </div>
           </div>
         </div>
