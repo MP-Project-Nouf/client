@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { Avatar} from "@chakra-ui/react";
+import { Avatar } from "@chakra-ui/react";
 import {
   Modal,
   ModalOverlay,
@@ -15,116 +15,90 @@ import {
   Button,
   FormLabel,
   Select,
-
+  Checkbox,
+  Stack,
 } from "@chakra-ui/react";
-import { PlusSquareIcon,CloseIcon } from "@chakra-ui/icons";
+import { PlusSquareIcon, CloseIcon } from "@chakra-ui/icons";
 import "./style.css";
 
-
-function Interestes({id,getUserById}) {
+function Interestes({ Interest, getUserById }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [favLan,setFavLan]= useState([]);
-  const [language,setLanguage]= useState("");
-  const [expertise,setExpertise]= useState("");
-  
+  const [interest, setInterest] = useState([]);
+
   const state = useSelector((state) => {
     // console.log("state", state);
     return state;
   });
 
-  const getfavLanByuser = async () => {
-    const lang = await axios.get(
-      `${process.env.REACT_APP_BASIC_URL}/favoritLang/${id}`,
+  const addInerest = async (e) => {
+    e.preventDefault();
+    await axios.post(
+      `${process.env.REACT_APP_BASIC_URL}/interest`,
+      {
+        interest,
+      },
       { headers: { Authorization: `Bearer ${state.signIn.token}` } }
     );
-    console.log("lang.profile", lang.data);
-    setFavLan(lang.data);
+    getUserById();
+    onClose();
+  };
+  const deletefavoritLang = (interest) => {
+    axios.delete(`${process.env.REACT_APP_BASIC_URL}/interest/${interest}`, {
+      headers: { Authorization: `Bearer ${state.signIn.token}` },
+    });
     getUserById();
   };
 
-  const addfavoritLang= async (e) => {
-        e.preventDefault();
-        await axios.post(
-          `${process.env.REACT_APP_BASIC_URL}/favoritLang`,
-          {
-            language,expertise
-          },
-          { headers: { Authorization: `Bearer ${state.signIn.token}` } }
-        );
-        getfavLanByuser();
-        onClose(); 
-  };
-  const deletefavoritLang=(id)=>{
-    axios.delete(
-        `${process.env.REACT_APP_BASIC_URL}/favoritLang/${id}`,
-        { headers: { Authorization: `Bearer ${state.signIn.token}` } }
-      );
-      getfavLanByuser();
-  }
-
-
-  useEffect(() => {
-    getfavLanByuser();
-  }, []);
-
   return (
     <>
-    {(favLan&&favLan.length)&&
-    favLan.map((item)=>{
-        return (
-            <div key={item._id} className="lan">
-                <h1>{item.language}</h1>
-                <h6>{item.expertise}</h6>
-                
-                    
-                    <CloseIcon onClick={()=>{deletefavoritLang(item._id)}} />
-                  
-            </div>
-        )
-    })
+      {Interest &&
+        Interest.length &&
+        Interest.map((item, i) => {
+          return (
+            <div key={i} className="lan">
+              <h1>{item}</h1>
 
-    }
-    <div  onClick={onOpen} className="addlang"><PlusSquareIcon/> <p>إضافة لغة مفضلة</p></div>
-   
-                    <Modal isOpen={isOpen} onClose={onClose}>
+              <CloseIcon
+                onClick={() => {
+                  deletefavoritLang(item);
+                }}
+              />
+            </div>
+          );
+        })}
+      <div onClick={onOpen} className="addlang">
+        <PlusSquareIcon /> <p>إضافةإهتمامات اخرى </p>
+      </div>
+
+      <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader className="title">لغة البرمجة المفضلة</ModalHeader>
+          <ModalHeader className="title">الإهتمامات </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            
-              <FormLabel htmlFor="country">لغة البرمجة</FormLabel>
-              <Select
-                id="country"
-                placeholder="اختر لغة"
-                onChange={(e) => {
-                    setLanguage(e.target.value);
-                   
-                }}
-              >
-                <option>جافاسكريبت</option>
-                <option>جافا</option>
-                <option>سويفت</option>
-                <option>كوتلن</option>
-                <option>c++</option>
-                <option>بايثون</option>
-              </Select>
-              <FormLabel htmlFor="country">سنوات الخبرة</FormLabel>
-              <Select
-                id="country"
-                placeholder="اختار سنوات الخبرة"
-                onChange={(e) => {
-                    setExpertise(e.target.value);
-                  
-                }}
-              >
-                <option>0-1 سنة</option>
-                <option>1-2 سنوات</option>
-                <option>2-4 سنوات</option>
-                <option>اكثر من 6 سنوات</option>
-
-              </Select>
-          
+            <Stack spacing={3} direction="column">
+              <Checkbox colorScheme="red" className="check">
+                تطوير المواقع الالكترونية
+              </Checkbox>
+              <Checkbox colorScheme="red" className="check">
+                تصميم المواقع الإلكترونية
+              </Checkbox>
+              <Checkbox colorScheme="red" className="check">
+                تصميم الواجهات
+              </Checkbox>
+              <Checkbox colorScheme="red" className="check">
+                الذكاء الإصطناعي
+              </Checkbox>
+              <Checkbox colorScheme="red" className="check">
+                البرمجة
+              </Checkbox>
+              <Checkbox colorScheme="red" className="check">
+                علم البيانات
+              </Checkbox>
+              <Checkbox colorScheme="red" className="check">
+                الأمن السيبراني
+              </Checkbox>
+            </Stack>
           </ModalBody>
 
           <ModalFooter>
@@ -134,7 +108,7 @@ function Interestes({id,getUserById}) {
             <Button
               variant="ghost"
               onClick={(e) => {
-                addfavoritLang(e);
+                addInerest(e);
               }}
             >
               إرسال
@@ -142,7 +116,6 @@ function Interestes({id,getUserById}) {
           </ModalFooter>
         </ModalContent>
       </Modal>
-             
     </>
   );
 }
