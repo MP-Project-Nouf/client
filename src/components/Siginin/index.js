@@ -11,7 +11,8 @@ function Signin() {
     const [password,setPassword]=useState("");
     const navigate = useNavigate();
 
-    const signin=async()=>{
+    const signin=async(e)=>{
+        e.preventDefault();
         let role="";
         console.log("name",name,"password",password)
         const user=await axios.post(`${process.env.REACT_APP_BASIC_URL}/login`, {name:name,password:password})
@@ -58,7 +59,7 @@ function Signin() {
             required
           />
           <Link to="/" className="forgit">نسيت كلمة المرور؟؟</Link>
-          <button className="login-signInButton" onClick={signin}>signin</button>
+          <button className="login-signInButton" onClick={(e)=>signin(e)}>signin</button>
           <p>ليس لديك حساب؟</p>
           <Link to="/" className="forgit">إنشاء حساب</Link>
         </form>
