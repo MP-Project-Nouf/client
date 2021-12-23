@@ -19,6 +19,7 @@
     margin-left: 5px;
     margin-right: 5px;
     margin-top: 100px;
+
     align-items:center
 
 }
@@ -26,13 +27,16 @@
     width: 30%;
     align-items: center;
     margin: 0 auto;
- 
    
 }
 .startChall{
-    background-color: rgba(14, 13, 13, 0.322); 
-    padding: 20px;
-    border-radius: 5px;
-    color: white;
+
+     background-color: rgba(14, 13, 13, 0.472) ;
+     padding: 10px;
+     border-radius: 5px;
+     color: white;
+     z-index: 1;
+    
+
 }
 

@@ -18,7 +18,10 @@ function Home() {
     const [image] = useState(Image);
 
    
+
     const goChallege=()=>{
+
+
         navigate(`/signin`);
     }
   return (

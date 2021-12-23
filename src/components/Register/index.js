@@ -14,7 +14,8 @@ function Register() {
     const [complex, setComplex] = useState(false);
     const navigate = useNavigate();
 
-    const register = () => {
+    const register = (e) => {
+        e.preventDefault();
         axios.post(`${process.env.REACT_APP_BASIC_URL}/register`, {
             email,
             username,
@@ -118,7 +119,7 @@ function Register() {
             />
             {value && <h6>كلمة المرور غير متطابقة</h6>}
             <Link to="/signin" className="forgit">العودة الى تسجيل الدخول</Link>
-            <button className="login-signInButton" onClick={register}>
+            <button className="login-signInButton" onClick={(e)=>register(e)}>
               إنشاء حساب
             </button>
           </form>
