@@ -21,7 +21,7 @@ import { PlusSquareIcon,CloseIcon } from "@chakra-ui/icons";
 import "./style.css";
 
 
-function Language({id,getUserById}) {
+function Interestes({id,getUserById}) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [favLan,setFavLan]= useState([]);
   const [language,setLanguage]= useState("");
@@ -147,4 +147,4 @@ function Language({id,getUserById}) {
   );
 }
 
-export default Language;
+export default Interestes;
