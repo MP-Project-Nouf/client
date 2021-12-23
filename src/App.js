@@ -7,6 +7,7 @@ import Users from './components/Users';
 import Profile from './components/Profile';
 import Signin from './components/Siginin';
 import Register from './components/Register';
+import Challenge from './components/Challenge';
 
 import './App.css';
 
@@ -21,6 +22,7 @@ function App() {
         <Route exact path="/signin" element={<Signin />} />
         <Route exact path="/Users" element={<Users />} />
         <Route exact path="/user/:id" element={<Profile />} />
+        <Route exact path="/challenge/:level" element={<Challenge />} />
       </Routes>
       
   
