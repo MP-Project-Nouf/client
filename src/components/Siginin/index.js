@@ -26,7 +26,10 @@ function Signin() {
             role:role,
             token:user.data.token,
             userId:user.data.result._id,
-            userName:user.data.result.username
+            userName:user.data.result.username,
+            image:user.data.result.avatar,
+            point:user.data.result.point,
+            level:user.data.result.level,
 
         }
         dispatch(login(data));

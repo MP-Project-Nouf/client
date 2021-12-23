@@ -1,0 +1,18 @@
+.container-profile{
+    display:flex;
+   flex-direction: row;
+    justify-content: space-around;
+    z-index: 1;
+    margin-top: 150px;
+}
+.slid{
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+   
+}
+.box{
+    width: 90%;
+    background-color: white;
+}
