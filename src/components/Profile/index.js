@@ -24,7 +24,8 @@ import "./style.css";
 import AccountInfo from "../AccountInfo";
 import PersonalInfo from "../PersonalInfo";
 import Language from "../Language";
-import Interestes from "../Interestes";
+import ChallSolve from "../ChallSolve";
+
 
 function Profile() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -92,10 +93,9 @@ function Profile() {
                  
                 </div>
                 <div className="box">
-                <Interestes
-                    id={id}
-                    getUserById={getUserById}
-                  />
+                <ChallSolve 
+                user={id}
+                />
                  
                 </div>
               </div>

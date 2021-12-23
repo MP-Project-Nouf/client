@@ -32,14 +32,15 @@ function Interestes({ Interest, getUserById }) {
 
   const addInerest = async (e) => {
     e.preventDefault();
-    await axios.post(
-      `${process.env.REACT_APP_BASIC_URL}/interest`,
-      {
-        interest,
-      },
-      { headers: { Authorization: `Bearer ${state.signIn.token}` } }
-    );
-    getUserById();
+    console.log("interest",interest);
+    // await axios.post(
+    //   `${process.env.REACT_APP_BASIC_URL}/interest`,
+    //   {
+    //     interest,
+    //   },
+    //   { headers: { Authorization: `Bearer ${state.signIn.token}` } }
+    // );
+    // getUserById();
     onClose();
   };
   const deletefavoritLang = (interest) => {
@@ -76,26 +77,87 @@ function Interestes({ Interest, getUserById }) {
           <ModalHeader className="title">الإهتمامات </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Stack spacing={3} direction="column">
-              <Checkbox colorScheme="red" className="check">
+            <Stack spacing={3} direction="column" >
+              <Checkbox colorScheme="red" className="check" 
+              onChange={(e)=>{if(e.target.checked){
+                setInterest(...interest,"تطوير المواقع الإلكترونية")}
+                if(!(e.target.checked))
+                {
+                    let copy=[...interest];
+                    copy.splice(interest.indexOf("تطوير المواقع الإلكترونية"),1);
+                    setInterest(...copy);
+                    }}}>
                 تطوير المواقع الالكترونية
               </Checkbox>
-              <Checkbox colorScheme="red" className="check">
+              <Checkbox colorScheme="red" className="check"
+              onChange={(e)=>{if(e.target.checked){
+                setInterest(...interest,"تصميم المواقع الإلكترونية")}
+                if(!(e.target.checked))
+                {
+                    let copy=[...interest];
+                    copy.splice(interest.indexOf("تصميم المواقع الإلكترونية"),1);
+                    setInterest(...copy);
+                    }}}
+              >
                 تصميم المواقع الإلكترونية
               </Checkbox>
-              <Checkbox colorScheme="red" className="check">
+              <Checkbox colorScheme="red" className="check"
+              onChange={(e)=>{if(e.target.checked){
+                setInterest(...interest,"تصميم  الواجهات")}
+                if(!(e.target.checked))
+                {
+                    let copy=[...interest];
+                    copy.splice(interest.indexOf("تصميم  الواجهات"),1);
+                    setInterest(...copy);
+                    }}}
+              >
                 تصميم الواجهات
               </Checkbox>
-              <Checkbox colorScheme="red" className="check">
+              <Checkbox colorScheme="red" className="check"
+              onChange={(e)=>{if(e.target.checked){
+                setInterest(...interest,"الذكاء الإصطناعي")}
+                if(!(e.target.checked))
+                {
+                    let copy=[...interest];
+                    copy.splice(interest.indexOf("الذكاء الإصطناعي"),1);
+                    setInterest(...copy);
+                    }}}
+              >
                 الذكاء الإصطناعي
               </Checkbox>
-              <Checkbox colorScheme="red" className="check">
+              <Checkbox colorScheme="red" className="check"
+              onChange={(e)=>{if(e.target.checked){
+                setInterest(...interest,"البرمجة")}
+                if(!(e.target.checked))
+                {
+                    let copy=[...interest];
+                    copy.splice(interest.indexOf("البرمجة"),1);
+                    setInterest(...copy);
+                    }}}
+              >
                 البرمجة
               </Checkbox>
-              <Checkbox colorScheme="red" className="check">
+              <Checkbox colorScheme="red" className="check"
+              onChange={(e)=>{if(e.target.checked){
+                setInterest(...interest,"علم البيانات")}
+                if(!(e.target.checked))
+                {
+                    let copy=[...interest];
+                    copy.splice(interest.indexOf("علم البيانات"),1);
+                    setInterest(...copy);
+                    }}}
+              >
                 علم البيانات
               </Checkbox>
-              <Checkbox colorScheme="red" className="check">
+              <Checkbox colorScheme="red" className="check"
+              onChange={(e)=>{if(e.target.checked){
+                setInterest(...interest,"الأمن السيبراني")}
+                if(!(e.target.checked))
+                {
+                    let copy=[...interest];
+                    copy.splice(interest.indexOf("الأمن السيبراني"),1);
+                    setInterest(...copy);
+                    }}}>
                 الأمن السيبراني
               </Checkbox>
             </Stack>
