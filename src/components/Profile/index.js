@@ -27,6 +27,7 @@ import Language from "../Language";
 import ChallSolve from "../ChallSolve";
 import CompleteProfile from "../CompleteProfile";
 import Comunication from "../Comunication";
+import Education from '../Education'
 
 
 function Profile() {
@@ -121,6 +122,14 @@ function Profile() {
                   website={User.website}
                   twitter={User.twitter}
                   linkedin={User.linkedin}
+                  id={User._id}
+                  getUserById={getUserById}
+                  />
+              
+              </div>
+              <div className="box">
+                 <Education
+                 
                   id={User._id}
                   getUserById={getUserById}
                   />
