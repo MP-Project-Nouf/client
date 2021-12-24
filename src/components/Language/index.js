@@ -74,17 +74,22 @@ function Language({ id, getUserById }) {
               <h1>{item.language}</h1>
               <h6>{item.expertise}</h6>
 
-              <CloseIcon
+              {state.signIn.userId===id&&
+                  <CloseIcon
                 onClick={() => {
                   deletefavoritLang(item._id);
                 }}
-              />
+              />}
             </div>
           );
         })}
-      <div onClick={onOpen} className="addlang">
-        <PlusSquareIcon /> <p>إضافة لغة مفضلة</p>
-      </div>
+        {state.signIn.userId===id&&
+                      
+                      <div onClick={onOpen} className="addlang">
+                      <PlusSquareIcon /> <p>إضافة لغة مفضلة</p>
+                    </div>
+                    }
+     
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />

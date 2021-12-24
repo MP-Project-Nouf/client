@@ -56,9 +56,7 @@ function PersonalInfo(props) {
 
   return (
     <>
-      <Button onClick={onOpen}>
-        <EditIcon />
-      </Button>
+      
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
@@ -176,6 +174,10 @@ function PersonalInfo(props) {
         <h1 className="line title">الحالة الوظيفية</h1>
         <h1 className="line value">{props.workStatus}</h1>
       </div>
+      {state.signIn.userId===props.id&&
+          
+          <EditIcon onClick={onOpen} className="editButt"/>
+       }
     </>
   );
 }
