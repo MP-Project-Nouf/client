@@ -34,23 +34,10 @@ function Users() {
   const getSearched = async (e) => {
     e.preventDefault();
     const search = await axios.get(`${process.env.REACT_APP_BASIC_URL}/search/${e.target.value}`);
-    // search.data.forEach((element) => {
-    //   console.log("element", element);
-    //   if (
-    //     element.kind.toLowerCase().includes(name) ||
-    //     element.name.toLowerCase().includes(name)
-    //   ) {
-    //     console.log("elementin loop", element);
-    //     productInSearch.push(element);
-    //   }
-    // });
-    // console.log("productInSearch", search.data);
+
     setSearchUser(search.data);
   };
 
-  // useEffect(() => {
-  //   getSearched();
-  // }, [name]);
 
   useEffect(() => {
     getAllUser();
