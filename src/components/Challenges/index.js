@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../Header";
 import axios from "axios";
-import image from "./bgUsers.jpg";
+// import image from "./bgUsers.jpg";
 import {  useSelector } from "react-redux";
 import "./style.css";
 import { Avatar} from "@chakra-ui/react";

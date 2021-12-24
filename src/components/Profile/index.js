@@ -78,6 +78,7 @@ function Profile() {
             <div className="container-profile">
               <div className="slid">
                 <div className="box">
+                    <h1 className="title-profile">معلومات الحساب</h1>
                   <AccountInfo
                     avatar={User.avatar}
                     firstname={User.firstname}
@@ -90,6 +91,7 @@ function Profile() {
                   />
                 </div>
                 <div className="box">
+                <h1 className="title-profile">معلومات شخصية</h1>
                 <PersonalInfo
                     birth={User.birth}
                     country={User.country}
@@ -103,6 +105,7 @@ function Profile() {
                  
                 </div>
                 <div className="box">
+                <h1 className="title-profile">اللغات المفضلة</h1>
                 <Language
                     id={id}
                     getUserById={getUserById}
@@ -110,6 +113,7 @@ function Profile() {
                  
                 </div>
                 <div className="box">
+                <h1 className="title-profile"> التحديات المجتازة</h1>
                 <ChallSolve 
                 user={id}
                 />
@@ -117,11 +121,12 @@ function Profile() {
                 </div>
               </div>
               <div className="slid">
-              <div className="box">
+              <div className="box compleate">
                  <CompleteProfile user={User}/> 
               
               </div>
               <div className="box">
+              <h1 className="title-profile"> وسائل التواصل</h1>
                  <Comunication
                   github={User.github} 
                   stackflow={User.stackflow} 
@@ -134,6 +139,7 @@ function Profile() {
               
               </div>
               <div className="box">
+              <h1 className="title-profile"> المستوى التعليمي</h1>
                  <Education
                  
                   id={User._id}
@@ -142,6 +148,7 @@ function Profile() {
               
               </div>
               <div className="box">
+              <h1 className="title-profile"> الشهادات التدريبية</h1>
                  <Training
                  
                   user={User._id}
@@ -151,6 +158,7 @@ function Profile() {
               </div>
               
               <div className="box">
+              <h1 className="title-profile"> التحديات المضافة</h1>
                  <UserChall
                  
                   user={User._id}

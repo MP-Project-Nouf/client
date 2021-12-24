@@ -154,24 +154,24 @@ function PersonalInfo(props) {
         </ModalContent>
       </Modal>
       <div>
-        <h1 className="line title">تاريخ الميلاد</h1>
+        <h1 className="line title textcolor">تاريخ الميلاد</h1>
         <h1 className="line value">{props.birth}</h1>
       </div>
       <div>
-        <h1 className="line title">الدولة</h1>
+        <h1 className="line title textcolor">الدولة</h1>
         <h1 className="line value">{props.country}/</h1>
         <h1 className="line value">{props.city}</h1>
       </div>
       <div>
-        <h1 className="line title">الجنسية</h1>
+        <h1 className="line title textcolor">الجنسية</h1>
         <h1 className="line value">{props.nationality}</h1>
       </div>
       <div>
-        <h1 className="line title">الجنس</h1>
+        <h1 className="line title textcolor">الجنس</h1>
         <h1 className="line value">{props.gender}</h1>
       </div>
       <div>
-        <h1 className="line title">الحالة الوظيفية</h1>
+        <h1 className="line title textcolor">الحالة الوظيفية</h1>
         <h1 className="line value">{props.workStatus}</h1>
       </div>
       {state.signIn.userId===props.id&&

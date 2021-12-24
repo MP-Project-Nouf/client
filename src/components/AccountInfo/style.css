@@ -1,3 +1,21 @@
 .editButt{
     margin-right: 90%;
 }
+.avatar{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+}
+.line{
+    margin-left: 15px;
+}
+.fullname{
+    display: flex;
+
+}
+.name{
+    color: rgba(255, 255, 255, 0.548);
+}
+.textcolor{
+    color:rgb(33, 83, 85); ;
+}

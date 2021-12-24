@@ -136,19 +136,26 @@ function AccountInfo(props) {
                     <Avatar
                       name="Dan Abrahmov"
                       src={props.avatar}
-                      className="line"
+                      className="line personImage"
                     />
-
-                    <h1 className="line fname">{props.firstname}</h1>
-                    <h1 className="line lname">{props.lastname}</h1>
+                    <div className="names">
+                        <div className="fullname">
+                        <h1 className="lname">{props.lastname}</h1>
+                        <h1 className="fname">{props.firstname}</h1>
+                    
+                        </div>
+                   
                     <h1 className="name">{props.username}@</h1>
+                    </div>
+
+                    
                   </div>
                   <div>
-                    <h1 className="line title">الإيميل</h1>
+                    <h1 className="line title textcolor">الإيميل</h1>
                     <h1 className="line value">{props.email}</h1>
                   </div>
                   <div>
-                    <h1 className="line title">رقم الهاتف</h1>
+                    <h1 className="line title textcolor">رقم الهاتف</h1>
                     <h1 className="line value">{props.phone}</h1>
                   </div>
                   {state.signIn.userId===props.id&&
