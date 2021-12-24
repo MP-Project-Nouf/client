@@ -8,8 +8,6 @@ function CompleteProfile({user}) {
      console.log("User",user);
      for(let key in user)
      {   let l=user[key];
-         console.log("key",key);
-         console.log("User.key",l);
          if(user[key]!=undefined&&key!="role"&&key!="_id"&&key!="rand"&&key!="isDel"&&key!="isActive"&&key!="point"&&key!="level"){
              x+=3;
 

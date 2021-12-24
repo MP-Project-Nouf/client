@@ -1,14 +1,17 @@
-import React from 'react'
-import Header from '../Header'
+import React, { useEffect, useState } from "react";
+import Header from "../Header";
+import axios from "axios";
+// import image from "./bgUsers.jpg";
+import {  useSelector } from "react-redux";
+import "./style.css";
+import { Avatar} from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 function Challenges() {
     return (
-        <>
-        <Header />
         <div>
-           <p>profile</p> 
+            
         </div>
-        </>
     )
 }
 

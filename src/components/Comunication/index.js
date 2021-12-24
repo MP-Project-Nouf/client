@@ -55,24 +55,24 @@ function Comunication(props) {
     <>
       {" "}
       <div className="comunication">
-        <h1>Personal website:</h1>
-        {props.website && <a href={props.website}> زيارة</a>}
+        <h1 className="line title textcolor">Personal website:</h1>
+        {props.website && <a href={props.website} className="name"> زيارة</a>}
       </div>
       <div className="comunication">
-        <h1>twitter:</h1>
-        {props.twitter && <a href={props.twitter}> زيارة</a>}
+        <h1 className="line title textcolor">twitter:</h1>
+        {props.twitter && <a href={props.twitter} className="name"> زيارة</a>}
       </div>
       <div className="comunication">
-        <h1>Stackoverflow:</h1>
-        {props.stackflow && <a href={props.stackflow}> زيارة</a>}
+        <h1 className="line title textcolor">Stackoverflow:</h1>
+        {props.stackflow && <a href={props.stackflow} className="name"> زيارة</a>}
       </div>
       <div className="comunication">
-        <h1>github:</h1>
-        {props.github && <a href={props.github}> زيارة</a>}
+        <h1 className="line title textcolor">github:</h1>
+        {props.github && <a href={props.github} className="name"> زيارة</a>}
       </div>
       <div className="comunication">
-        <h1>linkedin:</h1>
-        {props.linkedin && <a href={props.linkedin}> زيارة</a>}
+        <h1 className="line title textcolor">linkedin:</h1>
+        {props.linkedin && <a href={props.linkedin} className="name"> زيارة</a>}
       </div>
       {state.signIn.userId === props.id && (
         <EditIcon onClick={onOpen} className="editButt" />
