@@ -28,6 +28,8 @@ import ChallSolve from "../ChallSolve";
 import CompleteProfile from "../CompleteProfile";
 import Comunication from "../Comunication";
 import Education from '../Education'
+import Training from "../Training";
+import UserChall from "../UserChall";
 
 
 function Profile() {
@@ -135,9 +137,26 @@ function Profile() {
                   />
               
               </div>
+              <div className="box">
+                 <Training
+                 
+                  user={User._id}
+                  getUserById={getUserById}
+                  />
+              
+              </div>
+              
+              <div className="box">
+                 <UserChall
+                 
+                  user={User._id}
+                  />
+              
+              </div>
               </div>
               
             </div>
+            
           )}
         </div>
       </div>
