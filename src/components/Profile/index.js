@@ -26,6 +26,7 @@ import PersonalInfo from "../PersonalInfo";
 import Language from "../Language";
 import ChallSolve from "../ChallSolve";
 import CompleteProfile from "../CompleteProfile";
+import Comunication from "../Comunication";
 
 
 function Profile() {
@@ -78,6 +79,7 @@ function Profile() {
                     email={User.email}
                     phone={User.phone}
                     getUserById={getUserById}
+                    id={User._id}
                   />
                 </div>
                 <div className="box">
@@ -89,6 +91,7 @@ function Profile() {
                     gender={User.gender}
                     workStatus={User.workStatus}
                     getUserById={getUserById}
+                    id={User._id}
                   />
                  
                 </div>
@@ -106,11 +109,25 @@ function Profile() {
                  
                 </div>
               </div>
-              <div className="slid"></div>
+              <div className="slid">
               <div className="box">
                  <CompleteProfile user={User}/> 
               
               </div>
+              <div className="box">
+                 <Comunication
+                  github={User.github} 
+                  stackflow={User.stackflow} 
+                  website={User.website}
+                  twitter={User.twitter}
+                  linkedin={User.linkedin}
+                  id={User._id}
+                  getUserById={getUserById}
+                  />
+              
+              </div>
+              </div>
+              
             </div>
           )}
         </div>

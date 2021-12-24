@@ -3,12 +3,12 @@
     border-radius: 5px;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     padding: 10px;
     margin-bottom: 10px;
 }
 .addlang{
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    justify-content:start
 }

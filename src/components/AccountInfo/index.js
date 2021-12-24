@@ -58,9 +58,7 @@ function AccountInfo(props) {
   return (
     <>
    
-                  <Button onClick={onOpen}>
-                    <EditIcon />
-                  </Button>
+                 
 
                   <Modal isOpen={isOpen} onClose={onClose}>
                     <ModalOverlay />
@@ -153,6 +151,10 @@ function AccountInfo(props) {
                     <h1 className="line title">رقم الهاتف</h1>
                     <h1 className="line value">{props.phone}</h1>
                   </div>
+                  {state.signIn.userId===props.id&&
+                      
+                      <EditIcon onClick={onOpen} className="editButt"/>
+                    }
                 
     </>
   );
