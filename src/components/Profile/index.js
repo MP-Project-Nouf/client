@@ -25,6 +25,7 @@ import AccountInfo from "../AccountInfo";
 import PersonalInfo from "../PersonalInfo";
 import Language from "../Language";
 import ChallSolve from "../ChallSolve";
+import CompleteProfile from "../CompleteProfile";
 
 
 function Profile() {
@@ -32,6 +33,7 @@ function Profile() {
   const [image] = useState(Image);
   const { id } = useParams();
   const [User, setUser] = useState(null);
+  const [acou,setAcou]=useState(0);
 
   const state = useSelector((state) => {
     // console.log("state", state);
@@ -46,12 +48,17 @@ function Profile() {
     );
     console.log("user.profile", user.data);
     setUser(user.data);
+   
   };
+
+  
 
 
   useEffect(() => {
     getUserById();
+    
   }, []);
+
 
   return (
     <>
@@ -101,16 +108,8 @@ function Profile() {
               </div>
               <div className="slid"></div>
               <div className="box">
-                <div className="avatar">
-                  <Avatar name="Dan Abrahmov" src={User.avatar} />
-                  <h1>{User.firstname}</h1>
-                  <h1>{User.lastname}</h1>
-                  <h1>{User.username}@</h1>
-                </div>
-                <h1>الإيميل</h1>
-                <h1>{User.email}</h1>
-                <h1>رقم الهاتف</h1>
-                <h1>{User.phone}</h1>
+                 <CompleteProfile user={User}/> 
+              
               </div>
             </div>
           )}
