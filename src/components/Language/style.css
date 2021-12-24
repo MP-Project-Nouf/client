@@ -1,0 +1,14 @@
+.lan{
+    background-color: rgba(0, 0, 0, 0.596);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.addlang{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}

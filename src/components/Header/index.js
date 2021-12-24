@@ -31,7 +31,7 @@ function Header() {
     navigate(`/user/${state.signIn.userId}`);
    }
    const out=()=>{
-    dispatch(logout({ role: "", token: "",userId:"",useName:"" }));
+    dispatch(logout({ role: "", token: "",userId:"",useName:"",image:"" ,point:0,level:1}));
     navigate(`/`);
    }
    const gosignin=()=>{
