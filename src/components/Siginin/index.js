@@ -10,7 +10,7 @@ function Signin() {
     const dispatch=useDispatch();
     const [name,setName]=useState("");
     const [password,setPassword]=useState("");
-    const [message,setMessage]=useState("")
+    const [message,setMessage]=useState("");
     const navigate = useNavigate();
 
     const signin=async(e)=>{

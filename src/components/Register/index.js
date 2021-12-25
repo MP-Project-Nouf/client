@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import logo from "./logocoding(1).png";
+import './style.css'
 
 function Register() {
   const [email, setEmail] = useState("");
@@ -13,11 +14,16 @@ function Register() {
   const [phone, setPhone] = useState(0);
   const [value, setValue] = useState(false);
   const [complex, setComplex] = useState(false);
+  const [message,setMessage]=useState("")
   const navigate = useNavigate();
 
-  const register = (e) => {
+  const register = async(e) => {
     e.preventDefault();
-    axios.post(`${process.env.REACT_APP_BASIC_URL}/register`, {
+    if(password!=pass)
+    {
+      setMessage("كلمة المرور غير متطابقة")
+    }else{
+    const user = await axios.post(`${process.env.REACT_APP_BASIC_URL}/register`, {
       email,
       username,
       password,
@@ -26,10 +32,20 @@ function Register() {
       lastname,
       phone,
     });
-    navigate(`/signin`);
+    console.log("user.status",user.status)
+   
+    if(user.status === 200){
+      setMessage("تم ارسال رابط توثيق الحساب على الإيميل ");
+    }else if(user.status === 203)
+    {
+      setMessage("كلمة المرور غير مطابقة للشروط");
+    }else if (user.status === 204) {
+      setMessage("اسم المستخدم او كلمة المرور موجوده مسبقا");
+    }
+  }
   };
   return (
-    <div className="login register">
+    <div className="register">
       <Link to="/">
         <img className="login-logo" alt="logo" src={logo} />
       </Link>
@@ -66,42 +82,29 @@ function Register() {
           <h5>الإيميل</h5>
           <input
             type="text"
+            defaultValue={""}
             onChange={(e) => {
               e.preventDefault();
               setEmail(e.target.value);
             }}
             required
           />
-          <h5>رقم الجوال</h5>
-          <input
-            type="number"
-            onChange={(e) => {
-              e.preventDefault();
-              setPhone(e.target.value);
-            }}
-            required
-          />
+         
           <h5>كلمة المرور</h5>
-          <p >يجب ان تحتوي على الاقل 6 خانات,حرف كبير,حرف صغير,رقم و رمز</p>
+          <p className="complex" >يجب ان تحتوي على الاقل 6 خانات,حرف كبير,حرف صغير,رقم و رمز</p>
           <input
             type="password"
+            defaultValue={""}
             onChange={(e) => {
               e.preventDefault();
-              if (
-                /\d/.test(e.target.value) &&
-                /[A-Z]/.test(e.target.value) &&
-                /[a-z]/.test(e.target.value) &&
-                /[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/.test(e.target.value) &&
-                e.target.value.length > 6
-              ) {
+              
                 setPassword(e.target.value);
-              } else {
-                setComplex(true);
-              }
+             
+              
             }}
             required
           />
-          {complex && <h6>كلمة المرور غير مناسبة</h6>}
+          {/* {complex && <h6>كلمة المرور غير مناسبة</h6>} */}
           <h5>تأكيد كلمة المرور</h5>
           <input
             type="password"
@@ -114,13 +117,15 @@ function Register() {
             }}
             required
           />
-          {value && <h6>كلمة المرور غير متطابقة</h6>}
-          <Link to="/signin" className="forgit">
-            العودة الى تسجيل الدخول
-          </Link>
-          <button className="login-signInButton" onClick={(e) => register(e)}>
+          {/* {value && <h6>كلمة المرور غير متطابقة</h6>} */}
+         
+          <button className="login-registerButton" onClick={(e) => register(e)}>
             إنشاء حساب
           </button>
+          <Link to="/signin" className="register-back">
+            العودة الى تسجيل الدخول
+          </Link>
+          <div className="message">{message} </div>
         </form>
       </div>
     </div>

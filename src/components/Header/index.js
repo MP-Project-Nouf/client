@@ -29,6 +29,7 @@ function Header() {
   const navigate = useNavigate();
 
    const goProfile=()=>{
+    navigate(`/`);
     navigate(`/user/${state.signIn.userId}`);
    }
    const out=()=>{
