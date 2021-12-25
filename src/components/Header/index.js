@@ -17,6 +17,7 @@ import { ChevronDownIcon } from '@chakra-ui/icons'
 import { useNavigate } from "react-router-dom";
 import {  useDispatch,useSelector } from "react-redux";
 import {logout} from "./../../reducer/login"
+import logo from './logocoding(1).png'
 
 import './style.css';
 function Header() {
@@ -46,6 +47,7 @@ function Header() {
       
     <div className="header">
         <div className="header-right">
+        <img src={logo} alt="logo" className=" logo"/>  
             
       <Link to="/" className="header-item">الرئيسية</Link>
       <Link to="/leaderbord" className="header-item" >المتصدرون</Link>

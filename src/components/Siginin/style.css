@@ -1,3 +1,4 @@
+
 .login-logo{
     margin-top: 20px;
     margin-bottom:10px;
@@ -12,7 +13,11 @@
     flex-direction: column;
     align-items: center;
     height: 100vh;
-     background-color: rgb(234,237,237);;
+     background-color: rgb(148, 150, 150);
+     background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUptRc_Hm1Vo1u6M2nD5WnKgb44szuqr4LpA&usqp=CAU);
+background-size: cover;
+
+
 
 }
 .login-container{
@@ -23,8 +28,9 @@
     border-radius: 5px;
     border: 1px solid lightgray;
     padding: 20px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     margin-bottom: 10px;
+    
 }
 .login-container h1{
     font-weight: 500;
@@ -47,13 +53,14 @@ border-color: darkgray;
     font-size: 12px;
 }
 .login-signInButton{
-    background: #f0c14b;
+    background: rgba(21, 83, 119, 0.746);
     border-radius: 2px;
+    color: white;
     width: 100%;
     height: 30px;
     border: 1px solid;
     margin-top: 10px;
-    border-color: #a88734 #9c7e31 #846a29;
+    border-color: rgba(21, 83, 119, 0.746);
 }
 .login-registerButton{
 
@@ -63,4 +70,15 @@ border-color: darkgray;
     border: 1px solid;
     margin-top: 10px;
     border-color: darkgray;
+}
+.login-forgit{
+    font-size: 10px;
+}
+.login-account{
+    font-size: 15px;
+}
+.message{
+    color: rgba(21, 83, 119, 0.746);
+    font-size:15px ;
+    margin-top: 10px;
 }
