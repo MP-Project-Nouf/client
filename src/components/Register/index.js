@@ -27,10 +27,9 @@ function Register() {
       email,
       username,
       password,
-      role: "61c0401fe201d8703bbc7c4f",
+      role:"61c0401fe201d8703bbc7c4f",
       firstname,
       lastname,
-      phone,
     });
     console.log("user.status",user.status)
    

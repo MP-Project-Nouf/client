@@ -81,9 +81,9 @@ function Challenges() {
     onClose();
   };
 
-  const goprofile = (id) => {
-    navigate(`/user/${id}`);
-  };
+//   const goprofile = (id) => {
+//     navigate(`/user/${id}`);
+//   };
 
   useEffect(() => {
     getAllchallenge();
@@ -141,7 +141,7 @@ function Challenges() {
                                   </FormLabel>
                                   <Input
                                     id="title"
-                                    type="date"
+                                    type="text"
                                     defaultValue={item.title}
                                     onChange={(e) => {
                                       setTitle(e.target.value);

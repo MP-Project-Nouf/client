@@ -68,7 +68,7 @@ function Signin() {
             }}
             required
           />
-          <Link to="/" className="login-forgit">نسيت كلمة المرور؟؟</Link>
+          <Link to="/forgit" className="login-forgit">نسيت كلمة المرور؟؟</Link>
           <button className="login-signInButton" onClick={(e)=>signin(e)}>تسجل الدخول</button>
           <p className='login-account'>ليس لديك حساب؟</p>
           <Link to="/register" className="login-account">إنشاء حساب</Link>
