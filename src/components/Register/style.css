@@ -7,12 +7,15 @@
     margin-left: auto;
 
 }
-.login{
+.register{
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
-     background-color: rgb(234,237,237);;
+    height: 175vh;
+     background-color: rgb(234,237,237);
+     background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUptRc_Hm1Vo1u6M2nD5WnKgb44szuqr4LpA&usqp=CAU);
+background-size: cover;
+
 
 }
 .login-container{
@@ -32,6 +35,7 @@
 }
 .login-container form h5{
     margin-bottom: 5px;
+    text-align: right;
 }
 
 .login-container form input{
@@ -44,23 +48,21 @@ border-color: darkgray;
 }
 .login-container p{
     margin-top: 15px;
-    font-size: 12px;
-}
-.login-signInButton{
-    background: #f0c14b;
-    border-radius: 2px;
-    width: 100%;
-    height: 30px;
-    border: 1px solid;
-    margin-top: 10px;
-    border-color: #a88734 #9c7e31 #846a29;
+    font-size: 5px;
 }
 .login-registerButton{
-
+    background:rgba(21, 83, 119, 0.746);
     border-radius: 2px;
     width: 100%;
     height: 30px;
     border: 1px solid;
     margin-top: 10px;
-    border-color: darkgray;
+    border-color: rgba(21, 83, 119, 0.746);
+    margin-bottom: 10px;
 }
+.register-back{
+    font-size: 12px;
+    margin-top:20px;
+}
+
+    

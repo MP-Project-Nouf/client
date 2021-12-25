@@ -1,0 +1,54 @@
+.challenges-container{
+    display: grid;
+    grid-template-columns: 25% 25% 25%;
+    justify-content:space-evenly;
+   
+  
+    
+}
+.challenges-box{
+   background-color: rgba(0, 0, 0, 0.616);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+    
+}
+.challenges-point{
+    display: flex;
+    flex-direction: row;
+
+    
+}
+.last{
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    /* background-color: rgba(0, 0, 0, 0.548); */
+ 
+}
+.contents{
+    justify-content:space-evenly;
+}
+.challenges-title{
+    /* padding-top: 10px; */
+    padding-bottom: 10px;
+}
+.challenges-content{
+    padding-top: 10px;
+    /* background-color: rgba(0, 0, 0, 0.548); */
+}
+.active{
+
+    color:rgb(192, 231, 231); ;
+}
+.notactive{
+    color: rgb(182, 102, 102);
+}

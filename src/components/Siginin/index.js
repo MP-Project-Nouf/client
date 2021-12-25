@@ -3,20 +3,26 @@ import {Link,useNavigate} from 'react-router-dom'
 import {login} from "./../../reducer/login"
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
+import logo from './logocoding(1).png'
 import './style.css'
 
 function Signin() {
     const dispatch=useDispatch();
     const [name,setName]=useState("");
     const [password,setPassword]=useState("");
+    const [message,setMessage]=useState("");
     const navigate = useNavigate();
 
     const signin=async(e)=>{
         e.preventDefault();
         let role="";
-        console.log("name",name,"password",password)
-        const user=await axios.post(`${process.env.REACT_APP_BASIC_URL}/login`, {name:name,password:password})
+        const user=await axios.post(`${process.env.REACT_APP_BASIC_URL}/login`, {input:name,password:password})
         console.log("user.data",user.data)
+        console.log("statuse",user.status)
+        
+    if (user.status !== 200) {
+      setMessage(user.data);
+    }else{
         if(user.data.result.role==="61c04027e201d8703bbc7c51")
     
         {
@@ -34,16 +40,17 @@ function Signin() {
         }
         dispatch(login(data));
         navigate(`/`);
+      }
     }
     return (
         <div className="login">
-      {/* <Link to="/">
-        <img className="login-logo" alt='logo' />
-      </Link> */}
+      <Link to="/">
+        <img className="login-logo" alt='logo' src={logo}/>
+      </Link>
       <div className="login-container">
-        <h1>Signin</h1>
+        <h1>تسجيل دخول</h1>
         <form>
-          <h5>E-mail / UserName</h5>
+          <h5>اسم المستخدم/الإيمل</h5>
           <input
             type="text"
             onChange={(e) =>{ 
@@ -52,7 +59,7 @@ function Signin() {
             }}
             required
           />
-          <h5>password</h5>
+          <h5>كلمة المرور</h5>
           <input
             type="password"
             onChange={(e) => {
@@ -61,10 +68,11 @@ function Signin() {
             }}
             required
           />
-          <Link to="/" className="forgit">نسيت كلمة المرور؟؟</Link>
-          <button className="login-signInButton" onClick={(e)=>signin(e)}>signin</button>
-          <p>ليس لديك حساب؟</p>
-          <Link to="/" className="forgit">إنشاء حساب</Link>
+          <Link to="/forgit" className="login-forgit">نسيت كلمة المرور؟؟</Link>
+          <button className="login-signInButton" onClick={(e)=>signin(e)}>تسجل الدخول</button>
+          <p className='login-account'>ليس لديك حساب؟</p>
+          <Link to="/register" className="login-account">إنشاء حساب</Link>
+          <div className="message">{message} </div>
         </form>
         
       </div>

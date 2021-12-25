@@ -4,6 +4,7 @@ import Image from "./bghome.webp";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {ArrowRightIcon} from '@chakra-ui/icons';
+import logo from './logocoding(1).png'
 
 import './style.css'
 
@@ -31,6 +32,7 @@ function Home() {
         <div className="home-container">
           <img className="home-image" src={image} alt="image" />
           <div className="content">
+          <img src={logo} alt="logo" className="logo-home"/> 
             <div className="lang">
               <Stack direction="row" spacing={4} align="center">
               <Button colorScheme="gray" variant="ghost">
