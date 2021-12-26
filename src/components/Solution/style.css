@@ -1,0 +1,6 @@
+.solution-container{
+    position:absolute;
+    /* margin-top: 100px; */
+    width: 85%;
+    margin: 100px auto;
+}

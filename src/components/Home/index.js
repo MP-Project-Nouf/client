@@ -23,7 +23,7 @@ function Home() {
     const goChallege=()=>{
 
 
-        navigate(`/signin`);
+        navigate(`/challenge`);
     }
   return (
     <>
