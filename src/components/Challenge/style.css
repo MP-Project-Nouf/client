@@ -1,5 +1,25 @@
 .challenge-container{
+    width: 90%;
     z-index: 1;
     margin-top: 100px;
     position: absolute;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 45% 45%;
+}
+.challenge-slide{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.chall-slide-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.chall-level{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }

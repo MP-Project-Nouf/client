@@ -42,10 +42,30 @@ function Challenge() {
     <>
       <Header />
       <div className="challenge-container">
-        <AceEditor
-          placeholder="Placeholder Text"
+          <div className="challenge-slide">
+
+         <h1>{challenge.title}</h1>
+         <h1>{challenge.disc}</h1>
+          <h1 onClick={gosolution}>الحلول</h1>
+        <h1 onClick={gocomment}>التعليقات</h1>
+
+          </div>
+          <div className="challenge-slide">
+              <div className="chall-slide-header">
+                  <h1>javascript</h1>
+                  <div className="chall-level">
+                      <h1> المستوى:</h1>
+                      <h1>{challenge.level}</h1>
+                  </div>
+                  <div className="chall-level">
+                      <h1> النقاط:</h1>
+                      <h1>{challenge.point}</h1>
+                  </div>
+              </div>
+          <AceEditor
+          placeholder="قم بكتابة الدالة"
           mode="javascript"
-          theme="github"
+          theme="tomorrow"
           name="blah2"
         //   onLoad={onLoad}
         //   onChange={onChange}
@@ -64,8 +84,10 @@ function Challenge() {
           }}
           
         />
-        <h1 onClick={gosolution}>الحلول</h1>
-        <h1 onClick={gocomment}>التعليقات</h1>
+
+          </div>
+        
+        
       </div>
     </>
   );
