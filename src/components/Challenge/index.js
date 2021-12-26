@@ -46,7 +46,7 @@ function Challenge() {
     // console.log("solution",solution);
     let code = new Function( "a", `return ${solution}`);
     const result = code()
-    console.log("code", result(6,7));
+    console.log("code", result(...challenge.input[0]));
   };
   function onChange(newValue) {
     // console.log("change", newValue);
