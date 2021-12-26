@@ -11,6 +11,8 @@ import Challenge from './components/Challenge';
 import Forgit from './components/Forgit';
 
 import './App.css';
+import Solution from './components/Solution';
+import Comment from './components/Comment';
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
         <Route exact path="/user/:id" element={<Profile />} />
         <Route exact path="/challenge/:level" element={<Challenge />} />
         <Route exact path="/forgit" element={<Forgit />} />
+        <Route exact path="/comment" element={<Comment />} />
+        <Route exact path="/solution" element={<Solution />} />
       </Routes>
       
   
