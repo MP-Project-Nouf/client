@@ -46,34 +46,7 @@ function Challenge() {
     // console.log("solution",solution);
     let code = new Function( "a", `return ${solution}`);
     const result = code()
- 
-
-    console.log("code", result(6));
-
-    // const Api = `https://emkc.org/api/v2/piston/execute`;
-
-    // let obj = {
-    //   language: "js",
-    //   version: "15.10.0",
-    //   files: [
-    //     {
-    //       content: "console.log('hello noof')",
-    //     },
-    //   ],
-    // };
-
-    // axios
-    //   .post(Api, obj, {
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //   })
-    //   .then((data) => {
-    //     console.log("data", data);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err.response.data);
-    //   });
+    console.log("code", result(6,7));
   };
   function onChange(newValue) {
     // console.log("change", newValue);
@@ -113,6 +86,7 @@ function Challenge() {
                 <h1>{challenge.point}</h1>
               </div>
             </div>
+            <div className="editor">
             <AceEditor
               placeholder=""
               mode="javascript"
@@ -125,9 +99,8 @@ function Challenge() {
               showPrintMargin={true}
               showGutter={true}
               highlightActiveLine={true}
-              value={`function challange(num) {
-                  return num;
-                }`}
+              width="100%"
+              value={challenge.defValue}
               setOptions={{
                 enableBasicAutocompletion: true,
                 enableLiveAutocompletion: true,
@@ -136,6 +109,7 @@ function Challenge() {
                 tabSize: 2,
               }}
             />
+           </div>
           </div>
         </div>
       )}
