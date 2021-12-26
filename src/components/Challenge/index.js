@@ -6,13 +6,18 @@ import Header from "../Header";
 import AceEditor from "react-ace";
 import "./style.css";
 
-import "ace-builds/src-noconflict/mode-java";
-import "ace-builds/src-noconflict/theme-github";
+import "ace-builds/src-noconflict/mode-javascript";
+import "ace-builds/src-noconflict/theme-monokai";
 import "ace-builds/src-noconflict/ext-language_tools";
+import * as ace from "ace-builds/src-noconflict/ace";
+ace.config.set("basePath", "/assets/ui/");
+ace.config.set("modePath", "");
+ace.config.set("themePath", "");
 
 function Challenge() {
   const navigate = useNavigate();
   const [challenge, setChallenge] = useState([]);
+  let solution = "";
 
   const state = useSelector((state) => {
     // console.log("state", state);
@@ -24,7 +29,7 @@ function Challenge() {
       `${process.env.REACT_APP_BASIC_URL}/challByLevel/${state.signIn.level}`,
       { headers: { Authorization: `Bearer ${state.signIn.token}` } }
     );
-    console.log("chall", chall.data);
+    // console.log("chall", chall.data);
     setChallenge(chall.data);
   };
 
@@ -35,60 +40,105 @@ function Challenge() {
   const gocomment = () => {
     navigate(`/comment/${challenge._id}`);
   };
+
+  const goTest = (e) => {
+    e.preventDefault();
+    // console.log("solution",solution);
+    let code = new Function( "a", `return ${solution}`);
+    const result = code()
+ 
+
+    console.log("code", result(6));
+
+    // const Api = `https://emkc.org/api/v2/piston/execute`;
+
+    // let obj = {
+    //   language: "js",
+    //   version: "15.10.0",
+    //   files: [
+    //     {
+    //       content: "console.log('hello noof')",
+    //     },
+    //   ],
+    // };
+
+    // axios
+    //   .post(Api, obj, {
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //   })
+    //   .then((data) => {
+    //     console.log("data", data);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err.response.data);
+    //   });
+  };
+  function onChange(newValue) {
+    // console.log("change", newValue);
+    solution = newValue;
+  }
+
   useEffect(() => {
     getChallbylevel();
   }, []);
   return (
     <>
       <Header />
-      <div className="challenge-container">
+      {challenge && (
+        <div className="challenge-container">
           <div className="challenge-slide">
-
-         <h1>{challenge.title}</h1>
-         <h1>{challenge.disc}</h1>
-          <h1 onClick={gosolution}>الحلول</h1>
-        <h1 onClick={gocomment}>التعليقات</h1>
-
+            <h1>{challenge.title}</h1>
+            <h1>{challenge.disc}</h1>
+            <h1 onClick={gosolution}>الحلول</h1>
+            <h1 onClick={gocomment}>التعليقات</h1>
           </div>
           <div className="challenge-slide">
-              <div className="chall-slide-header">
-                  <h1>javascript</h1>
-                  <div className="chall-level">
-                      <h1> المستوى:</h1>
-                      <h1>{challenge.level}</h1>
-                  </div>
-                  <div className="chall-level">
-                      <h1> النقاط:</h1>
-                      <h1>{challenge.point}</h1>
-                  </div>
+            <div className="chall-slide-header">
+              <button
+                onClick={(e) => {
+                  goTest(e);
+                }}
+              >
+                Run
+              </button>
+              <h1>javascript</h1>
+              <div className="chall-level">
+                <h1> المستوى:</h1>
+                <h1>{challenge.level}</h1>
               </div>
-          <AceEditor
-          placeholder="قم بكتابة الدالة"
-          mode="javascript"
-          theme="tomorrow"
-          name="blah2"
-        //   onLoad={onLoad}
-        //   onChange={onChange}
-          fontSize={14}
-          showPrintMargin={true}
-          showGutter={true}
-          highlightActiveLine={true}
-          value={`function= () => {
-}`}
-          setOptions={{
-            enableBasicAutocompletion: true,
-            enableLiveAutocompletion: true,
-            enableSnippets: true,
-            showLineNumbers: true,
-            tabSize: 2,
-          }}
-          
-        />
-
+              <div className="chall-level">
+                <h1> النقاط:</h1>
+                <h1>{challenge.point}</h1>
+              </div>
+            </div>
+            <AceEditor
+              placeholder=""
+              mode="javascript"
+              theme="monokai"
+              name="blah2"
+              editorProps={{ $blockScrolling: true }}
+              // onLoad={(v) => console.log(v)}
+              onChange={onChange}
+              fontSize={18}
+              showPrintMargin={true}
+              showGutter={true}
+              highlightActiveLine={true}
+              value={`function challange(num) {
+                  return num;
+                }`}
+              setOptions={{
+                enableBasicAutocompletion: true,
+                enableLiveAutocompletion: true,
+                enableSnippets: true,
+                showLineNumbers: true,
+                tabSize: 2,
+              }}
+            />
           </div>
-        
-        
-      </div>
+        </div>
+      )}
     </>
   );
 }
