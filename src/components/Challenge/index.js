@@ -29,7 +29,7 @@ function Challenge() {
       `${process.env.REACT_APP_BASIC_URL}/challByLevel/${state.signIn.level}`,
       { headers: { Authorization: `Bearer ${state.signIn.token}` } }
     );
-    // console.log("chall", chall.data);
+    console.log("chall", chall.data);
     setChallenge(chall.data);
   };
 
@@ -44,8 +44,8 @@ function Challenge() {
   const goTest = (e) => {
     e.preventDefault();
     // console.log("solution",solution);
-    let code = new Function( "a", `return ${solution}`);
-    const result = code()
+    let code = new Function("a", `return ${solution}`);
+    const result = code();
     console.log("code", result(...challenge.input[0]));
   };
   function onChange(newValue) {
@@ -62,8 +62,39 @@ function Challenge() {
       {challenge && (
         <div className="challenge-container">
           <div className="challenge-slide">
-            <h1>{challenge.title}</h1>
-            <h1>{challenge.disc}</h1>
+            <h1 className="disc">{challenge.title}</h1>
+            <h1 className="disc">{challenge.disc}</h1>
+
+            <table
+            className="disc">
+              <tr>
+              {challenge.input &&
+                challenge.input.length &&
+                challenge.input.map((item, i) => {
+                  return (
+                    item.map((x) => {
+                        return <th>input</th>;
+                      })
+
+                  )})}
+                
+                <th>output</th>
+              </tr>
+
+              {challenge.input &&
+                challenge.input.length &&
+                challenge.input.map((item, i) => {
+                  return (
+                    <tr>
+                      {item.map((x) => {
+                        return <td>{x}</td>;
+                      })}
+
+                      <td>{challenge.output[i][0]}</td>
+                    </tr>
+                  );
+                })}
+            </table>
             <h1 onClick={gosolution}>الحلول</h1>
             <h1 onClick={gocomment}>التعليقات</h1>
           </div>
@@ -87,29 +118,29 @@ function Challenge() {
               </div>
             </div>
             <div className="editor">
-            <AceEditor
-              placeholder=""
-              mode="javascript"
-              theme="monokai"
-              name="blah2"
-              editorProps={{ $blockScrolling: true }}
-              // onLoad={(v) => console.log(v)}
-              onChange={onChange}
-              fontSize={18}
-              showPrintMargin={true}
-              showGutter={true}
-              highlightActiveLine={true}
-              width="100%"
-              value={challenge.defValue}
-              setOptions={{
-                enableBasicAutocompletion: true,
-                enableLiveAutocompletion: true,
-                enableSnippets: true,
-                showLineNumbers: true,
-                tabSize: 2,
-              }}
-            />
-           </div>
+              <AceEditor
+                placeholder=""
+                mode="javascript"
+                theme="monokai"
+                name="blah2"
+                editorProps={{ $blockScrolling: true }}
+                // onLoad={(v) => console.log(v)}
+                onChange={onChange}
+                fontSize={18}
+                showPrintMargin={true}
+                showGutter={true}
+                highlightActiveLine={true}
+                width="100%"
+                value={challenge.defValue}
+                setOptions={{
+                  enableBasicAutocompletion: true,
+                  enableLiveAutocompletion: true,
+                  enableSnippets: true,
+                  showLineNumbers: true,
+                  tabSize: 2,
+                }}
+              />
+            </div>
           </div>
         </div>
       )}

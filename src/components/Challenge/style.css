@@ -26,3 +26,12 @@
 .editor{
     width: 100%;
 }
+.disc{
+    margin-bottom:50px;
+    width: 100%;
+    text-align: center;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
