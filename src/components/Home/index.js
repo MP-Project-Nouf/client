@@ -5,12 +5,22 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {ArrowRightIcon} from '@chakra-ui/icons';
 import logo from './logocoding(1).png'
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  useDisclosure,
+
+} from "@chakra-ui/react";
 
 import './style.css'
 
 import { Button, ButtonGroup,Stack } from "@chakra-ui/react";
 
 function Home() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
     const navigate = useNavigate();
     const state = useSelector((state) => {
         console.log("state", state);
@@ -21,9 +31,15 @@ function Home() {
    
 
     const goChallege=()=>{
-
-
+      if(state.signIn.token)
+      {
         navigate(`/challenge`);
+      }else{
+        onOpen();
+      }
+
+
+        
     }
   return (
     <>
@@ -51,6 +67,18 @@ function Home() {
                 <h1>إبدأ التحدي</h1>
                 <ArrowRightIcon  />
             </div>
+            <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader className="title">لم تقم بتسجيل الدخول</ModalHeader>
+
+          <ModalFooter>
+            <Button colorScheme="blue" mr={3} onClick={onClose}>
+              إغلاق
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
           </div>
         </div>
       </div>

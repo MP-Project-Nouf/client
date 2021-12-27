@@ -10,6 +10,7 @@
     z-index: -1;
     margin-bottom: -350px;
     mask-image: linear-gradient(to bottom,rgba(0,0,0,1),rgba(0,0,0,0));
+    position: relative;
   
 }
 .content{
@@ -18,7 +19,7 @@
     z-index: 1;
     margin-left: 5px;
     margin-right: 5px;
-    position: absolute;
+    /* position: absolute; */
     /* margin-top: 150px; */
     align-items:center;
 
