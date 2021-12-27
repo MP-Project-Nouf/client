@@ -17,6 +17,7 @@ ace.config.set("themePath", "");
 function Challenge() {
   const navigate = useNavigate();
   const [challenge, setChallenge] = useState([]);
+  const [message,setMessage]=useState("")
   let solution = "";
 
   const state = useSelector((state) => {
@@ -45,7 +46,22 @@ function Challenge() {
     e.preventDefault();
     // console.log("solution",solution);
     let code = new Function("a", `return ${solution}`);
+    let resul=true;
+    let ms="";
     const result = code();
+    challenge.input.forEach((item,i)=>{
+        if(!(result(...item)===challenge.output[i]))
+        {
+            ms+=`\n`+`test number ${i} output is ${result(...item)} expect output is ${challenge.output[i]}`; 
+            resul=false;
+            
+        }
+       
+        // console.log("input",...item);
+        // console.log("output",challenge.output[i]);
+    })
+    console.log("ms",ms);
+    setMessage(ms);
     console.log("code", result(...challenge.input[0]));
   };
   function onChange(newValue) {
@@ -144,6 +160,7 @@ function Challenge() {
                   tabSize: 2,
                 }}
               />
+              <h1>${message}</h1>
             </div>
           </div>
         </div>

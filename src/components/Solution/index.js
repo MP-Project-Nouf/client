@@ -3,6 +3,7 @@ import { useNavigate,useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import Header from "../Header";
+import { Avatar,Input} from "@chakra-ui/react";
 import "./style.css";
 
 function Solution() {
@@ -20,8 +21,8 @@ function Solution() {
       `${process.env.REACT_APP_BASIC_URL}/solution/${id}`,
       { headers: { Authorization: `Bearer ${state.signIn.token}` } }
     );
-    // console.log("id",id);
-    // console.log("solve", solve.data);
+    console.log("id",id);
+    console.log("solve", solve.data);
     setSolution(solve.data);
   };
 
@@ -38,7 +39,28 @@ function Solution() {
   return (
     <>
       <Header />
-      <div className="solution-container">
+      <div className="comment-container">
+      {(solution&&solution.length)&&
+            solution.map(item=>{
+                return(
+                <div key={item._id}>
+                    <div className='comment-infoUser'>
+                    <Avatar
+                    name="Dan Abrahmov"
+                    src={item.image}
+                    className="line"
+                  />
+                  <div>
+                    <h2>{item.username}</h2>
+                    <h6>{item.date.slice(0,10)}</h6>
+                    </div>
+                
+                    </div>
+                    <h1>{item.solve}</h1>
+                </div>
+            )})
+
+            }
           
           </div>
     </>
