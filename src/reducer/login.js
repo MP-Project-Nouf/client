@@ -23,6 +23,16 @@ const signIn=(state=instialState,action)=>{
         case "LOGOUT":
             localStorage.clear();
             return{role:"",token:"",userId:"",userName:"",image:"",point:0,level:1};
+        case "UPDATE":
+            const {pointt,levell}=payload;
+            const tokenStorag=localStorage.getItem("Token");
+            const roleStorag=localStorage.getItem("Role");
+            const userIdStorag=localStorage.getItem("UserId");
+            const userNameStorag=localStorage.getItem("UserName");
+            const imageStorag=localStorage.getItem("Image");
+            localStorage.setItem("Point",pointt);
+            localStorage.setItem("Level",levell);
+            return{token:tokenStorag,role:roleStorag,userId:userIdStorag,userName:userNameStorag,image:imageStorag,point:pointt,level:levell};
         default:
             const tokenStorage=localStorage.getItem("Token");
             const roleStorage=localStorage.getItem("Role");
@@ -53,6 +63,13 @@ export const login=(data)=>{
 export const logout=(data)=>{
     return {
         type:"LOGOUT",
+        payload:data
+    };
+};
+
+export const update=(data)=>{
+    return {
+        type:"UPDATE",
         payload:data
     };
 };

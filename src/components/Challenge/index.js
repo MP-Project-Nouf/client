@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
+import { update } from "./../../reducer/login";
 import axios from "axios";
 import Header from "../Header";
 import AceEditor from "react-ace";
@@ -26,6 +27,7 @@ ace.config.set("modePath", "");
 ace.config.set("themePath", "");
 
 function Challenge() {
+    const dispatch = useDispatch();
     const { isOpen, onOpen, onClose } = useDisclosure();
   const navigate = useNavigate();
   const [challenge, setChallenge] = useState([]);
@@ -89,6 +91,15 @@ if(resul)
         },
         { headers: { Authorization: `Bearer ${state.signIn.token}` } }
       );
+      const newPoint=state.signIn.point+challenge.point;
+      const newLevel=state.signIn.level+challenge.level;
+    //   console.log("newPoint",newPoint);
+    //   console.log("newLevel",newLevel)
+      const data = {
+        pointt: newPoint,
+        levell:newLevel,
+      };
+      dispatch(update(data));
       navigate(`/solution/${challenge._id}`); 
 }else{
     onOpen();

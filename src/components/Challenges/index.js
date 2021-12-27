@@ -30,13 +30,25 @@ function Challenges() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [disc, setDisc] = useState("");
   const [title, setTitle] = useState("");
-  const [point, setPoint] = useState(null);
-  const [level, setLevel] = useState(null);
+  const [point, setPoint] = useState(5);
+  const [defValue, setDefValue] = useState("");
   const [input, setInput] = useState([]);
   const [output, setOutput] = useState([]);
   const [active, setActive] = useState(false);
-//   const [_id, set_id] = useState("");
+  //   const [_id, set_id] = useState("");
   const [challenges, setChallenges] = useState([]);
+  const [test1Input1, setTest1Input1] = useState("");
+  const [test1Input2, setTest1Input2] = useState("");
+  const [test1Input3, setTest1Input3] = useState("");
+  const [test2Input1, setTest2Input1] = useState("");
+  const [test2Input2, setTest2Input2] = useState("");
+  const [test2Input3, setTest2Input3] = useState("");
+  const [test3Input1, setTest3Input1] = useState("");
+  const [test3Input2, setTest3Input2] = useState("");
+  const [test3Input3, setTest3Input3] = useState("");
+  const [output1, setOutput1] = useState("");
+  const [output2, setOutput2] = useState("");
+  const [output3, setOutput3] = useState("");
   const navigate = useNavigate();
   const state = useSelector((state) => {
     return state;
@@ -51,7 +63,7 @@ function Challenges() {
     setChallenges(allchall.data);
   };
 
-  const editchallenge = async (e,_id) => {
+  const editchallenge = async (e, _id) => {
     console.log("salam");
     e.preventDefault();
     await axios.put(
@@ -60,20 +72,19 @@ function Challenges() {
         disc,
         title,
         point,
-        level,
+        defValue,
         input,
         output,
         active,
         _id,
-      }
-      ,
+      },
       { headers: { Authorization: `Bearer ${state.signIn.token}` } }
     );
     getAllchallenge();
     onClose();
   };
 
-  const deleteeducation = (e,id) => {
+  const deleteeducation = (e, id) => {
     e.preventDefault();
     axios.delete(`${process.env.REACT_APP_BASIC_URL}/challenge/${id}`, {
       headers: { Authorization: `Bearer ${state.signIn.token}` },
@@ -82,9 +93,9 @@ function Challenges() {
     onClose();
   };
 
-//   const goprofile = (id) => {
-//     navigate(`/user/${id}`);
-//   };
+  //   const goprofile = (id) => {
+  //     navigate(`/user/${id}`);
+  //   };
 
   useEffect(() => {
     getAllchallenge();
@@ -125,7 +136,7 @@ function Challenges() {
                             <h1 className="notactive">غير مفعل</h1>
                           )}
                           <div>
-                          <EditIcon onClick={onOpen} />
+                            <EditIcon onClick={onOpen} />
                           </div>
                           <Modal isOpen={isOpen} onClose={onClose}>
                             <ModalOverlay />
@@ -148,6 +159,18 @@ function Challenges() {
                                       setTitle(e.target.value);
                                     }}
                                   />
+                                  <FormLabel htmlFor="disc">
+                                    {" "}
+                                    وصف التحدي
+                                  </FormLabel>
+                                  <Input
+                                    id="disc"
+                                    type="text"
+                                    defaultValue={item.disc}
+                                    onChange={(e) => {
+                                      setDisc(e.target.value);
+                                    }}
+                                  />
 
                                   <FormLabel htmlFor="point">النقاط</FormLabel>
                                   <Input
@@ -158,35 +181,168 @@ function Challenges() {
                                       setPoint(e.target.value);
                                     }}
                                   />
-                                  <FormLabel htmlFor="level">المستوى</FormLabel>
-                                  <Input
-                                    id="level"
-                                    type="number"
-                                    defaultValue={item.level}
-                                    onChange={(e) => {
-                                      setLevel(e.target.value);
-                                    }}
-                                  />
-                                  <FormLabel htmlFor="input">
-                                    المدخلات
+                                  <FormLabel htmlFor="defValue">
+                                    القيمة الافتراضية للدالة
                                   </FormLabel>
                                   <Input
-                                    id="input"
+                                    id="defValue"
                                     type="text"
-                                    defaultValue={item.input}
+                                    defaultValue={item.defValue}
                                     onChange={(e) => {
-                                      setInput(e.target.value);
+                                      setDefValue(e.target.value);
                                     }}
                                   />
-                                  <FormLabel htmlFor="output">
-                                    المخرجات
+                                  <ModalHeader className="title">
+                                    مدخلات الدالة للإختبار
+                                  </ModalHeader>
+                                  <ModalHeader className="title">
+                                    الإختبار الأول
+                                  </ModalHeader>
+                                  <FormLabel htmlFor="input11">
+                                    المدخل الأول
                                   </FormLabel>
                                   <Input
-                                    id="output"
+                                    id="input11"
                                     type="text"
-                                    defaultValue={item.output}
+                                    
+                                        defaultValue={item.input[0][0]? item.input[0][0]: ""}
+                        
+                                    
+                                    
                                     onChange={(e) => {
-                                      setOutput(e.target.value);
+                                      setTest1Input1(e.target.value);
+                                    }}
+                                  />
+                                  <FormLabel htmlFor="input12">
+                                    المدخل الثاني
+                                  </FormLabel>
+                                  <Input
+                                    id="input12"
+                                    type="text"
+                                    defaultValue={item.input[0][1]? item.input[0][1]: ""}
+                                    onChange={(e) => {
+                                      setTest1Input2(e.target.value);
+                                    }}
+                                  />
+                                  <FormLabel htmlFor="input13">
+                                    المدخل الثالث
+                                  </FormLabel>
+                                  <Input
+                                    id="input13"
+                                    type="text"
+                                    defaultValue={item.input[0][2]? item.input[0][2]: ""}
+                                    onChange={(e) => {
+                                      setTest1Input3(e.target.value);
+                                    }}
+                                  />
+
+                                  <ModalHeader className="title">
+                                    الإختبار الثاني
+                                  </ModalHeader>
+                                  <FormLabel htmlFor="input21">
+                                    المدخل الأول
+                                  </FormLabel>
+                                  <Input
+                                    id="input21"
+                                    type="text"
+                                    defaultValue={(item.input[1]&&item.input[1][0])? item.input[1][0]: ""}
+                                    onChange={(e) => {
+                                      setTest2Input1(e.target.value);
+                                    }}
+                                  />
+                                  <FormLabel htmlFor="input22">
+                                    المدخل الثاني
+                                  </FormLabel>
+                                  <Input
+                                    id="input22"
+                                    type="text"
+                                    defaultValue={(item.input[1]&&item.input[1][1])? item.input[1][1]: ""}
+                                    onChange={(e) => {
+                                      setTest2Input2(e.target.value);
+                                    }}
+                                  />
+                                  <FormLabel htmlFor="input23">
+                                    المدخل الثالث
+                                  </FormLabel>
+                                  <Input
+                                    id="input23"
+                                    type="text"
+                                    defaultValue={(item.input[1]&&item.input[1][2])? item.input[1][2]:""}
+                                    onChange={(e) => {
+                                      setTest2Input3(e.target.value);
+                                    }}
+                                  />
+                                  <ModalHeader className="title">
+                                    الإختبار الثالث
+                                  </ModalHeader>
+                                  <FormLabel htmlFor="input31">
+                                    المدخل الأول
+                                  </FormLabel>
+                                  <Input
+                                    id="input31"
+                                    type="text"
+                                    defaultValue={(item.input[2]&&item.input[2][0])? item.input[2][0]: ""}
+                                    onChange={(e) => {
+                                      setTest3Input1(e.target.value);
+                                    }}
+                                  />
+                                  <FormLabel htmlFor="input32">
+                                    المدخل الثاني
+                                  </FormLabel>
+                                  <Input
+                                    id="input32"
+                                    type="text"
+                                    defaultValue={(item.input[2]&&item.input[2][1])? item.input[2][1] : ""}
+                                    onChange={(e) => {
+                                      setTest3Input2(e.target.value);
+                                    }}
+                                  />
+                                  <FormLabel htmlFor="input33">
+                                    المدخل الثالث
+                                  </FormLabel>
+                                  <Input
+                                    id="input33"
+                                    type="text"
+                                    defaultValue={(item.input[2]&&item.input[2][2])? item.input[2][2] : ""}
+                                    onChange={(e) => {
+                                      setTest3Input3(e.target.value);
+                                    }}
+                                  />
+                                  <ModalHeader className="title">
+                                    مخرجات الدالة للإختبار
+                                  </ModalHeader>
+
+                                  <FormLabel htmlFor="output1">
+                                    مخرجات الإختبار الأول
+                                  </FormLabel>
+                                  <Input
+                                    id="output1"
+                                    type="text"
+                                    defaultValue={item.output[0]? item.output[0]: ""}
+                                    onChange={(e) => {
+                                      setOutput1(e.target.value);
+                                    }}
+                                  />
+                                  <FormLabel htmlFor="output2">
+                                    مخرجات الإختبار الثاني
+                                  </FormLabel>
+                                  <Input
+                                    id="output2"
+                                    type="text"
+                                    defaultValue={item.output[1]? item.output[1] : ""}
+                                    onChange={(e) => {
+                                      setOutput2(e.target.value);
+                                    }}
+                                  />
+                                  <FormLabel htmlFor="output3">
+                                    مخرجات الإختبار الثالث
+                                  </FormLabel>
+                                  <Input
+                                    id="output3"
+                                    type="text"
+                                    defaultValue={item.output[2]? item.output[2]: ""}
+                                    onChange={(e) => {
+                                      setOutput3(e.target.value);
                                     }}
                                   />
                                   <FormControl as="fieldset">
@@ -222,8 +378,7 @@ function Challenges() {
                                   colorScheme="blue"
                                   mr={3}
                                   onClick={(e) => {
-                                   
-                                    deleteeducation(e,item._id);
+                                    deleteeducation(e, item._id);
                                   }}
                                 >
                                   حذف التحدي
