@@ -28,11 +28,9 @@ function UserChall({user}) {
   const [chall, setChall] = useState([]);
   const [disc, setDisc] = useState("");
   const [title, setTitle] = useState("");
-  const [point, setPoint] = useState(5);
   const [defValue, setDefValue] = useState("");
-  const [input, setInput] = useState([]);
-  const [output, setOutput] = useState([]);
-  const [active, setActive] = useState(false);
+  // const [input, setInput] = useState([]);
+  // const [output, setOutput] = useState([]);
   //   const [_id, set_id] = useState("");
   // const [challenges, setChallenges] = useState([]);
   const [test1Input1, setTest1Input1] = useState("");
@@ -63,6 +61,84 @@ function UserChall({user}) {
     setChall( challenge.data);
  
   };
+
+  const addChall = async (e) => {
+    e.preventDefault();
+    let test1Input=[];
+    let test2Input=[];
+    let test3Input=[];
+    let input=[];
+    let output=[];
+    if(test1Input1)
+    {
+        test1Input.push(test1Input1);
+    }
+    if(test1Input2)
+    {
+        test1Input.push(test1Input2);
+    }
+    if(test1Input3)
+    {
+        test1Input.push(test1Input3);
+    }
+    if(test2Input1)
+    {
+        test2Input.push(test2Input1);
+    }
+    if(test2Input2)
+    {
+        test2Input.push(test2Input2);
+    }
+    if(test2Input3)
+    {
+        test2Input.push(test2Input3);
+    }
+    if(test3Input1)
+    {
+        test3Input.push(test3Input1);
+    }
+    if(test3Input2)
+    {
+        test3Input.push(test3Input2);
+    }
+    if(test3Input3)
+    {
+        test3Input.push(test3Input3);
+    }
+    if(test1Input.length)
+    {
+        input.push(test1Input)
+    }
+    if(test2Input.length)
+    {
+        input.push(test2Input)
+    }
+    if(test3Input.length)
+    {
+        input.push(test3Input)
+    }
+    if(output1)
+    {
+        output.push(output1)
+    }
+    if(output2)
+    {
+        output.push(output2)
+    }
+    if(output3)
+    {
+        output.push(output3)
+    }
+    await axios.post(
+      `${process.env.REACT_APP_BASIC_URL}/addChall`,
+      {
+        disc,title,input,output,defValue
+      },
+      { headers: { Authorization: `Bearer ${state.signIn.token}` } }
+    );
+    getChallengeByUser();
+    onClose();
+  };
   useEffect(() => {
     getChallengeByUser();
   }, []);
@@ -89,7 +165,7 @@ function UserChall({user}) {
                             <ModalOverlay />
                             <ModalContent>
                               <ModalHeader className="title">
-                                تعديل التحدي
+                                إضافة التحدي
                               </ModalHeader>
                               <ModalCloseButton />
                               <ModalBody>
@@ -119,15 +195,6 @@ function UserChall({user}) {
                                     }}
                                   />
 
-                                  <FormLabel htmlFor="point">النقاط</FormLabel>
-                                  <Input
-                                    id="point"
-                                    type="number"
-                                    // defaultValue={item.point}
-                                    onChange={(e) => {
-                                      setPoint(e.target.value);
-                                    }}
-                                  />
                                   <FormLabel htmlFor="defValue">
                                     القيمة الافتراضية للدالة
                                   </FormLabel>
@@ -151,11 +218,6 @@ function UserChall({user}) {
                                   <Input
                                     id="input11"
                                     type="text"
-                                    
-                                        // defaultValue={item.input[0][0]? item.input[0][0]: ""}
-                        
-                                    
-                                    
                                     onChange={(e) => {
                                       setTest1Input1(e.target.value);
                                     }}
@@ -292,51 +354,17 @@ function UserChall({user}) {
                                       setOutput3(e.target.value);
                                     }}
                                   />
-                                  <FormControl as="fieldset">
-                                    <FormLabel as="legend">
-                                      تفعيل التحدي
-                                    </FormLabel>
-                                    <RadioGroup defaultValue="Itachi">
-                                      <HStack spacing="24px">
-                                        <Radio
-                                          value="مفعل"
-                                          onChange={() => {
-                                            setActive(true);
-                                          }}
-                                        >
-                                          مفعل
-                                        </Radio>
-                                        <Radio
-                                          value="غير مفعل"
-                                          onChange={() => {
-                                            setActive(false);
-                                          }}
-                                        >
-                                          غير مفعل
-                                        </Radio>
-                                      </HStack>
-                                    </RadioGroup>
-                                  </FormControl>
                                 </FormControl>
                               </ModalBody>
 
                               <ModalFooter>
                                 <Button
-                                  colorScheme="blue"
-                                  mr={3}
-                                  // onClick={(e) => {
-                                  //   deleteeducation(e, item._id);
-                                  // }}
-                                >
-                                  حذف التحدي
-                                </Button>
-                                <Button
                                   variant="ghost"
-                                  // onClick={(e) => {
-                                  //   editchallenge(e, item._id);
-                                  // }}
+                                  onClick={(e) => {
+                                    addChall(e);
+                                  }}
                                 >
-                                  تعديل
+                                  إضافة
                                 </Button>
                               </ModalFooter>
                             </ModalContent>
