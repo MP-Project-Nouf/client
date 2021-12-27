@@ -117,12 +117,16 @@ function ChallengesItem({ item, getAllchallenge }) {
     onClose();
   };
 
+  const gochallenge = (id) => {
+    navigate(`/challenge/${id}`);
+  };
+
   useEffect(() => {
     getAllchallenge();
   }, []);
   return (
     <>
-      <div className="challenges-box">
+      <div className="challenges-box" >
         <>
           <div className="challenges-title">
             <h1>{item.title}</h1>
@@ -144,6 +148,7 @@ function ChallengesItem({ item, getAllchallenge }) {
               <h1 className="notactive">غير مفعل</h1>
             )}
             <div>
+        
               <EditIcon onClick={onOpen} />
             </div>
             <Modal isOpen={isOpen} onClose={onClose}>

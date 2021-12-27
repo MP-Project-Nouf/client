@@ -12,6 +12,7 @@ import Forgit from './components/Forgit';
 import './App.css';
 import Solution from './components/Solution';
 import Comment from './components/Comment';
+import ChallengeId from './components/ChallengeId';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route exact path="/comment/:id" element={<Comment />} />
         <Route exact path="/solution/:id" element={<Solution />} />
         <Route exact path="/challenge" element={<Challenge />} />
+        <Route exact path="/challenge/:id" element={<ChallengeId />} />
       </Routes>
       
   

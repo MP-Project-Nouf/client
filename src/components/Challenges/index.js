@@ -7,24 +7,24 @@ import image from "./bgprofile.jpg";
 import { useSelector } from "react-redux";
 import "./style.css";
 import { useNavigate } from "react-router-dom";
-import { EditIcon } from "@chakra-ui/icons";
-import {
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-  useDisclosure,
-  Button,
-  FormControl,
-  FormLabel,
-  Input,
-  RadioGroup,
-  HStack,
-  Radio,
-} from "@chakra-ui/react";
+// import { EditIcon } from "@chakra-ui/icons";
+// import {
+//   Modal,
+//   ModalOverlay,
+//   ModalContent,
+//   ModalHeader,
+//   ModalFooter,
+//   ModalBody,
+//   ModalCloseButton,
+//   useDisclosure,
+//   Button,
+//   FormControl,
+//   FormLabel,
+//   Input,
+//   RadioGroup,
+//   HStack,
+//   Radio,
+// } from "@chakra-ui/react";
 import ChallengesItem from "./../ChallengesItem";
 
 function Challenges() {
@@ -62,6 +62,10 @@ function Challenges() {
     console.log("allchall.data", allchall.data);
 
     setChallenges(allchall.data);
+  };
+
+  const gochallenge = (challid) => {
+    navigate(`/challenge/${challid}`);
   };
 
 //   const editchallenge = async (e, _id) => {
@@ -164,7 +168,10 @@ function Challenges() {
               challenges.length &&
               challenges.map((item, i) => {
                 return (
-                    <ChallengesItem item={item} getAllchallenge={getAllchallenge}/>
+                    <div  key={item._id} onDoubleClick={gochallenge(item._id)}>
+                        <ChallengesItem item={item} getAllchallenge={getAllchallenge} />
+                    </div> 
+                    
                 //   <>
                 //     <div className="challenges-box">
                 //       <>
