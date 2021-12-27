@@ -29,7 +29,7 @@ function App() {
         <Route exact path="/comment/:id" element={<Comment />} />
         <Route exact path="/solution/:id" element={<Solution />} />
         <Route exact path="/challenge" element={<Challenge />} />
-        <Route exact path="/challenge/:id" element={<ChallengeId />} />
+        <Route exact path="/challengeid/:id" element={<ChallengeId />} />
       </Routes>
       
   

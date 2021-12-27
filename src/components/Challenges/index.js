@@ -65,7 +65,7 @@ function Challenges() {
   };
 
   const gochallenge = (challid) => {
-    navigate(`/challenge/${challid}`);
+    navigate(`/challengeid/${challid}`);
   };
 
 //   const editchallenge = async (e, _id) => {
@@ -168,9 +168,9 @@ function Challenges() {
               challenges.length &&
               challenges.map((item, i) => {
                 return (
-                    <div  key={item._id} onDoubleClick={gochallenge(item._id)}>
+                    <div  key={item._id} >
                         <ChallengesItem item={item} getAllchallenge={getAllchallenge} />
-                    </div> 
+                  </div> 
                     
                 //   <>
                 //     <div className="challenges-box">

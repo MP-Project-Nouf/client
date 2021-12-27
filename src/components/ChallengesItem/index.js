@@ -118,7 +118,7 @@ function ChallengesItem({ item, getAllchallenge }) {
   };
 
   const gochallenge = (id) => {
-    navigate(`/challenge/${id}`);
+    navigate(`/challengeid/${id}`);
   };
 
   useEffect(() => {
@@ -126,6 +126,7 @@ function ChallengesItem({ item, getAllchallenge }) {
   }, []);
   return (
     <>
+      
       <div className="challenges-box" >
         <>
           <div className="challenges-title">
@@ -147,6 +148,7 @@ function ChallengesItem({ item, getAllchallenge }) {
             ) : (
               <h1 className="notactive">غير مفعل</h1>
             )}
+            <h1 onClick={()=>{gochallenge(item._id)}}>فتح</h1>
             <div>
         
               <EditIcon onClick={onOpen} />
