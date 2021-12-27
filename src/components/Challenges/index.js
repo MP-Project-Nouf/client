@@ -32,8 +32,8 @@ function Challenges() {
   const [title, setTitle] = useState("");
   const [point, setPoint] = useState(5);
   const [defValue, setDefValue] = useState("");
-  const [input, setInput] = useState([]);
-  const [output, setOutput] = useState([]);
+//   const [input, setInput] = useState([]);
+//   const [output, setOutput] = useState([]);
   const [active, setActive] = useState(false);
   //   const [_id, set_id] = useState("");
   const [challenges, setChallenges] = useState([]);
@@ -66,6 +66,71 @@ function Challenges() {
   const editchallenge = async (e, _id) => {
     console.log("salam");
     e.preventDefault();
+    let test1Input=[];
+    let test2Input=[];
+    let test3Input=[];
+    let input=[];
+    let output=[];
+    if(test1Input1)
+    {
+        test1Input.push(test1Input1);
+    }
+    if(test1Input2)
+    {
+        test1Input.push(test1Input2);
+    }
+    if(test1Input3)
+    {
+        test1Input.push(test1Input3);
+    }
+    if(test2Input1)
+    {
+        test2Input.push(test2Input1);
+    }
+    if(test2Input2)
+    {
+        test2Input.push(test2Input2);
+    }
+    if(test2Input3)
+    {
+        test2Input.push(test2Input3);
+    }
+    if(test3Input1)
+    {
+        test3Input.push(test3Input1);
+    }
+    if(test3Input2)
+    {
+        test3Input.push(test3Input2);
+    }
+    if(test3Input3)
+    {
+        test3Input.push(test3Input3);
+    }
+    if(test1Input.length)
+    {
+        input.push(test1Input)
+    }
+    if(test2Input.length)
+    {
+        input.push(test2Input)
+    }
+    if(test3Input.length)
+    {
+        input.push(test3Input)
+    }
+    if(output1)
+    {
+        output.push(output1)
+    }
+    if(output2)
+    {
+        output.push(output2)
+    }
+    if(output3)
+    {
+        output.push(output3)
+    }
     await axios.put(
       `${process.env.REACT_APP_BASIC_URL}/challenge`,
       {
@@ -84,14 +149,14 @@ function Challenges() {
     onClose();
   };
 
-  const deleteeducation = (e, id) => {
-    e.preventDefault();
-    axios.delete(`${process.env.REACT_APP_BASIC_URL}/challenge/${id}`, {
-      headers: { Authorization: `Bearer ${state.signIn.token}` },
-    });
-    getAllchallenge();
-    onClose();
-  };
+//   const deleteeducation = (e, id) => {
+//     e.preventDefault();
+//     axios.delete(`${process.env.REACT_APP_BASIC_URL}/challenge/${id}`, {
+//       headers: { Authorization: `Bearer ${state.signIn.token}` },
+//     });
+//     getAllchallenge();
+//     onClose();
+//   };
 
   //   const goprofile = (id) => {
   //     navigate(`/user/${id}`);
@@ -205,7 +270,7 @@ function Challenges() {
                                     id="input11"
                                     type="text"
                                     
-                                        defaultValue={item.input[0][0]? item.input[0][0]: ""}
+                                        defaultValue={(item.input[0]&&item.input[0][0])? item.input[0][0]: ""}
                         
                                     
                                     
@@ -219,7 +284,7 @@ function Challenges() {
                                   <Input
                                     id="input12"
                                     type="text"
-                                    defaultValue={item.input[0][1]? item.input[0][1]: ""}
+                                    defaultValue={(item.input[0]&&item.input[0][1])? item.input[0][1]: ""}
                                     onChange={(e) => {
                                       setTest1Input2(e.target.value);
                                     }}
@@ -230,7 +295,7 @@ function Challenges() {
                                   <Input
                                     id="input13"
                                     type="text"
-                                    defaultValue={item.input[0][2]? item.input[0][2]: ""}
+                                    defaultValue={(item.input[0]&&item.input[0][2])? item.input[0][2]: ""}
                                     onChange={(e) => {
                                       setTest1Input3(e.target.value);
                                     }}
@@ -374,7 +439,7 @@ function Challenges() {
                               </ModalBody>
 
                               <ModalFooter>
-                                <Button
+                                {/* <Button
                                   colorScheme="blue"
                                   mr={3}
                                   onClick={(e) => {
@@ -382,7 +447,7 @@ function Challenges() {
                                   }}
                                 >
                                   حذف التحدي
-                                </Button>
+                                </Button> */}
                                 <Button
                                   variant="ghost"
                                   onClick={(e) => {

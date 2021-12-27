@@ -130,15 +130,15 @@ if(resul)
             <table
             className="disc">
               <tr>
-              {challenge.input &&
-                challenge.input.length &&
-                challenge.input.map((item, i) => {
-                  return (
-                    item.map((x) => {
+              {(challenge.input &&
+                challenge.input.length) &&
+                challenge.input[0].map((item, i) => {
+                //   return (
+                //     item.map((x) => {
                         return <th>input</th>;
-                      })
+                    //   })
 
-                  )})}
+                  })}
                 
                 <th>output</th>
               </tr>
