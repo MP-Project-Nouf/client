@@ -18,9 +18,9 @@
     z-index: 1;
     margin-left: 5px;
     margin-right: 5px;
-   
-
-    align-items:center
+    position: absolute;
+    /* margin-top: 150px; */
+    align-items:center;
 
 }
 .lang{
@@ -36,11 +36,14 @@
      border-radius: 5px;
      color: white;
      z-index: 1;
+     width: 30%;
+     margin: 0 auto;
+     text-align: center;
     
 
 }
 .logo-home{
     width: 30%;
-    margin-top:-200px;
+   margin: 0 auto;
 }
 

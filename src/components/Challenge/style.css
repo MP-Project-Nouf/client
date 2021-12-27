@@ -1,11 +1,16 @@
 .challenge-container{
     width: 90%;
     z-index: 1;
-    margin-top: 100px;
+    /* margin: 0 auto; */
+    margin-top: 150px;
     position: absolute;
     display: grid;
-    justify-content: space-between;
+    justify-content:space-around;
     grid-template-columns: 45% 45%;
+    margin-right: 3%;
+   
+    
+
 }
 .challenge-slide{
     width: 100%;
@@ -34,4 +39,17 @@
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
+  }
+  .challenge-title{
+      display: flex;
+      flex-direction: row;
+      justify-content:space-around ;
+      width: 100%;
+  }
+  .title-challenge{
+      width: 150px;
+  }
+  .title-disc{
+     margin-right: 0;
+     margin-bottom: 10px;
   }
