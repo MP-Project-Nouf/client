@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router";
+import { useParams,useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { update } from "./../../reducer/login";
 import axios from "axios";
@@ -26,8 +26,9 @@ ace.config.set("basePath", "/assets/ui/");
 ace.config.set("modePath", "");
 ace.config.set("themePath", "");
 
-function Challenge() {
+function ChallengeId() {
     const dispatch = useDispatch();
+    const { id } = useParams();
     const { isOpen, onOpen, onClose } = useDisclosure();
   const navigate = useNavigate();
   const [challenge, setChallenge] = useState([]);
@@ -38,10 +39,10 @@ function Challenge() {
     // console.log("state", state);
     return state;
   });
-  const getChallbylevel = async () => {
+  const getChallById = async () => {
     console.log("state.signIn.level", state.signIn.level);
     const chall = await axios.get(
-      `${process.env.REACT_APP_BASIC_URL}/challByLevel/${state.signIn.level}`,
+      `${process.env.REACT_APP_BASIC_URL}/challById/${id}`,
       { headers: { Authorization: `Bearer ${state.signIn.token}` } }
     );
     console.log("chall", chall.data);
@@ -55,6 +56,7 @@ function Challenge() {
   const gocomment = () => {
     navigate(`/comment/${challenge._id}`);
   };
+  
 
   const goTest = (e) => {
     e.preventDefault();
@@ -112,7 +114,7 @@ if(resul)
 //   console.log(state.signIn.token)
 
   useEffect(() => {
-    getChallbylevel();
+    getChallById();
   }, []);
   return (
     <>
@@ -225,4 +227,4 @@ if(resul)
   );
 }
 
-export default Challenge;
+export default ChallengeId;

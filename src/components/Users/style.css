@@ -18,7 +18,7 @@
 }
 .user-container{
     z-index: 1;
-    margin-top: 0;
+    /* margin-top: 0; */
 }
 .user{
  
@@ -37,7 +37,7 @@
 }
 .head{
  font-size: 10px;
- background-color: rgba(28, 100, 102, 0.637);
+ background-color: rgba(28, 100, 102, 0.637);;
 }
 .search{
    

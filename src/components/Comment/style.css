@@ -1,0 +1,13 @@
+.comment-container{
+    position: absolute;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 100px;
+   
+    
+  
+}
+.comment-infoUser{
+    display: flex;
+    flex-direction: row;
+}
