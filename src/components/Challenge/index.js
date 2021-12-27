@@ -4,6 +4,17 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import Header from "../Header";
 import AceEditor from "react-ace";
+import {
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalFooter,
+    ModalBody,
+    useDisclosure,
+    Button,
+  
+  } from "@chakra-ui/react";
 import "./style.css";
 
 import "ace-builds/src-noconflict/mode-javascript";
@@ -15,6 +26,7 @@ ace.config.set("modePath", "");
 ace.config.set("themePath", "");
 
 function Challenge() {
+    const { isOpen, onOpen, onClose } = useDisclosure();
   const navigate = useNavigate();
   const [challenge, setChallenge] = useState([]);
   const [message,setMessage]=useState("")
@@ -52,7 +64,7 @@ function Challenge() {
     challenge.input.forEach((item,i)=>{
         if(!(result(...item)===challenge.output[i]))
         {
-            ms+=`\n`+`test number ${i} output is ${result(...item)} expect output is ${challenge.output[i]}`; 
+            ms+=`\n`+`test number ${i+1} output is ${result(...item)} expect output is ${challenge.output[i]}`; 
             resul=false;
             
         }
@@ -62,12 +74,31 @@ function Challenge() {
     })
     console.log("ms",ms);
     setMessage(ms);
-    console.log("code", result(...challenge.input[0]));
+//     console.log("code", result(...challenge.input[0]));
+if(resul)
+{
+    axios.post(
+        `${process.env.REACT_APP_BASIC_URL}/solution`,
+        {
+            image:state.signIn.image,
+            username:state.signIn.userName,
+            solve:solution,
+            challenge:challenge._id,
+            point:challenge.point,
+            title:challenge.title,
+        },
+        { headers: { Authorization: `Bearer ${state.signIn.token}` } }
+      );
+      navigate(`/solution/${challenge._id}`); 
+}else{
+    onOpen();
+}
   };
   function onChange(newValue) {
     // console.log("change", newValue);
     solution = newValue;
   }
+//   console.log(state.signIn.token)
 
   useEffect(() => {
     getChallbylevel();
@@ -75,7 +106,7 @@ function Challenge() {
   return (
     <>
       <Header />
-      {challenge && (
+      {challenge && 
         <div className="challenge-container">
           <div className="challenge-slide">
               <div className="challenge-title">
@@ -160,11 +191,25 @@ function Challenge() {
                   tabSize: 2,
                 }}
               />
-              <h1>${message}</h1>
+     
             </div>
           </div>
+          <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader className="title">حاول مرة اخرى</ModalHeader>
+          <ModalBody>
+              {message}
+          </ModalBody>
+          <ModalFooter>
+            <Button colorScheme="blue" mr={3} onClick={onClose}>
+              إغلاق
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
         </div>
-      )}
+      }
     </>
   );
 }

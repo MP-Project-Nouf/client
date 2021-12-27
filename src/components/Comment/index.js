@@ -45,7 +45,6 @@ function Comment() {
                 username:state.signIn.userName,
                 disc:addComment,
                 challenge:id,
-                user: state.signIn.userId,
             },
             { headers: { Authorization: `Bearer ${state.signIn.token}` } }
           );
