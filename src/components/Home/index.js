@@ -31,7 +31,7 @@ function Home() {
       <div className="home">
         <div className="home-container">
           <img className="home-image" src={image} alt="image" />
-          <div className="content">
+          <div className="C">
           <img src={logo} alt="logo" className="logo-home"/> 
             <div className="lang">
               <Stack direction="row" spacing={4} align="center">

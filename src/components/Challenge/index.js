@@ -62,7 +62,11 @@ function Challenge() {
       {challenge && (
         <div className="challenge-container">
           <div className="challenge-slide">
+              <div className="challenge-title">
+              <h1 className="title-challenge">عنوان التحدي</h1>
             <h1 className="disc">{challenge.title}</h1>
+            </div>
+            <h1 className="title-disc">وصف التحدي</h1>
             <h1 className="disc">{challenge.disc}</h1>
 
             <table
@@ -90,7 +94,7 @@ function Challenge() {
                         return <td>{x}</td>;
                       })}
 
-                      <td>{challenge.output[i][0]}</td>
+                      <td>{challenge.output[i]}</td>
                     </tr>
                   );
                 })}
