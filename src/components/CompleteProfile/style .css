@@ -1,0 +1,10 @@
+.compleated{
+    text-align: center;
+    margin: 0 auto;
+    width: 70%;
+}
+.totl-point{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

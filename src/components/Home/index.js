@@ -43,7 +43,9 @@ function Home() {
     }
   return (
     <>
+    {/* <div className="home-header"> */}
       <Header />
+      {/* </div> */}
       <div className="home">
         <div className="home-container">
           <img className="home-image" src={image} alt="image" />

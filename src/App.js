@@ -13,6 +13,7 @@ import './App.css';
 import Solution from './components/Solution';
 import Comment from './components/Comment';
 import ChallengeId from './components/ChallengeId';
+import User from './components/User/insex';
 
 function App() {
   return (
@@ -24,12 +25,13 @@ function App() {
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/signin" element={<Signin />} />
         <Route exact path="/Users" element={<Users />} />
-        <Route exact path="/user/:id" element={<Profile />} />
+        <Route exact path="/profile/:id" element={<Profile />} />
         <Route exact path="/forgit" element={<Forgit />} />
         <Route exact path="/comment/:id" element={<Comment />} />
         <Route exact path="/solution/:id" element={<Solution />} />
         <Route exact path="/challenge" element={<Challenge />} />
         <Route exact path="/challengeid/:id" element={<ChallengeId />} />
+        <Route exact path="/user/:id" element={<User />} />
       </Routes>
       
   

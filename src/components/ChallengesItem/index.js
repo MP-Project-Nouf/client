@@ -134,11 +134,11 @@ function ChallengesItem({ item, getAllchallenge }) {
           </div>
           <div className="challenges-content">
             <div className="challenges-point contents">
-              <h1>النقاط:</h1>
+              <h1 className="tit">النقاط:</h1>
               <h1>{item.point}</h1>
             </div>
             <div className="challenges-point contents">
-              <h1>المستوى:</h1>
+              <h1 className="tit">المستوى:</h1>
               <h1>{item.level}</h1>
             </div>
           </div>

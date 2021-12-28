@@ -27,7 +27,7 @@ import UserChall from "../UserChall";
 import {logout} from "./../../reducer/login"
 
 
-function Profile() {
+function User() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -74,7 +74,7 @@ function Profile() {
       </div>
       <div className="home">
         <div className="home-container">
-          {/* <img className="home-image" src={image} alt="image" /> */}
+         
           {User && (
               <>
             <div className="container-profile">
@@ -200,4 +200,4 @@ function Profile() {
   );
 }
 
-export default Profile;
+export default User;

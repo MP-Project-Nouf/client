@@ -26,9 +26,10 @@ function Solution() {
     setSolution(solve.data);
   };
 
-//   const gosolution = () => {
-//     navigate(`/solution/${challenge._id}`);
-//   };
+  const goChallenge = (e) => {
+    e.preventDefault();
+    navigate(`/challenge`);
+  };
 
 //   const gocomment = () => {
 //     navigate(`/comment/${challenge._id}`);
@@ -40,11 +41,15 @@ function Solution() {
     <>
       <Header />
       <div className="comment-container">
+      <div className='add-comment' >
+            <button onClick={(e)=>{goChallenge(e)}}>التحدي التالي</button>
+            </div>
       {(solution&&solution.length)&&
             solution.map(item=>{
                 return(
-                <div key={item._id}>
+                <div key={item._id} className='oneComment-container'>
                     <div className='comment-infoUser'>
+                        {/* <div className='comment-infoUser'> */}
                     <Avatar
                     name="Dan Abrahmov"
                     src={item.image}
@@ -54,9 +59,11 @@ function Solution() {
                     <h2>{item.username}</h2>
                     <h6>{item.date.slice(0,10)}</h6>
                     </div>
-                
-                    </div>
+                {/* </div> */}
+                    </div >
+                    <div className='comment-disc'>
                     <h1>{item.solve}</h1>
+                    </div>
                 </div>
             )})
 

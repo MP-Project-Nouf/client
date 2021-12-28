@@ -21,9 +21,14 @@ function CompleteProfile({user}) {
       }, []);
     return (
         <>
-        <div>تم إكتمال نسبة<span> {acou} </span> % من ملفك الشخصي </div>
-                  <h1>مجموع النقاط</h1>
+        <div className="compleated">
+        <div>تم إكتمال نسبة<span className="account"> {acou} </span> % من ملفك الشخصي </div>
+        <div className="totl-point">
+        <h1 className="totl-point-name">مجموع النقاط</h1>
                   <h1>{user.point}</h1>
+        </div>
+                  
+                  </div>
             
         </>
     )

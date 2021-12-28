@@ -35,7 +35,7 @@ function Users() {
   const getSearched = async (e) => {
     e.preventDefault();
     const search = await axios.get(`${process.env.REACT_APP_BASIC_URL}/search/${e.target.value}`);
-
+    // console.log("search",search.data[0]._id);
     setSearchUser(search.data);
   };
 
@@ -50,9 +50,11 @@ function Users() {
       
       <div className="users">
         <div className="users-container">
-          <img className="users-image" src={image} alt="image" />
-          <Input placeholder='ابحث عن اسم المستخدم او الايميل' className="search" onKeyUp={(e)=>{getSearched(e)}}
+          {/* <img className="users-image" src={image} alt="image" /> */}
+          <div className="search">
+          <Input placeholder='ابحث عن اسم المستخدم او الايميل'  onKeyUp={(e)=>{getSearched(e)}}
         autoFocus/>
+        </div>
           
           <div className="user-container">
           
@@ -60,23 +62,27 @@ function Users() {
           <h4>الصورة الشخصية</h4> 
                   <h4>اسم المستخدم</h4>
                   <h4>الإيميل</h4>
-                  <h4>المستوى</h4>
+                  {/* <h4>المستوى</h4> */}
                   <h4>عدد النقاط</h4>
                 </div>
           {(searchUser&&searchUser.length )?
           searchUser.map((item,i)=>{
             console.log("hello")
             return (
-              <div key={i} className="user" onClick={()=>{goprofile(item._id)}}>
+              <div key={i} className="user users-info-container" onClick={()=>{goprofile(item._id)}}>
+                <div className="users-avatar">
                   <Avatar
                     name="Dan Abrahmov"
                     src={item.avatar}
                     className="line"
                   />
+                  </div>
+                  <div className="users-info">
                 <h4>{item.username}@</h4>
                 <h4>{item.email}</h4>
-                <h4>{item.level}</h4>
+                {/* <h4>{item.level}</h4> */}
                 <h4>{item.point}</h4>
+                </div>
               </div>
             );
 
@@ -93,7 +99,7 @@ function Users() {
                     />
                   <h4>{item.username}@</h4>
                   <h4>{item.email}</h4>
-                  <h4>{item.level}</h4>
+                  {/* <h4>{item.level}</h4> */}
                   <h4>{item.point}</h4>
                 </div>
               );
