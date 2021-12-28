@@ -69,20 +69,16 @@ function Users() {
           searchUser.map((item,i)=>{
             console.log("hello")
             return (
-              <div key={i} className="user users-info-container" onClick={()=>{goprofile(item._id)}}>
-                <div className="users-avatar">
+              <div key={i} className="user " onClick={()=>{goprofile(item._id)}}>
                   <Avatar
                     name="Dan Abrahmov"
                     src={item.avatar}
                     className="line"
                   />
-                  </div>
-                  <div className="users-info">
+              
                 <h4>{item.username}@</h4>
                 <h4>{item.email}</h4>
-                {/* <h4>{item.level}</h4> */}
                 <h4>{item.point}</h4>
-                </div>
               </div>
             );
 

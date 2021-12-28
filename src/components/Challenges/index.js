@@ -168,7 +168,7 @@ function Challenges() {
               challenges.length &&
               challenges.map((item, i) => {
                 return (
-                    <div  key={item._id} >
+                    <div  key={item._id} className="zzz">
                         <ChallengesItem item={item} getAllchallenge={getAllchallenge} />
                   </div> 
                     

@@ -4,7 +4,7 @@ import Image from "./bghome.webp";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {ArrowRightIcon} from '@chakra-ui/icons';
-import logo from './logocoding(1).png'
+import logo from './logoedit.png'
 import {
   Modal,
   ModalOverlay,
@@ -46,12 +46,13 @@ function Home() {
     {/* <div className="home-header"> */}
       <Header />
       {/* </div> */}
-      <div className="home">
-        <div className="home-container">
-          <img className="home-image" src={image} alt="image" />
+      <div className="hom">
+        <div className="hom-container">
+          {/* <img className="home-image" src={image} alt="image" /> */}
           <div className="C">
           <img src={logo} alt="logo" className="logo-home"/> 
-            <div className="lang">
+          <div><h1>منصة عربية متخصصة في التحديات البرمجة</h1></div>
+            {/* <div className="lang">
               <Stack direction="row" spacing={4} align="center">
               <Button colorScheme="gray" variant="ghost">
                   javascript
@@ -64,7 +65,7 @@ function Home() {
                 </Button>
                 
               </Stack>
-            </div>
+            </div> */}
             <div className="startChall" onClick={goChallege}>
                 <h1>إبدأ التحدي</h1>
                 <ArrowRightIcon  />
