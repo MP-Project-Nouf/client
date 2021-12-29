@@ -7,6 +7,8 @@
     max-width: 100%;
     background-color: rgba(228, 226, 226, 0.89);
     height: 100vh;
+    min-height: 100vh;
+   
 }
 .users-container{
     margin-top: 150px;
@@ -65,6 +67,8 @@
 .users-info-container h4{
     margin-top: 20px;
 }
+
+
 @media only screen and (max-width: 700px) {
     .user{
         width: 100%;

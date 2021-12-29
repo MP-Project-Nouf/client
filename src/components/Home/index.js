@@ -14,13 +14,14 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { SiCodeceptjs } from "react-icons/si";
-import { GrNewWindow } from "react-icons/gr";
+import {GiLaddersPlatform} from "react-icons/gi";
 import { GiLevelEndFlag } from "react-icons/gi";
 import { AiOutlineAppstoreAdd } from "react-icons/ai";
 
 import "./style.css";
 
 import { Button, ButtonGroup, Stack } from "@chakra-ui/react";
+import Footer from "../Footer";
 
 function Home() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -75,19 +76,19 @@ function Home() {
               <div className="home-role-container">
                 <div className="home-role-content">
                   <SiCodeceptjs className="home-role-icon"/>
-                  <h1>قم بحل التحدي للأنتقال للتحدي التالي</h1>
+                  <h1 className="home-role-text">قم بحل التحدي للأنتقال للتحدي التالي</h1>
                 </div>
                 <div className="home-role-content">
-                  <GrNewWindow className="home-role-icon"/>
-                  <h1>إجمع النقاط من خلال حل التحديات</h1>
+                  <GiLaddersPlatform className="home-role-icon"/>
+                  <h1 className="home-role-text">إجمع النقاط من خلال حل التحديات</h1>
                 </div>
                 <div className="home-role-content">
                   <GiLevelEndFlag className="home-role-icon"/>
-                  <h1>نقاط كل تحدي يعتمد على مستوى الصعوبة</h1>
+                  <h1 className="home-role-text">نقاط كل تحدي يعتمد على مستوى الصعوبة</h1>
                 </div>
                 <div className="home-role-content">
                   <AiOutlineAppstoreAdd className="home-role-icon"/>
-                  <h1>يمكنك أضافة تحديات عند وصولك ل 300 نقطة</h1>
+                  <h1 className="home-role-text">يمكنك أضافة تحديات عند وصولك ل 300 نقطة</h1>
                 </div>
               </div>
             </div>
@@ -107,7 +108,9 @@ function Home() {
             </Modal>
           </div>
         </div>
+       
       </div>
+      <Footer />
     </>
   );
 }

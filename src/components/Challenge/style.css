@@ -6,7 +6,7 @@
     position: absolute;
     display: grid;
     justify-content:space-around;
-    grid-template-columns: 45% 45%;
+    grid-template-columns: 30% 60%;
     margin-right: 3%;
    
     
@@ -35,6 +35,10 @@
     margin-bottom:50px;
     width: 100%;
     text-align: center;
+    font-weight: bold;
+    color: rgb(73, 126, 224);
+ 
+    
 }
 table, th, td {
     border: 1px solid black;
@@ -48,8 +52,14 @@ table, th, td {
   }
   .title-challenge{
       width: 150px;
+      
+      
   }
   .title-disc{
      margin-right: 0;
      margin-bottom: 10px;
+  }
+  th{
+      background-color: rgb(138, 135, 135);
+      color: white;
   }

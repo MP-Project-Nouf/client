@@ -7,6 +7,7 @@ import {  useSelector } from "react-redux";
 import "./style.css";
 import { Avatar,Input} from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+import Footer from "../Footer";
 
 function Users() {
   const [users, setUsers] = useState([]);
@@ -65,6 +66,7 @@ function Users() {
                   {/* <h4>المستوى</h4> */}
                   <h4>عدد النقاط</h4>
                 </div>
+             
           {(searchUser&&searchUser.length )?
           searchUser.map((item,i)=>{
             console.log("hello")
@@ -100,9 +102,11 @@ function Users() {
                 </div>
               );
             })}
+           
             </div>
         </div>
       </div>
+      
     </>
   );
 }

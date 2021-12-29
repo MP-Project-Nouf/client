@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code&display=swap');
+.footer-info{
+   position: absolute;
+   bottom: 0px;
+    display: grid;
+    grid-template-columns: 25% 60%;
+    justify-content:center;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    padding: 10px;
+   
+}
+.footer-logo{
+    width: 100px; 
+
+}
+.accounts{
+    margin: auto auto;
+    width: 100%;
+}
+.title-account{
+    color: rgb(94, 96, 97);
+    margin-bottom: 20px;
+    font-family: 'M PLUS 1 Code', sans-serif;
+    font-size: 20px;
+}
+.logo-account{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.acc{
+    font-size: 40px;
+}
+.tw{
+    color:rgba(141, 168, 250, 0.548)
+}
+.yo{
+    color:rgba(250, 150, 141, 0.52)
+}
+.ma{
+    color: rgba(73, 73, 72, 0.5);
+  
+}
+.sn{
+    color: rgba(243, 243, 128, 0.548);
+}

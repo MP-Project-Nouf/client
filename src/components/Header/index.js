@@ -17,7 +17,7 @@ import { ChevronDownIcon } from '@chakra-ui/icons'
 import { useNavigate } from "react-router-dom";
 import {  useDispatch,useSelector } from "react-redux";
 import {logout} from "./../../reducer/login"
-import logo from './logoedit.png'
+import logo from "./logohommp.png";
 
 import './style.css';
 function Header() {
