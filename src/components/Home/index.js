@@ -67,9 +67,9 @@ function Home() {
                 
               </Stack>
             </div> */}
-            <div onClick={goChallege}>
-              <h1 className="startChall">إبدأ التحدي</h1>
-              <ArrowRightIcon w={8} h={8} color="#4299E1" />
+            <div onClick={goChallege} className="startChall">
+              <h1 >إبدأ التحدي</h1>
+              <ArrowRightIcon w={8} h={8}  />
             </div>
             <div className="home-role">
               <h1 className="home-role-tilte">قوانين التحدي</h1>

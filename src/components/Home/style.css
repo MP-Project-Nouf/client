@@ -6,11 +6,12 @@
     margin-right:0;
     width: 100%;
     max-width: 100%;
+    background-color: rgba(228, 226, 226, 0.89);
     /* background-color: rgba(228, 226, 226, 0.89); */
   
     /* background-image: url(https://pngtree.com/free-backgrounds); */
     /* background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQclcuzb1ovHGgVPcZz0e97NUeKeT9MBUTChA&usqp=CAU); */
-    background-size: cover;
+    /* background-size: cover; */
     min-height: 100vh;
     /* background-color: rgba(0, 0, 0, 0.87); */
 
@@ -115,5 +116,12 @@
 .home-role-text{
     font-size: 15px;
     color: rgb(83, 85, 88);
+}
+.startChall:hover{
+   border:rgba(9, 87, 139, 0.534) 2px solid;
+
+}
+.startChall:active{
+    transform: scale(1.1);
 }
 

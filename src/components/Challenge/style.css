@@ -30,6 +30,9 @@
 }
 .editor{
     width: 100%;
+    border: 1px solid;
+    padding: 5px;
+    background-color: #272822;
 }
 .disc{
     margin-bottom:50px;
@@ -62,4 +65,13 @@ table, th, td {
   th{
       background-color: rgb(138, 135, 135);
       color: white;
+  }
+  .challenge-bottun{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+  }
+  td{
+      color: rgba(66, 64, 64, 0.767);
+      font-weight: 100;
   }

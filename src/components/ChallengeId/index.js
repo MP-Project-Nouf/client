@@ -159,18 +159,21 @@ if(resul)
                   );
                 })}
             </table>
+            <div className="challenge-bottun">
             <h1 onClick={gosolution}>الحلول</h1>
             <h1 onClick={gocomment}>التعليقات</h1>
-          </div>
-          <div className="challenge-slide">
-            <div className="chall-slide-header">
-              <button
+            <button
                 onClick={(e) => {
                   goTest(e);
                 }}
               >
                 Run
               </button>
+            </div>
+          </div>
+          <div className="challenge-slide">
+            <div className="chall-slide-header">
+             
               <h1>javascript</h1>
               <div className="chall-level">
                 <h1> المستوى:</h1>

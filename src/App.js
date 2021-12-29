@@ -14,6 +14,7 @@ import Solution from './components/Solution';
 import Comment from './components/Comment';
 import ChallengeId from './components/ChallengeId';
 import User from './components/User/insex';
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -34,7 +35,6 @@ function App() {
         <Route exact path="/user/:id" element={<User />} />
       </Routes>
       
-  
     </div>
   );
 }
