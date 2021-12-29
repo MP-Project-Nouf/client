@@ -51,6 +51,9 @@
     /* padding-top: 10px; */
     padding-bottom: 10px;
     color: rgb(27, 153, 211);
+    font-weight: bold;
+    font-size: 20px;
+ 
 }
 .challenges-content{
     padding-top: 10px;
@@ -66,4 +69,19 @@
 }
 .contents .tit{
     margin-left: 10px;
+}
+.icon-challenges{
+    color: rgba(27, 153, 211, 0.568);
+    font-size: 30px;
+    /* margin: 0 auto; */
+}
+.challenge-open{
+cursor: pointer;
+padding: 1px;
+}
+.challenge-open:hover{
+   border-bottom: rgba(27, 153, 211, 0.568) 1px solid;
+}
+.challenge-open:active{
+    transform: scale(1.1);
 }

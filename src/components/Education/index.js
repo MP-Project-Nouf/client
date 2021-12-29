@@ -94,13 +94,13 @@ function Education({ id, getUserById }) {
                 onClick={(e) => {
                     deleteeducation(item._id,e);
                 }}
-              />}
+              className="web-button"/>}
             </div>
           );
         })}
         {state.signIn.userId===id&&
                       
-                      <div onClick={onOpen} className="addlang">
+                      <div onClick={onOpen} className="addlang web-button">
                       <PlusSquareIcon /> <p>إضافة مستوى تعليمي</p>
                     </div>
                     }

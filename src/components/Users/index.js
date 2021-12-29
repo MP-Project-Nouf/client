@@ -60,27 +60,27 @@ function Users() {
           <div className="user-container">
           
           <div  className="user head">
-          <h4>الصورة الشخصية</h4> 
-                  <h4>اسم المستخدم</h4>
-                  <h4>الإيميل</h4>
+          <h3>الصورة الشخصية</h3> 
+                  <h3>اسم المستخدم</h3>
+                  <h3>الإيميل</h3>
                   {/* <h4>المستوى</h4> */}
-                  <h4>عدد النقاط</h4>
+                  <h3>عدد النقاط</h3>
                 </div>
              
           {(searchUser&&searchUser.length )?
           searchUser.map((item,i)=>{
             console.log("hello")
             return (
-              <div key={i} className="user " onClick={()=>{goprofile(item._id)}}>
+              <div key={i} className="user users-user " onClick={()=>{goprofile(item._id)}}>
                   <Avatar
                     name="Dan Abrahmov"
                     src={item.avatar}
                     className="line"
                   />
               
-                <h4>{item.username}@</h4>
-                <h4>{item.email}</h4>
-                <h4>{item.point}</h4>
+                <h4 className="u-u-i">{item.username}@</h4>
+                <h4 className="u-u-i">{item.email}</h4>
+                <h4 className="u-u-i">{item.point}</h4>
               </div>
             );
 
@@ -89,16 +89,20 @@ function Users() {
             users.length) &&
             users.map((item) => {
               return (
-                <div key={item._id} className="user" onClick={()=>{goprofile(item._id)}}>
+                <div key={item._id} className="user users-user" onClick={()=>{goprofile(item._id)}}>
+                 
                     <Avatar
                       name="Dan Abrahmov"
                       src={item.avatar}
                       className="line"
                     />
-                  <h4>{item.username}@</h4>
-                  <h4>{item.email}</h4>
+                 
+               
+                  <h4 className="u-u-i">{item.username}@</h4>
+                  <h4 className="u-u-i">{item.email}</h4>
                   {/* <h4>{item.level}</h4> */}
-                  <h4>{item.point}</h4>
+                  <h4 className="u-u-i">{item.point}</h4>
+              
                 </div>
               );
             })}

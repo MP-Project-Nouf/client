@@ -155,7 +155,7 @@ function PersonalInfo(props) {
       </Modal>
       <div>
         <h1 className="line title textcolor">تاريخ الميلاد</h1>
-        <h1 className="line value">{props.birth}</h1>
+        <h1 className="line value">{props.birth.slice(0,10)}</h1>
       </div>
       <div>
         <h1 className="line title textcolor">الدولة</h1>
@@ -176,7 +176,7 @@ function PersonalInfo(props) {
       </div>
       {state.signIn.userId===props.id&&
           
-          <EditIcon onClick={onOpen} className="editButt"/>
+          <EditIcon onClick={onOpen} className="editButt web-button"/>
        }
     </>
   );

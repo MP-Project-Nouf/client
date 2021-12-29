@@ -75,7 +75,7 @@ function Comunication(props) {
         {props.linkedin && <a href={props.linkedin} className="name"> زيارة</a>}
       </div>
       {state.signIn.userId === props.id && (
-        <EditIcon onClick={onOpen} className="editButt" />
+        <EditIcon onClick={onOpen} className="editButt web-button" />
       )}
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />

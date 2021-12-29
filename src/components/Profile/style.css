@@ -92,3 +92,25 @@
     font-weight: bold;
     margin-right: 2px;
 }
+.web-button{
+    cursor: pointer;
+
+}
+.web-button:hover{
+    border-bottom: white 1px solid;
+    border-left: white 1px solid;
+  
+}
+.web-button:active{
+    
+    transform: scale(1.1);
+}
+.deleteAccount:hover{
+    background-color: rgba(45, 102, 124, 0.842);
+    color: rgb(171, 172, 173);
+}
+.deleteAccount:active{
+    background-color: rgba(45, 102, 124, 0.842);
+    color: rgb(171, 172, 173);
+    transform: scale(1.1);
+}

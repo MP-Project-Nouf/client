@@ -167,6 +167,7 @@ function AccountInfo(props) {
           name="Dan Abrahmov"
           src={props.avatar}
           className="line personImage"
+          size='2xl'
         />
         <div className="names">
           <div className="fullname">
@@ -176,6 +177,7 @@ function AccountInfo(props) {
 
           <h1 className="name">{props.username}@</h1>
         </div>
+        
       </div>
       <div>
         <h1 className="line title textcolor">الإيميل</h1>
@@ -186,7 +188,7 @@ function AccountInfo(props) {
         <h1 className="line value">{props.phone}</h1>
       </div>
       {state.signIn.userId === props.id && (
-        <EditIcon onClick={onOpen} className="editButt" />
+        <EditIcon onClick={onOpen} className="editButt web-button" />
       )}
     </>
   );

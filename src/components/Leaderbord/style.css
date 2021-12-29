@@ -81,7 +81,7 @@
     cursor: pointer;
 }
 .leader-logo{
-    width: 1px;
+    width: 120px;
     margin: 0 auto;
     border-radius: 50px;
     margin-bottom: 20px;
@@ -92,9 +92,9 @@
         width: 100%;
     }
   }
-  /* .leader-profile:hover{
+  .leader-profile:hover{
 background-color: rgba(28, 81, 102, 0.842);
   }
   .leader-profile:active{
     transform: scale(1.1);
-      } */
+      }

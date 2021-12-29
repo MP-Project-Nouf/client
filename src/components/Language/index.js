@@ -79,13 +79,13 @@ function Language({ id, getUserById }) {
                 onClick={() => {
                   deletefavoritLang(item._id);
                 }}
-              />}
+              className="web-button"/>}
             </div>
           );
         })}
         {state.signIn.userId===id&&
                       
-                      <div onClick={onOpen} className="addlang">
+                      <div onClick={onOpen} className="addlang web-button">
                       <PlusSquareIcon /> <p>إضافة لغة مفضلة</p>
                     </div>
                     }

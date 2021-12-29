@@ -3,6 +3,7 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import "./style.css";
 import { useNavigate } from "react-router-dom";
+import {BiCodeAlt} from 'react-icons/bi'
 import { EditIcon } from "@chakra-ui/icons";
 import {
   Modal,
@@ -137,6 +138,7 @@ function ChallengesItem({ item, getAllchallenge }) {
               <h1 className="tit">النقاط:</h1>
               <h1>{item.point}</h1>
             </div>
+            <BiCodeAlt className="icon-challenges"/>
             <div className="challenges-point contents">
               <h1 className="tit">المستوى:</h1>
               <h1>{item.level}</h1>
@@ -148,10 +150,10 @@ function ChallengesItem({ item, getAllchallenge }) {
             ) : (
               <h1 className="notactive">غير مفعل</h1>
             )}
-            <h1 onClick={()=>{gochallenge(item._id)}}>فتح</h1>
+            <h1 onClick={()=>{gochallenge(item._id)}} className="challenge-open">فتح</h1>
             <div>
         
-              <EditIcon onClick={onOpen} />
+              <EditIcon onClick={onOpen} className="challenge-open"/>
             </div>
             <Modal isOpen={isOpen} onClose={onClose}>
               <ModalOverlay />

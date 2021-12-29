@@ -171,11 +171,11 @@ function Profile() {
               
             </div>
             {(state.signIn.userId===id||state.signIn.role==="admin")&&
-                <button onClick={onOpen} className="deleteAccount">حذف الحساب</button>}
+                <button onClick={onOpen} className="deleteAccount web-button">حذف الحساب</button>}
             <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader className="title">هل انت متأكد من حذف الحساب ؟؟ </ModalHeader>
+          <ModalHeader className="title ">هل انت متأكد من حذف الحساب ؟؟ </ModalHeader>
 
           <ModalFooter>
             <Button colorScheme="blue" mr={3} onClick={onClose}>

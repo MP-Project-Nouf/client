@@ -85,13 +85,13 @@ function Training({ user, getUserById }) {
                 onClick={(e) => {
                     deleteTraining(item._id,e);
                 }}
-                />
+                className="web-button"/>
               )}
             </div>
           );
         })}
       {state.signIn.userId === user && (
-        <div onClick={onOpen} className="addlang">
+        <div onClick={onOpen} className="addlang web-button">
           <PlusSquareIcon /> <p>إضافة مستوى تعليمي</p>
         </div>
       )}
