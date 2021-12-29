@@ -7,9 +7,9 @@ import { Avatar,Input} from "@chakra-ui/react";
 import { PlusSquareIcon, CloseIcon } from "@chakra-ui/icons";
 import './style.css'
 
-function Comment({id}) {
+function Comment() {
     const navigate=useNavigate();
-    // const { id } = useParams();
+    const { id } = useParams();
     const [comment,setComment]=useState([]);
     const [addComment,setAddComment]=useState("")
     const state = useSelector((state) => {
@@ -67,9 +67,9 @@ function Comment({id}) {
         <div className='big'>
         <Header />
         <div className='comment-container'>
-            {/* <div>
+            <div className='comment-collection'>
                   
-            </div> */}
+            
             <div className='add-comment' >
                 
                 <div>
@@ -102,22 +102,26 @@ function Comment({id}) {
                     </div>
                     <div className='comment-disc'>
                     <h1 >{item.disc}</h1>
-                    {(state.signIn.userId===item.user||state.signIn.role==="admin")&&
+                     {(state.signIn.userId===item.user||state.signIn.role==="admin")&&
                 <CloseIcon
                 onClick={() => {
                     delComment(item._id);
                 }}
-              className='comment-delete'/>}
+                color="#314974"
+            //   className='comment-delete'
+              />} 
                     </div>
+                    
                    
                 </div>
+                
             )})
 
             }
           
-            
+          </div>
         </div>
-        // </div>
+        </div>
     )
 }
 

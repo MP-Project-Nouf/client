@@ -1,3 +1,15 @@
+.challenges{
+    display:flex ;
+    justify-content: center;
+    margin-left: 0;
+    margin-right:0;
+    width: 100%;
+    max-width: 100%;
+    background-color: rgba(228, 226, 226, 0.89);
+    height: 120vh;
+    min-height: 100vh;
+   
+}
 .leader-container{
     /* background-color: rgba(19, 70, 71, 0.431); */
     background-color: rgba(228, 226, 226, 0.89);
@@ -8,6 +20,7 @@
     z-index: 1;
     border-radius: 10px;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+ 
 }
 
 /* .users{

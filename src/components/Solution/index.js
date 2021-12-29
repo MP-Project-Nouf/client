@@ -41,9 +41,14 @@ function Solution() {
     <>
       <Header />
       <div className="comment-container">
-      <div className='add-comment' >
-            <button onClick={(e)=>{goChallenge(e)}}>التحدي التالي</button>
-            </div>
+    
+      <div className='comment-collection'>
+      <h1 className="win">لقد إجتزت التحدي بنجاح</h1>
+      <button onClick={(e)=>{goChallenge(e)}} className="next-challenge" >التحدي التالي</button>
+      {/* <div className='add-comment' >
+            
+            </div> */}
+            
       {(solution&&solution.length)&&
             solution.map(item=>{
                 return(
@@ -68,6 +73,7 @@ function Solution() {
             )})
 
             }
+            </div>
           
           </div>
     </>

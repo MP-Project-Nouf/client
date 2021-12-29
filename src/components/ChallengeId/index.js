@@ -162,13 +162,7 @@ if(resul)
             <div className="challenge-bottun">
             <h1 onClick={gosolution} className="go-comment">الحلول</h1>
             <h1 onClick={gocomment} className="go-comment">التعليقات</h1>
-            <button
-                onClick={(e) => {
-                  goTest(e);
-                }}
-                className="run">
-                Run
-              </button>
+            
             </div>
           </div>
           <div className="challenge-slide">
@@ -209,6 +203,13 @@ if(resul)
               />
      
             </div>
+            <button
+                onClick={(e) => {
+                  goTest(e);
+                }}
+                className="run">
+                Run
+              </button>
           </div>
           <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />

@@ -51,6 +51,7 @@ function Users() {
       
       <div className="users">
         <div className="users-container">
+        <h1 className="challenges-title-head">المستخدمين</h1>
           {/* <img className="users-image" src={image} alt="image" /> */}
           <div className="search">
           <Input placeholder='ابحث عن اسم المستخدم او الايميل'  onKeyUp={(e)=>{getSearched(e)}}

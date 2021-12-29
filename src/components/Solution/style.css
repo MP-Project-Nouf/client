@@ -4,3 +4,24 @@
     width: 85%;
     margin: 100px auto; */
 /* } */
+.win{
+    
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: #52688F;
+}
+.next-challenge{
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: #7391C8;
+    border: rgba(128, 128, 128, 0) 2px solid;
+    border-radius: 10px;
+}
+.next-challenge:hover{
+    border-top: #52688F 2px solid;
+ border-bottom: #52688F 2px solid;
+}
+.next-challenge:active{
+    
+    color: #2f4264;
+   }
