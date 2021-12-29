@@ -165,13 +165,7 @@ if(resul)
             {/* <h1 onClick={gosolution}>الحلول</h1> */}
             {/* {!openComment &&<h1 onClick={gocomment} className="go-comment">التعليقات</h1>} */}
             <h1 onClick={gocomment} className="go-comment">التعليقات</h1>
-            <button
-                onClick={(e) => {
-                  goTest(e);
-                }}
-             className="run" >
-                Run
-              </button>
+            
             </div>
           </div>
           <div className="challenge-slide">
@@ -210,8 +204,16 @@ if(resul)
                   tabSize: 2,
                 }}
               />
+              
      
             </div>
+            <button
+                onClick={(e) => {
+                  goTest(e);
+                }}
+             className="run" >
+                Run
+              </button>
           </div>
           <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />

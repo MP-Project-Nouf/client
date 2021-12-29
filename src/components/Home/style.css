@@ -47,7 +47,7 @@
 }
 .startChall{
 
-     background-color: rgba(19, 122, 190, 0.644);
+     background-color: #52688F;
      padding: 10px;
      border-radius: 5px;
      color: white;
@@ -83,7 +83,7 @@
     font-size: 25px;
 }
 .home-plate h1{
-    color: rgb(19, 122, 190);
+    color: #7391C8;
     font-size: 30px;
     font-weight: bold;
 }
@@ -93,28 +93,29 @@
     
 }
 .home-role-tilte{
-    color: rgb(19, 122, 190);
+    color: #7391C8;
     font-size: 25px;
     margin-bottom: 30px;
    
 }
 .home-role-container{
-    display: grid;
-    grid-template-columns: 40% 40%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
     justify-content:space-between;
 }
 .home-role-content{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 40% 40%;
     align-items: center;
     margin-bottom: 50px;
 }
 .home-role-icon{
-    font-size: 150px;
-    color: rgba(19, 122, 190, 0.534);
+    font-size: 90px;
+    color: #7ba6ce;
 }
 .home-role-text{
-    font-size: 15px;
+    font-size: 10px;
     color: rgb(83, 85, 88);
 }
 .startChall:hover{

@@ -48,7 +48,9 @@
 
 }
 .head {
-    background-color: rgba(28, 81, 102, 0.637);
+    background-color: #6b80a5;
+
+    ;
  /* background-color: rgba(28, 100, 102, 0.637); */
 }
 .user h3{
@@ -83,12 +85,11 @@
       cursor: pointer;
   }
 .users-user:hover{
-    border-bottom:  rgba(28, 81, 102, 0.692) 4px solid;
-    border-left:  rgba(28, 81, 102, 0.685) 4px solid;
+    border-bottom:  #49628d 4px solid;
+    border-left:  #6b80a5 4px solid;
 
 }
 .users-user:active{
-    border-bottom:  rgba(28, 81, 102, 0.692) 4px solid;
-    border-left:  rgba(28, 81, 102, 0.685) 4px solid;
-    color: rgb(177, 173, 173);
+   
+    color: #BDC6D9;
 }

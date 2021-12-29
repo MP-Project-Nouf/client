@@ -47,7 +47,7 @@
 }
 .leader-level{
     
-    background-color: rgba(28, 81, 102, 0.637);
+    background-color: #7391c8b2;
     /* background-color: rgba(28, 100, 102, 0.753); */
     /* background-color: rgb(22, 71, 73); */
     width:20% ;
@@ -70,7 +70,7 @@
 
 }
 .leader-profile{
-    background-color: rgba(28, 81, 102, 0.637);
+    background-color: #7391c8b2;
    /* background-color: rgba(28, 100, 102, 0.753); */
     width:25% ;
     padding:10px ;
@@ -93,7 +93,7 @@
     }
   }
   .leader-profile:hover{
-background-color: rgba(28, 81, 102, 0.842);
+background-color: #5982cfd5;
   }
   .leader-profile:active{
     transform: scale(1.1);

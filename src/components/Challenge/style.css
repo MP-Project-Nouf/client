@@ -39,7 +39,7 @@
     width: 100%;
     text-align: center;
     font-weight: bold;
-    color: rgb(73, 176, 224);
+    color: #7391C8;
  
     
 }
@@ -56,16 +56,18 @@ table, th, td {
   .title-challenge{
       width: 150px;
       font-weight: bold;
+      color: #52688F;
       
       
   }
   .title-disc{
+      color: #52688F;
      margin-right: 0;
      margin-bottom: 10px;
      font-weight: bold;
   }
   th{
-      background-color: rgb(138, 135, 135);
+      background-color: #BDC6D9;
       color: white;
   }
   .challenge-bottun{
@@ -83,7 +85,7 @@ table, th, td {
       border-left: black 1px solid;
   }
   .go-comment:hover{
-     background-color: rgba(128, 128, 128, 0.589);
+     background-color: #52688F;
      color: white;
   }
   .go-comment:active{
@@ -92,10 +94,14 @@ table, th, td {
  .run{
      font-size: 20px;
      font-weight: bold;
-     background-color: rgba(128, 128, 128, 0.514);
+     background-color: #52688F;
      padding: 10px;
      border-radius: 5px;
      color: white;
+     width: 100px;
+    margin-right: 85%;
+    margin-bottom: 20px;
+     
  }
  .run:hover{
     background-color: rgb(128, 128, 128);
