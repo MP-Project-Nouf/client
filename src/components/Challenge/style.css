@@ -105,3 +105,8 @@ table, th, td {
     background-color: rgb(128, 128, 128);
     transform: scale(1.1);
  }
+ /* .challenge-collection{
+     display: flex;
+     flex-direction: column;
+    
+ } */
