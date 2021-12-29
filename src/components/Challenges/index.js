@@ -64,9 +64,9 @@ function Challenges() {
     setChallenges(allchall.data);
   };
 
-  const gochallenge = (challid) => {
-    navigate(`/challenge/${challid}`);
-  };
+//   const gochallenge = (challid) => {
+//     navigate(`/challengeid/${challid}`);
+//   };
 
 //   const editchallenge = async (e, _id) => {
 //     console.log("salam");
@@ -161,16 +161,16 @@ function Challenges() {
 
       <div className="users">
         <div className="users-container">
-          <img className="users-image" src={image} alt="image" />
+          {/* <img className="users-image" src={image} alt="image" /> */}
 
           <div className="challenges-container">
             {challenges &&
               challenges.length &&
               challenges.map((item, i) => {
                 return (
-                    <div  key={item._id} onDoubleClick={gochallenge(item._id)}>
+                    <div  key={item._id} className="zzz">
                         <ChallengesItem item={item} getAllchallenge={getAllchallenge} />
-                    </div> 
+                  </div> 
                     
                 //   <>
                 //     <div className="challenges-box">

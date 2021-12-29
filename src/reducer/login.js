@@ -33,7 +33,17 @@ const signIn=(state=instialState,action)=>{
             localStorage.setItem("Point",pointt);
             localStorage.setItem("Level",levell);
             return{token:tokenStorag,role:roleStorag,userId:userIdStorag,userName:userNameStorag,image:imageStorag,point:pointt,level:levell};
-        default:
+            case "EDIT":
+                const {username,avatar}=payload;
+                const tokenStor=localStorage.getItem("Token");
+                const roleStor=localStorage.getItem("Role");
+                const userIdStor=localStorage.getItem("UserId");
+                const pointStor=localStorage.getItem("Point");
+                const levelStor=localStorage.getItem("Level");
+                localStorage.setItem("UserName",username);
+                localStorage.setItem("Image",avatar);
+                return{token:tokenStor,role:roleStor,userId:userIdStor,userName:username,image:avatar,point:pointStor,level:levelStor};
+            default:
             const tokenStorage=localStorage.getItem("Token");
             const roleStorage=localStorage.getItem("Role");
             const userIdStorage=localStorage.getItem("UserId");
@@ -70,6 +80,13 @@ export const logout=(data)=>{
 export const update=(data)=>{
     return {
         type:"UPDATE",
+        payload:data
+    };
+};
+
+export const edit=(data)=>{
+    return {
+        type:"EDIT",
         payload:data
     };
 };

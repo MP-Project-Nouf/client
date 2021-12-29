@@ -39,7 +39,7 @@ function Leaderbord() {
       
       <div className="users">
         <div className="users-container">
-          <img className="users-image" src={image} alt="image" />
+          {/* <img className="users-image" src={image} alt="image" /> */}
         
           <div className="leader-container">
           <img className="leader-logo" src={logo} alt="logo" />

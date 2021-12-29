@@ -17,7 +17,7 @@ import { ChevronDownIcon } from '@chakra-ui/icons'
 import { useNavigate } from "react-router-dom";
 import {  useDispatch,useSelector } from "react-redux";
 import {logout} from "./../../reducer/login"
-import logo from './logocoding(1).png'
+import logo from './logoedit.png'
 
 import './style.css';
 function Header() {
@@ -30,7 +30,7 @@ function Header() {
 
    const goProfile=()=>{
     navigate(`/`);
-    navigate(`/user/${state.signIn.userId}`);
+    navigate(`/profile/${state.signIn.userId}`);
    }
    const out=()=>{
     dispatch(logout({ role: "", token: "",userId:"",useName:"",image:"" ,point:0,level:1}));
@@ -61,8 +61,8 @@ function Header() {
       
       {state.signIn.token ? 
         <Menu>
-        <MenuButton as={Button} rightIcon={<ChevronDownIcon />}className="profile" >
-          <><p>مرحبا</p><p>{state.signIn.userName}</p></>
+        <MenuButton as={Button} rightIcon={<ChevronDownIcon/>}   className="profile" >
+          <><span>مرحبا</span>{" "}<span>{state.signIn.userName}</span></>
         </MenuButton>
         <MenuList>
           <MenuItem onClick={goProfile}>الملف الشخصي</MenuItem>

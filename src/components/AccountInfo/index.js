@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { edit } from "./../../reducer/login";
 import axios from "axios";
 import { Avatar } from "@chakra-ui/react";
 import {
@@ -22,6 +23,7 @@ import { storage } from "./../../firebase";
 import "./style.css";
 
 function AccountInfo(props) {
+  const dispatch = useDispatch();
   const [file, setFile] = useState(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [Avatarr, setAvatarr] = useState("");
@@ -66,8 +68,15 @@ function AccountInfo(props) {
           },
           { headers: { Authorization: `Bearer ${state.signIn.token}` } }
         );
+        let username=Username||state.signIn.userName;
+        let avatar=url||state.signIn.image;
+        const data = {
+          username,
+         avatar,
+        };
+        dispatch(edit(data));
         props.getUserById();
-    onClose();
+        onClose();
         // setURL(url);
         // createPost(url);
       });
