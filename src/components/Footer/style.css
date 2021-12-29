@@ -9,6 +9,7 @@
     width: 100%;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
     padding: 10px;
+    padding-right: 200px;
    
 }
 .footer-logo{
@@ -28,13 +29,14 @@
 .logo-account{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content:center ;
     width: 100%;
 }
 .acc{
     font-size: 40px;
+    margin-left: 35px;
 }
-.tw{
+/* .tw{
     color:rgba(141, 168, 250, 0.548)
 }
 .yo{
@@ -46,4 +48,4 @@
 }
 .sn{
     color: rgba(243, 243, 128, 0.548);
-}
+} */

@@ -159,12 +159,12 @@ if(resul)
             </table>
             <div className="challenge-bottun">
             {/* <h1 onClick={gosolution}>الحلول</h1> */}
-            <h1 onClick={gocomment}>التعليقات</h1>
+            <h1 onClick={gocomment} className="go-comment">التعليقات</h1>
             <button
                 onClick={(e) => {
                   goTest(e);
                 }}
-              >
+             className="run" >
                 Run
               </button>
             </div>

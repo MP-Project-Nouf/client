@@ -39,7 +39,7 @@
     width: 100%;
     text-align: center;
     font-weight: bold;
-    color: rgb(73, 126, 224);
+    color: rgb(73, 176, 224);
  
     
 }
@@ -55,12 +55,14 @@ table, th, td {
   }
   .title-challenge{
       width: 150px;
+      font-weight: bold;
       
       
   }
   .title-disc{
      margin-right: 0;
      margin-bottom: 10px;
+     font-weight: bold;
   }
   th{
       background-color: rgb(138, 135, 135);
@@ -75,3 +77,31 @@ table, th, td {
       color: rgba(66, 64, 64, 0.767);
       font-weight: 100;
   }
+  .go-comment{
+      padding: 5px;
+      border-bottom: black 1px solid;
+      border-left: black 1px solid;
+  }
+  .go-comment:hover{
+     background-color: rgba(128, 128, 128, 0.589);
+     color: white;
+  }
+  .go-comment:active{
+    transform: scale(1.1);
+ }
+ .run{
+     font-size: 20px;
+     font-weight: bold;
+     background-color: rgba(128, 128, 128, 0.514);
+     padding: 10px;
+     border-radius: 5px;
+     color: white;
+ }
+ .run:hover{
+    background-color: rgb(128, 128, 128);
+
+ }
+ .run:active{
+    background-color: rgb(128, 128, 128);
+    transform: scale(1.1);
+ }
