@@ -7,7 +7,7 @@ import { Avatar,Input} from "@chakra-ui/react";
 import { PlusSquareIcon, CloseIcon } from "@chakra-ui/icons";
 import './style.css'
 
-function Comment() {
+function CommentAdmin() {
     const navigate=useNavigate();
     const { id } = useParams();
     const [comment,setComment]=useState([]);
@@ -56,7 +56,7 @@ function Comment() {
 
       const backChallenge=(e)=>{
           e.preventDefault();
-          navigate(`/challenge`);
+          navigate(`/challengeid/${id}`);
       }
 
       useEffect(() => {
@@ -110,7 +110,7 @@ function Comment() {
                 color="#314974"
                 className='web-button'
             //   className='comment-delete'
-               />} 
+              />} 
                     </div>
                     
                    
@@ -126,4 +126,4 @@ function Comment() {
     )
 }
 
-export default Comment
+export default CommentAdmin

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../Header";
 import axios from "axios";
-import image from "./bgprofile.jpg";
+// import image from "./bgprofile.jpg";
 // import image from "./bgUsers.jpg";
 import logo from './leader.png'
 import {  useSelector } from "react-redux";
@@ -37,12 +37,14 @@ function Leaderbord() {
       <Header />
       
       
-      <div className="users">
+      <div className="challenges">
         <div className="users-container">
           {/* <img className="users-image" src={image} alt="image" /> */}
         
           <div className="leader-container">
+          {/* <img className="leader-logo" src={logo} alt="logo" /> */}
           <img className="leader-logo" src={logo} alt="logo" />
+          <h1 className="challenges-title-head">المتصدرون</h1>
           
           <div  className="leader-head">
           <h4> المركز</h4> 

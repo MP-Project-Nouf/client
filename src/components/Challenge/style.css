@@ -6,7 +6,7 @@
     position: absolute;
     display: grid;
     justify-content:space-around;
-    grid-template-columns: 45% 45%;
+    grid-template-columns: 30% 60%;
     margin-right: 3%;
    
     
@@ -30,11 +30,18 @@
 }
 .editor{
     width: 100%;
+    border: 1px solid;
+    padding: 5px;
+    background-color: #272822;
 }
 .disc{
     margin-bottom:50px;
     width: 100%;
     text-align: center;
+    font-weight: bold;
+    color: #7391C8;
+ 
+    
 }
 table, th, td {
     border: 1px solid black;
@@ -48,8 +55,64 @@ table, th, td {
   }
   .title-challenge{
       width: 150px;
+      font-weight: bold;
+      color: #52688F;
+      
+      
   }
   .title-disc{
+      color: #52688F;
      margin-right: 0;
      margin-bottom: 10px;
+     font-weight: bold;
   }
+  th{
+      background-color: #BDC6D9;
+      color: white;
+  }
+  .challenge-bottun{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+  }
+  td{
+      color: rgba(66, 64, 64, 0.767);
+      font-weight: 100;
+  }
+  .go-comment{
+      padding: 5px;
+      border-bottom: black 1px solid;
+      border-left: black 1px solid;
+  }
+  .go-comment:hover{
+     background-color: #52688F;
+     color: white;
+  }
+  .go-comment:active{
+    transform: scale(1.1);
+ }
+ .run{
+     font-size: 20px;
+     font-weight: bold;
+     background-color: #52688F;
+     padding: 10px;
+     border-radius: 5px;
+     color: white;
+     width: 100px;
+    margin-right: 85%;
+    margin-bottom: 20px;
+     
+ }
+ .run:hover{
+    background-color: rgb(128, 128, 128);
+
+ }
+ .run:active{
+    background-color: rgb(128, 128, 128);
+    transform: scale(1.1);
+ }
+ /* .challenge-collection{
+     display: flex;
+     flex-direction: column;
+    
+ } */

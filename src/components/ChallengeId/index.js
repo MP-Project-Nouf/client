@@ -54,7 +54,7 @@ function ChallengeId() {
   };
 
   const gocomment = () => {
-    navigate(`/comment/${challenge._id}`);
+    navigate(`/commentadmin/${challenge._id}`);
   };
   
 
@@ -159,18 +159,15 @@ if(resul)
                   );
                 })}
             </table>
-            <h1 onClick={gosolution}>الحلول</h1>
-            <h1 onClick={gocomment}>التعليقات</h1>
+            <div className="challenge-bottun">
+            <h1 onClick={gosolution} className="go-comment">الحلول</h1>
+            <h1 onClick={gocomment} className="go-comment">التعليقات</h1>
+            
+            </div>
           </div>
           <div className="challenge-slide">
             <div className="chall-slide-header">
-              <button
-                onClick={(e) => {
-                  goTest(e);
-                }}
-              >
-                Run
-              </button>
+             
               <h1>javascript</h1>
               <div className="chall-level">
                 <h1> المستوى:</h1>
@@ -206,6 +203,13 @@ if(resul)
               />
      
             </div>
+            <button
+                onClick={(e) => {
+                  goTest(e);
+                }}
+                className="run">
+                Run
+              </button>
           </div>
           <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />

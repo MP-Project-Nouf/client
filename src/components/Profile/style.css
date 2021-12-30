@@ -39,7 +39,7 @@
 }
 .box{
     width: 100%;
-    background-color: rgba(39, 38, 38, 0.575);
+    background-color: rgba(39, 38, 38, 0.425);
     border-radius: 3px;
     text-align: right;
     padding: 30px;
@@ -61,14 +61,14 @@
     margin: 0 auto;
 }
 .deleteAccount{
-    background-color: rgba(28, 81, 102, 0.842);
+    background-color: #52688F;
     color: white;
     padding: 10px;
     border-radius: 3px;
     margin-bottom: 20px;
 }
 .compleate{
-    background-color: rgba(28, 81, 102, 0.575);
+    background-color: #52688fbb;
     /* background-color:rgba(23, 81, 83, 0.63); */
     align-items: center;
     text-align: center;
@@ -92,3 +92,33 @@
     font-weight: bold;
     margin-right: 2px;
 }
+.web-button{
+    cursor: pointer;
+
+}
+.web-button:hover{
+    border-bottom: white 1px solid;
+    border-left: white 1px solid;
+  
+}
+.web-button:active{
+    
+    transform: scale(1.1);
+}
+.deleteAccount:hover{
+    background-color: #3f61a0;
+    color: #BDC6D9
+}
+.deleteAccount:active{
+    /* background-color: rgba(45, 102, 124, 0.842);
+    color: rgb(171, 172, 173); */
+    transform: scale(1.1);
+}
+.label-value{
+    margin-right: 10px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.label{
+    margin-top: 10px;
+}
+    

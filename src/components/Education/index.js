@@ -94,13 +94,13 @@ function Education({ id, getUserById }) {
                 onClick={(e) => {
                     deleteeducation(item._id,e);
                 }}
-              />}
+              className="web-button"/>}
             </div>
           );
         })}
         {state.signIn.userId===id&&
                       
-                      <div onClick={onOpen} className="addlang">
+                      <div onClick={onOpen} className="addlang web-button">
                       <PlusSquareIcon /> <p>إضافة مستوى تعليمي</p>
                     </div>
                     }
@@ -112,42 +112,47 @@ function Education({ id, getUserById }) {
           <ModalCloseButton />
           <ModalBody>
             <FormControl>
-              <FormLabel htmlFor="level">المستوى</FormLabel>
+              <FormLabel htmlFor="level" className="label">المستوى</FormLabel>
               <Input
                 id="level"
                 type="text"
+                className="label-value"
                 onChange={(e) => {
                   setLevel(e.target.value);
                 }}
               />
-              <FormLabel htmlFor="college">الجامعة</FormLabel>
+              <FormLabel htmlFor="college" className="label">الجامعة</FormLabel>
               <Input
                 id="college"
                 type="text"
+                className="label-value"
                 onChange={(e) => {
                   setCollege(e.target.value);
                 }}
               />
-              <FormLabel htmlFor="speciall">التخصص</FormLabel>
+              <FormLabel htmlFor="speciall" className="label">التخصص</FormLabel>
               <Input
                 id="speciall"
                 type="text"
+                className="label-value"
                 onChange={(e) => {
                     setSpeciall(e.target.value);
                 }}
               />
-              <FormLabel htmlFor="start">تاريخ البداية </FormLabel>
+              <FormLabel htmlFor="start" className="label">تاريخ البداية </FormLabel>
               <Input
                 id="start"
                 type="date"
+                className="label-value"
                 onChange={(e) => {
                     setEnrollment(e.target.value);
                 }}
               />
-              <FormLabel htmlFor="end">تاريخ التخرج </FormLabel>
+              <FormLabel htmlFor="end" className="label">تاريخ التخرج </FormLabel>
               <Input
                 id="end"
                 type="date"
+                className="label-value"
                 onChange={(e) => {
                     setGraduation(e.target.value);
                 }}

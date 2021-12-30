@@ -14,9 +14,16 @@
 
 }
 .name{
+    margin-right: 10px;
     color: rgba(255, 255, 255, 0.548);
 }
 .textcolor{
-    color:rgba(45, 75, 87, 0.938); 
+    color:#425069; 
     font-weight: bold;
+}
+.names{
+    padding-top: 50px;
+}
+.value{
+    font-family: 'Courier New', Courier, monospace;
 }

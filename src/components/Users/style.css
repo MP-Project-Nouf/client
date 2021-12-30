@@ -6,7 +6,9 @@
     width: 100%;
     max-width: 100%;
     background-color: rgba(228, 226, 226, 0.89);
-    height: 100vh;
+    height: 120vh;
+    min-height: 100vh;
+   
 }
 .users-container{
     margin-top: 150px;
@@ -35,22 +37,29 @@
     width: 70%;
     color: rgb(255, 255, 255);
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
     margin: auto auto;
-    font-weight: bold;
+    /* font-weight: bold; */
     margin-bottom: 10px;
     /* border-bottom: rgba(28, 100, 102, 0.637) 4px solid;
     border-left: rgba(28, 100, 102, 0.637) 4px solid; */
-    border-bottom:  rgba(28, 81, 102, 0.637) 4px solid;
-    border-left:  rgba(28, 81, 102, 0.637) 4px solid;
+    border-bottom:  rgba(28, 81, 102, 0) 4px solid;
+    border-left:  rgba(28, 81, 102, 0) 4px solid;
 
 }
 .head {
-    background-color: rgba(28, 81, 102, 0.637);
+    background-color: #6b80a5;
+
+    ;
  /* background-color: rgba(28, 100, 102, 0.637); */
 }
-.user h4{
+.user h3{
     font-size: 12px;
+    font-weight: bold;
+}
+.user h4{
+    margin-top: 10px;
+    font-size: 17px;
 }
 .search{
     z-index: 1;
@@ -65,8 +74,22 @@
 .users-info-container h4{
     margin-top: 20px;
 }
+
+
 @media only screen and (max-width: 700px) {
     .user{
         width: 100%;
     }
   }
+  .users-user{
+      cursor: pointer;
+  }
+.users-user:hover{
+    border-bottom:  #49628d 4px solid;
+    border-left:  #6b80a5 4px solid;
+
+}
+.users-user:active{
+   
+    color: #BDC6D9;
+}

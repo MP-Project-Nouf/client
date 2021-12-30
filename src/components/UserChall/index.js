@@ -156,7 +156,7 @@ function UserChall({user}) {
           );
         })}
         {((state.signIn.role==="admin"||state.signIn.point>300)&&state.signIn.userId===user) &&
-          <div onClick={onOpen} className="addlang">
+          <div onClick={onOpen} className="addlang web-button">
             <PlusSquareIcon /> <p>إضافة تحدي </p>
             </div>
             

@@ -6,25 +6,28 @@
     margin-right:0;
     width: 100%;
     max-width: 100%;
+    background-color: rgba(228, 226, 226, 0.89);
     /* background-color: rgba(228, 226, 226, 0.89); */
-    height: 100vh;
+  
     /* background-image: url(https://pngtree.com/free-backgrounds); */
     /* background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQclcuzb1ovHGgVPcZz0e97NUeKeT9MBUTChA&usqp=CAU); */
-    background-size: cover;
+    /* background-size: cover; */
+    min-height: 100vh;
     /* background-color: rgba(0, 0, 0, 0.87); */
+
 
 } 
 .hom-container{
     margin-top: 100px;
 }
-.home-image{
+/* .home-image{
     width: 100%;
     z-index: -1;
     margin-bottom: -350px;
     mask-image: linear-gradient(to bottom,rgba(0,0,0,1),rgba(0,0,0,0));
     position: relative;
   
-}
+} */
 .content{
     display: flex;
     flex-direction: column;
@@ -44,7 +47,7 @@
 }
 .startChall{
 
-     background-color: rgba(19, 122, 190, 0.644);
+     background-color: #52688F;
      padding: 10px;
      border-radius: 5px;
      color: white;
@@ -62,13 +65,13 @@
    margin-bottom: 0px;
    /* position: relative; */
 }
-.home-header{
+/* .home-header{
     position: absolute;
     margin-top: 0px;
     width: 100%;
     height: 70px;
     background-color:   rgba(228, 226, 226, 0.89);
-}
+} */
 .home-plate{
     display: flex;
     flex-direction: column;
@@ -80,33 +83,57 @@
     font-size: 25px;
 }
 .home-plate h1{
-    color: rgb(19, 122, 190);
+    color: #7391C8;
     font-size: 30px;
     font-weight: bold;
 }
 .home-role{
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 60px;
+    
     
 }
+.gole{
+    margin-bottom: 200px;
+}
 .home-role-tilte{
-    color: rgb(19, 122, 190);
+    color: #7391C8;
     font-size: 25px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
    
 }
 .home-role-container{
-    display: grid;
-    grid-template-columns: 40% 40%;
-    justify-content: space-around;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
 }
 .home-role-content{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 40% 40%;
     align-items: center;
     margin-bottom: 50px;
 }
 .home-role-icon{
-    width: 100px;
+    font-size: 90px;
+    color: #7ba6ce;
+}
+.home-role-text{
+    font-size: 10px;
+    color: rgb(83, 85, 88);
+}
+.startChall:hover{
+   border:rgba(9, 87, 139, 0.534) 2px solid;
+
+}
+.startChall:active{
+    transform: scale(1.1);
+}
+.gole h4{
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    color: #5b616b;
 }
 

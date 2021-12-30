@@ -79,13 +79,13 @@ function Language({ id, getUserById }) {
                 onClick={() => {
                   deletefavoritLang(item._id);
                 }}
-              />}
+              className="web-button"/>}
             </div>
           );
         })}
         {state.signIn.userId===id&&
                       
-                      <div onClick={onOpen} className="addlang">
+                      <div onClick={onOpen} className="addlang web-button">
                       <PlusSquareIcon /> <p>إضافة لغة مفضلة</p>
                     </div>
                     }
@@ -97,10 +97,11 @@ function Language({ id, getUserById }) {
           <ModalHeader className="title">لغة البرمجة المفضلة</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <FormLabel htmlFor="country">لغة البرمجة</FormLabel>
+            <FormLabel htmlFor="country" className="label">لغة البرمجة</FormLabel>
             <Select
               id="country"
               placeholder="اختر لغة"
+              className="label-value"
               onChange={(e) => {
                 setLanguage(e.target.value);
               }}
@@ -112,10 +113,11 @@ function Language({ id, getUserById }) {
               <option>c++</option>
               <option>بايثون</option>
             </Select>
-            <FormLabel htmlFor="country">سنوات الخبرة</FormLabel>
+            <FormLabel htmlFor="country" className="label">سنوات الخبرة</FormLabel>
             <Select
               id="country"
               placeholder="اختار سنوات الخبرة"
+              className="label-value"
               onChange={(e) => {
                 setExpertise(e.target.value);
               }}
