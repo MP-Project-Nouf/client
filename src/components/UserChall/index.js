@@ -170,185 +170,200 @@ function UserChall({user}) {
                               <ModalCloseButton />
                               <ModalBody>
                                 <FormControl>
-                                  <FormLabel htmlFor="title">
+                                  <FormLabel htmlFor="title label">
                                     {" "}
                                     عنوان التحدي
                                   </FormLabel>
                                   <Input
                                     id="title"
                                     type="text"
+                                    className="label-value"
                                     // defaultValue={item.title}
                                     onChange={(e) => {
                                       setTitle(e.target.value);
                                     }}
                                   />
-                                  <FormLabel htmlFor="disc">
+                                  <FormLabel htmlFor="disc" className="label">
                                     {" "}
                                     وصف التحدي
                                   </FormLabel>
                                   <Input
                                     id="disc"
                                     type="text"
+                                    className="label-value"
                                     // defaultValue={item.disc}
                                     onChange={(e) => {
                                       setDisc(e.target.value);
                                     }}
                                   />
 
-                                  <FormLabel htmlFor="defValue">
+                                  <FormLabel htmlFor="defValue" className="label">
                                     القيمة الافتراضية للدالة
                                   </FormLabel>
                                   <Input
                                     id="defValue"
                                     type="text"
+                                    className="label-value"
                                     // defaultValue={item.defValue}
                                     onChange={(e) => {
                                       setDefValue(e.target.value);
                                     }}
                                   />
-                                  <ModalHeader className="title">
+                                  <ModalHeader className="title label">
                                     مدخلات الدالة للإختبار
                                   </ModalHeader>
-                                  <ModalHeader className="title">
+                                  <ModalHeader className="title label">
                                     الإختبار الأول
                                   </ModalHeader>
-                                  <FormLabel htmlFor="input11">
+                                  <FormLabel htmlFor="input11" className="label">
                                     المدخل الأول
                                   </FormLabel>
                                   <Input
                                     id="input11"
                                     type="text"
+                                    className="label-value"
                                     onChange={(e) => {
                                       setTest1Input1(e.target.value);
                                     }}
                                   />
-                                  <FormLabel htmlFor="input12">
+                                  <FormLabel htmlFor="input12" className="label">
                                     المدخل الثاني
                                   </FormLabel>
                                   <Input
                                     id="input12"
                                     type="text"
+                                    className="label-value"
                                     // defaultValue={item.input[0][1]? item.input[0][1]: ""}
                                     onChange={(e) => {
                                       setTest1Input2(e.target.value);
                                     }}
                                   />
-                                  <FormLabel htmlFor="input13">
+                                  <FormLabel htmlFor="input13" className="label">
                                     المدخل الثالث
                                   </FormLabel>
                                   <Input
                                     id="input13"
                                     type="text"
+                                    className="label-value"
                                     // defaultValue={item.input[0][2]? item.input[0][2]: ""}
                                     onChange={(e) => {
                                       setTest1Input3(e.target.value);
                                     }}
                                   />
 
-                                  <ModalHeader className="title">
+                                  <ModalHeader className="title label">
                                     الإختبار الثاني
                                   </ModalHeader>
-                                  <FormLabel htmlFor="input21">
+                                  <FormLabel htmlFor="input21" className="label">
                                     المدخل الأول
                                   </FormLabel>
                                   <Input
                                     id="input21"
                                     type="text"
+                                    className="label-value"
                                     // defaultValue={(item.input[1]&&item.input[1][0])? item.input[1][0]: ""}
                                     onChange={(e) => {
                                       setTest2Input1(e.target.value);
                                     }}
                                   />
-                                  <FormLabel htmlFor="input22">
+                                  <FormLabel htmlFor="input22" className="label">
                                     المدخل الثاني
                                   </FormLabel>
                                   <Input
                                     id="input22"
                                     type="text"
+                                    className="label-value"
                                     // defaultValue={(item.input[1]&&item.input[1][1])? item.input[1][1]: ""}
                                     onChange={(e) => {
                                       setTest2Input2(e.target.value);
                                     }}
                                   />
-                                  <FormLabel htmlFor="input23">
+                                  <FormLabel htmlFor="input23" className="label">
                                     المدخل الثالث
                                   </FormLabel>
                                   <Input
                                     id="input23"
                                     type="text"
+                                    className="label-value"
                                     // defaultValue={(item.input[1]&&item.input[1][2])? item.input[1][2]:""}
                                     onChange={(e) => {
                                       setTest2Input3(e.target.value);
                                     }}
                                   />
-                                  <ModalHeader className="title">
+                                  <ModalHeader className="title label">
                                     الإختبار الثالث
                                   </ModalHeader>
-                                  <FormLabel htmlFor="input31">
+                                  <FormLabel htmlFor="input31" className="label">
                                     المدخل الأول
                                   </FormLabel>
                                   <Input
                                     id="input31"
                                     type="text"
+                                    className="label-value"
                                     // defaultValue={(item.input[2]&&item.input[2][0])? item.input[2][0]: ""}
                                     onChange={(e) => {
                                       setTest3Input1(e.target.value);
                                     }}
                                   />
-                                  <FormLabel htmlFor="input32">
+                                  <FormLabel htmlFor="input32" className="label">
                                     المدخل الثاني
                                   </FormLabel>
                                   <Input
                                     id="input32"
                                     type="text"
+                                    className="label-value"
                                     // defaultValue={(item.input[2]&&item.input[2][1])? item.input[2][1] : ""}
                                     onChange={(e) => {
                                       setTest3Input2(e.target.value);
                                     }}
                                   />
-                                  <FormLabel htmlFor="input33">
+                                  <FormLabel htmlFor="input33" className="label">
                                     المدخل الثالث
                                   </FormLabel>
                                   <Input
                                     id="input33"
                                     type="text"
+                                    className="label-value"
                                     // defaultValue={(item.input[2]&&item.input[2][2])? item.input[2][2] : ""}
                                     onChange={(e) => {
                                       setTest3Input3(e.target.value);
                                     }}
                                   />
-                                  <ModalHeader className="title">
+                                  <ModalHeader className="title label">
                                     مخرجات الدالة للإختبار
                                   </ModalHeader>
 
-                                  <FormLabel htmlFor="output1">
+                                  <FormLabel htmlFor="output1" className="label">
                                     مخرجات الإختبار الأول
                                   </FormLabel>
                                   <Input
                                     id="output1"
                                     type="text"
+                                    className="label-value"
                                     // defaultValue={item.output[0]? item.output[0]: ""}
                                     onChange={(e) => {
                                       setOutput1(e.target.value);
                                     }}
                                   />
-                                  <FormLabel htmlFor="output2">
+                                  <FormLabel htmlFor="output2" className="label">
                                     مخرجات الإختبار الثاني
                                   </FormLabel>
                                   <Input
                                     id="output2"
                                     type="text"
+                                    className="label-value"
                                     // defaultValue={item.output[1]? item.output[1] : ""}
                                     onChange={(e) => {
                                       setOutput2(e.target.value);
                                     }}
                                   />
-                                  <FormLabel htmlFor="output3">
+                                  <FormLabel htmlFor="output3" className="label">
                                     مخرجات الإختبار الثالث
                                   </FormLabel>
                                   <Input
                                     id="output3"
                                     type="text"
+                                    className="label-value"
                                     // defaultValue={item.output[2]? item.output[2]: ""}
                                     onChange={(e) => {
                                       setOutput3(e.target.value);
