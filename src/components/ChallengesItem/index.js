@@ -29,7 +29,7 @@ function ChallengesItem({ item, getAllchallenge }) {
   const [title, setTitle] = useState("");
   const [point, setPoint] = useState(5);
   const [defValue, setDefValue] = useState("");
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState(null);
   const [test1Input1, setTest1Input1] = useState("");
   const [test1Input2, setTest1Input2] = useState("");
   const [test1Input3, setTest1Input3] = useState("");
@@ -48,7 +48,7 @@ function ChallengesItem({ item, getAllchallenge }) {
   });
 
   const editchallenge = async (e, _id) => {
-    console.log("salam");
+    // console.log("salam");
     e.preventDefault();
     let test1Input = [];
     let test2Input = [];

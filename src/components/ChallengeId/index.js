@@ -137,7 +137,7 @@ if(resul)
                 challenge.input[0].map((item, i) => {
                 //   return (
                 //     item.map((x) => {
-                        return <th>input</th>;
+                        return <th key={i}>input</th>;
                     //   })
 
                   })}
@@ -151,7 +151,7 @@ if(resul)
                   return (
                     <tr>
                       {item.map((x) => {
-                        return <td>{x}</td>;
+                        return <td key={x+i}>{x}</td>;
                       })}
 
                       <td>{challenge.output[i]}</td>
