@@ -54,7 +54,7 @@ function ChallengeId() {
   };
 
   const gocomment = () => {
-    navigate(`/comment/${challenge._id}`);
+    navigate(`/commentadmin/${challenge._id}`);
   };
   
 

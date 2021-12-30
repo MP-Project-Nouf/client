@@ -65,19 +65,21 @@ function PersonalInfo(props) {
           <ModalCloseButton />
           <ModalBody>
             <FormControl>
-              <FormLabel htmlFor="birth">تاريخ الميلاد</FormLabel>
+              <FormLabel htmlFor="birth" className="label">تاريخ الميلاد</FormLabel>
               <Input
                 id="birth"
                 type="date"
                 defaultValue={props.birth}
+                className="label-value"
                 onChange={(e) => {
                   setBirth(e.target.value);
                 }}
               />
-              <FormLabel htmlFor="country">الدولة</FormLabel>
+              <FormLabel htmlFor="country" className="label">الدولة</FormLabel>
               <Select
                 id="country"
                 placeholder="اختار دولتك"
+                className="label-value"
                 onChange={(e) => {
                   setCountry(e.target.value);
                 }}
@@ -85,26 +87,28 @@ function PersonalInfo(props) {
                 <option>السعودية</option>
                 <option>الإمارات</option>
               </Select>
-              <FormLabel htmlFor="city">المدينة</FormLabel>
+              <FormLabel htmlFor="city" className="label">المدينة</FormLabel>
               <Input
                 id="city"
                 type="text"
                 defaultValue={props.city}
+                className="label-value"
                 onChange={(e) => {
                   setCity(e.target.value);
                 }}
               />
-              <FormLabel htmlFor="nationality">الجنسية</FormLabel>
+              <FormLabel htmlFor="nationality" className="label">الجنسية</FormLabel>
               <Input
                 id="nationality"
                 type="text"
                 defaultValue={props.nationality}
+                className="label-value"
                 onChange={(e) => {
                   setNationality(e.target.value);
                 }}
               />
               <FormControl as="fieldset">
-                <FormLabel as="legend">الجنس</FormLabel>
+                <FormLabel as="legend" className="label">الجنس</FormLabel>
                 <RadioGroup defaultValue="Itachi">
                   <HStack spacing="24px">
                     <Radio
@@ -126,11 +130,12 @@ function PersonalInfo(props) {
                   </HStack>
                 </RadioGroup>
               </FormControl>
-              <FormLabel htmlFor="work">الحالة الوظيفية</FormLabel>
+              <FormLabel htmlFor="work" className="label">الحالة الوظيفية</FormLabel>
               <Input
                 id="work"
                 type="text"
                 defaultValue={props.workStatus}
+                className="label-value"
                 onChange={(e) => {
                   setWorkStatus(e.target.value);
                 }}

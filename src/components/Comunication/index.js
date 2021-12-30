@@ -84,47 +84,52 @@ function Comunication(props) {
           <ModalCloseButton />
           <ModalBody>
             <FormControl>
-              <FormLabel htmlFor="website">Personal website </FormLabel>
+              <FormLabel htmlFor="website" className="label">Personal website </FormLabel>
               <Input
                 id="website"
                 type="text"
                 defaultValue={props.website}
+                className="label-value"
                 onChange={(e) => {
                   setWebsite(e.target.value);
                 }}
               />
-              <FormLabel htmlFor="github">github</FormLabel>
+              <FormLabel htmlFor="github" className="label">github</FormLabel>
               <Input
                 id="github"
                 type="text"
                 defaultValue={props.github}
+                className="label-value"
                 onChange={(e) => {
                   setGithub(e.target.value);
                 }}
               />{" "}
-              <FormLabel htmlFor="stackflow">stackflow</FormLabel>
+              <FormLabel htmlFor="stackflow" className="label">stackflow</FormLabel>
               <Input
                 id="stackflow"
                 type="text"
                 defaultValue={props.stackflow}
+                className="label-value"
                 onChange={(e) => {
                   setStackflow(e.target.value);
                 }}
               />{" "}
-              <FormLabel htmlFor="twitter">twitter</FormLabel>
+              <FormLabel htmlFor="twitter" className="label">twitter</FormLabel>
               <Input
                 id="twitter"
                 type="text"
                 defaultValue={props.twitter}
+                className="label-value"
                 onChange={(e) => {
                   setTwitter(e.target.value);
                 }}
               />{" "}
-              <FormLabel htmlFor="linkedin">linkedin</FormLabel>
+              <FormLabel htmlFor="linkedin" className="label">linkedin</FormLabel>
               <Input
                 id="linkedin"
                 type="text"
                 defaultValue={props.linkedin}
+                className="label-value"
                 onChange={(e) => {
                   setLinkedin(e.target.value);
                 }}

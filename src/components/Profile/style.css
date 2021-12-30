@@ -114,3 +114,11 @@
     color: rgb(171, 172, 173); */
     transform: scale(1.1);
 }
+.label-value{
+    margin-right: 10px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.label{
+    margin-top: 10px;
+}
+    

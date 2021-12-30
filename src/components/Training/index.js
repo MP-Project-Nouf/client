@@ -103,35 +103,39 @@ function Training({ user, getUserById }) {
           <ModalCloseButton />
           <ModalBody>
             <FormControl>
-              <FormLabel htmlFor="center">المركز</FormLabel>
+              <FormLabel htmlFor="center" className="label">المركز</FormLabel>
               <Input
                 id="center"
                 type="text"
+                className="label-value"
                 onChange={(e) => {
                   setCenter(e.target.value);
                 }}
               />
-              <FormLabel htmlFor="certificate">مسمى الشهادة</FormLabel>
+              <FormLabel htmlFor="certificate" className="label">مسمى الشهادة</FormLabel>
               <Input
                 id="certificate"
                 type="text"
+                className="label-value"
                 onChange={(e) => {
                   setCertificate(e.target.value);
                 }}
               />
 
-              <FormLabel htmlFor="start"> بداية التدريب </FormLabel>
+              <FormLabel htmlFor="start" className="label"> بداية التدريب </FormLabel>
               <Input
                 id="start"
                 type="date"
+                className="label-value"
                 onChange={(e) => {
                   setBegining(e.target.value);
                 }}
               />
-              <FormLabel htmlFor="end">نهاية التدريب </FormLabel>
+              <FormLabel htmlFor="end" className="label">نهاية التدريب </FormLabel>
               <Input
                 id="end"
                 type="date"
+                className="label-value"
                 onChange={(e) => {
                   setEnd(e.target.value);
                 }}

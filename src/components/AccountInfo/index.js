@@ -104,47 +104,52 @@ function AccountInfo(props) {
               }}
             />
             <FormControl>
-              <FormLabel htmlFor="fname">الإسم الأول</FormLabel>
+              <FormLabel htmlFor="fname" className="label">الإسم الأول</FormLabel>
               <Input
                 id="fname"
                 type="text"
                 defaultValue={props.firstname}
+                className="label-value"
                 onChange={(e) => {
                   setFirstname(e.target.value);
                 }}
               />
-              <FormLabel htmlFor="lname">الإسم الأخير</FormLabel>
+              <FormLabel htmlFor="lname" className="label">الإسم الأخير</FormLabel>
               <Input
                 id="lname"
                 type="text"
                 defaultValue={props.lastname}
+                className="label-value"
                 onChange={(e) => {
                   setLastname(e.target.value);
                 }}
               />
-              <FormLabel htmlFor="username">اسم المستخدم</FormLabel>
+              <FormLabel htmlFor="username" className="label">اسم المستخدم</FormLabel>
               <Input
                 id="username"
                 type="text"
                 defaultValue={props.username}
+                className="label-value"
                 onChange={(e) => {
                   setUsername(e.target.value);
                 }}
               />
-              <FormLabel htmlFor="email">الإيميل</FormLabel>
+              <FormLabel htmlFor="email" className="label">الإيميل</FormLabel>
               <Input
                 id="email"
                 type="email"
                 defaultValue={props.email}
+                className="label-value"
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
               />
-              <FormLabel htmlFor="phone">رقم الجوال</FormLabel>
+              <FormLabel htmlFor="phone" className="label">رقم الجوال</FormLabel>
               <Input
                 id="phone"
                 type="number"
                 defaultValue={props.phone}
+                className="label-value"
                 onChange={(e) => {
                   setPhone(e.target.value);
                 }}

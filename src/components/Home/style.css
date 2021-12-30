@@ -89,8 +89,11 @@
 }
 .home-role{
     margin-top: 60px;
-    margin-bottom: 200px;
     
+    
+}
+.gole{
+    margin-bottom: 200px;
 }
 .home-role-tilte{
     color: #7391C8;
@@ -124,5 +127,13 @@
 }
 .startChall:active{
     transform: scale(1.1);
+}
+.gole h4{
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    color: #5b616b;
 }
 

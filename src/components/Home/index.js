@@ -92,6 +92,10 @@ function Home() {
                 </div>
               </div>
             </div>
+            <div className="home-role gole">
+            <h1 className="home-role-tilte">أهدافنا </h1>
+            <h4>منصة تهدف الى تشجيع المبرمجين لتطوير مهاراتهم البرمجية من خلال حل العديد من التحديات البرمجية</h4>
+            </div>
             <Modal isOpen={isOpen} onClose={onClose}>
               <ModalOverlay />
               <ModalContent>

@@ -15,6 +15,7 @@ import Comment from './components/Comment';
 import ChallengeId from './components/ChallengeId';
 import User from './components/User/insex';
 import Footer from './components/Footer'
+import CommentAdmin from './components/CommentAdmin';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route exact path="/challenge" element={<Challenge />} />
         <Route exact path="/challengeid/:id" element={<ChallengeId />} />
         <Route exact path="/user/:id" element={<User />} />
+        <Route exact path="/commentadmin/:id" element={<CommentAdmin />} />
       </Routes>
       
     </div>
