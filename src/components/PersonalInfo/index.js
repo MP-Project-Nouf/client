@@ -160,7 +160,8 @@ function PersonalInfo(props) {
       </Modal>
       <div>
         <h1 className="line title textcolor">تاريخ الميلاد</h1>
-        <h1 className="line value">{props.birth.slice(0,10)}</h1>
+        {props.birth?<h1 className="line value">{props.birth.slice(0,10)}</h1>:
+        <h1 className="line value">{props.birth}</h1>}
       </div>
       <div>
         <h1 className="line title textcolor">الدولة</h1>

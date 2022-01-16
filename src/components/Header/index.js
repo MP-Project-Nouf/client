@@ -12,6 +12,7 @@ import {
   MenuCommand,
   MenuDivider,
   Button,
+  useColorMode,
 } from '@chakra-ui/react'
 import { ChevronDownIcon } from '@chakra-ui/icons'
 import { useNavigate } from "react-router-dom";
@@ -21,6 +22,7 @@ import logo from "./logohommp.png";
 
 import './style.css';
 function Header() {
+  const { colorMode, toggleColorMode } = useColorMode()
   const dispatch = useDispatch();
   const state = useSelector((state) => {
    
@@ -82,6 +84,15 @@ function Header() {
       </MenuList>
       
     </Menu>}
+   
+  
+ 
+   
+      <Button onClick={toggleColorMode} className="profile">
+        تبديل {colorMode === 'light' ? 'ليلي' : 'نهاري'}
+      </Button>
+ 
+
     
       
       </div>

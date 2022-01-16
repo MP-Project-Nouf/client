@@ -10,20 +10,21 @@ function Forgit() {
     const [rand,setrand]=useState("");
     const [pass,setpass]=useState("");
     const [passtow,setpasstow]=useState("");
-    const [target,setTarger]=useState(false);
+    const [target,setTarget]=useState(false);
     const [message,setMessage]=useState("");
     const [messageTow,setMessageTow]=useState("")
 
     const forgit = async(e) => {
         e.preventDefault();
+        console.log("email" ,email);
         const user=await axios.post(`${process.env.REACT_APP_BASIC_URL}/forgit`, {
           email: email,
        
         });
-        // console.log("forgit status" ,user.status);
+        console.log("forgit status" ,user.status);
         if(user.status===200)
         {
-            setTarger(true);  
+            setTarget(true);  
         }else if(user.status===400)
         {
             setMessage("الإيميل غير موجود ")

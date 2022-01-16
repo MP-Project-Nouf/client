@@ -6,19 +6,16 @@ import axios from "axios";
 import Header from "../Header";
 import AceEditor from "react-ace";
 import {
-    Modal,
-    ModalOverlay,
-    ModalContent,
-    ModalHeader,
-    ModalFooter,
-    ModalBody,
-    useDisclosure,
-    Button,
-  
-  } from "@chakra-ui/react";
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  useDisclosure,
+  Button,
+} from "@chakra-ui/react";
 import "./style.css";
-import Comment from "../Comment";
-
 import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/theme-monokai";
 import "ace-builds/src-noconflict/ext-language_tools";
@@ -28,12 +25,13 @@ ace.config.set("modePath", "");
 ace.config.set("themePath", "");
 
 function Challenge() {
-    const [openComment,setOpenComment]=useState(false);
-    const dispatch = useDispatch();
-    const { isOpen, onOpen, onClose } = useDisclosure();
+  const dispatch = useDispatch();
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const navigate = useNavigate();
   const [challenge, setChallenge] = useState([]);
-  const [message,setMessage]=useState("")
+  const [message, setMessage] = useState("");
+  const [newInput,setNewinput]=useState([]);
+  const [newOutput,setNewOutput]=useState([]);
   let solution = "";
 
   const state = useSelector((state) => {
@@ -46,13 +44,34 @@ function Challenge() {
       `${process.env.REACT_APP_BASIC_URL}/challByLevel/${state.signIn.level}`,
       { headers: { Authorization: `Bearer ${state.signIn.token}` } }
     );
-    console.log("chall", chall.data);
+    let newint=[];
+    let newout=[];
+    // console.log("chall", chall.data);
     setChallenge(chall.data);
+    chall.data.input.forEach((item,i)=>{
+        // console.log("chall.data.output[i]",chall.data.output[i])
+         let out=chall.data.output[i];
+         out = out.replace(/'/g, '"');
+        //  console.log("out",out);
+         newout.push(JSON.parse(out));
+        item.forEach(x=>{
+            // console.log("x",x);
+      let int = x;
+      int = int.replace(/'/g, '"');
+    //   console.log(int);
+      newint.push(JSON.parse(int))
+      
+    
+    
+})
+    })
+    setNewOutput(newout);
+    setNewinput(newint);
   };
 
-  const gosolution = () => {
-    navigate(`/solution/${challenge._id}`);
-  };
+  //   const gosolution = () => {
+  //     navigate(`/solution/${challenge._id}`);
+  //   };
 
   const gocomment = () => {
     navigate(`/comment/${challenge._id}`);
@@ -63,56 +82,60 @@ function Challenge() {
     e.preventDefault();
     // console.log("solution",solution);
     let code = new Function("a", `return ${solution}`);
-    let resul=true;
-    let ms="";
+    let resul = true;
+    let ms = "";
     const result = code();
-    challenge.input.forEach((item,i)=>{
-        if(!(result(...item)===challenge.output[i]))
-        {
-            ms+=`\n`+`test number ${i+1} output is ${result(...item)} expect output is ${challenge.output[i]}`; 
-            resul=false;
-            
-        }
-       
-        // console.log("input",...item);
-        // console.log("output",challenge.output[i]);
-    })
-    console.log("ms",ms);
+    newInput.forEach((item, i) => {
+        // result(...item)
+        if (!(result(item).toString() === newOutput[i].toString())) {
+         
+        ms +=
+          `\n` +
+          `test number ${i + 1} output is ${result(item)} expect output is ${
+            challenge.output[i]
+          }`;
+        resul = false;
+      }
+
+
+      // console.log("input",...item);
+      // console.log("output",challenge.output[i]);
+    });
+    console.log("ms", ms);
     setMessage(ms);
-//     console.log("code", result(...challenge.input[0]));
-if(resul)
-{
-    axios.post(
+    //     console.log("code", result(...challenge.input[0]));
+    if (resul) {
+      axios.post(
         `${process.env.REACT_APP_BASIC_URL}/solution`,
         {
-            image:state.signIn.image,
-            username:state.signIn.userName,
-            solve:solution,
-            challenge:challenge._id,
-            point:challenge.point,
-            title:challenge.title,
+          image: state.signIn.image,
+          username: state.signIn.userName,
+          solve: solution,
+          challenge: challenge._id,
+          point: challenge.point,
+          title: challenge.title,
         },
         { headers: { Authorization: `Bearer ${state.signIn.token}` } }
       );
-      const newPoint=state.signIn.point+challenge.point;
-      const newLevel=state.signIn.level+challenge.level;
-    //   console.log("newPoint",newPoint);
-    //   console.log("newLevel",newLevel)
+      const newPoint = state.signIn.point + challenge.point;
+      const newLevel = state.signIn.level + challenge.level;
+      //   console.log("newPoint",newPoint);
+      //   console.log("newLevel",newLevel)
       const data = {
         pointt: newPoint,
-        levell:newLevel,
+        levell: newLevel,
       };
       dispatch(update(data));
-      navigate(`/solution/${challenge._id}`); 
-}else{
-    onOpen();
-}
+      navigate(`/solution/${challenge._id}`);
+    } else {
+      onOpen();
+    }
   };
   function onChange(newValue) {
     // console.log("change", newValue);
     solution = newValue;
   }
-//   console.log(state.signIn.token)
+  //   console.log(state.signIn.token)
 
   useEffect(() => {
     getChallbylevel();
@@ -121,29 +144,27 @@ if(resul)
     <>
       <Header />
       {/* <div className="challenge-collection"> */}
-      {challenge && 
+      {challenge && (
         <div className="challenge-container">
           <div className="challenge-slide">
-              <div className="challenge-title">
+            <div className="challenge-title">
               <h1 className="title-challenge">عنوان التحدي</h1>
-            <h1 className="disc">{challenge.title}</h1>
+              <h1 className="disc">{challenge.title}</h1>
             </div>
             <h1 className="title-disc">وصف التحدي</h1>
             <h1 className="disc">{challenge.disc}</h1>
 
-            <table
-            className="disc">
+            <table className="disc">
               <tr>
-              {(challenge.input &&
-                challenge.input.length) &&
-                challenge.input[0].map((item, i) => {
-                //   return (
-                //     item.map((x) => {
-                        return <th>input</th>;
+                {challenge.input &&
+                  challenge.input.length &&
+                  challenge.input[0].map((item, i) => {
+                    //   return (
+                    //     item.map((x) => {
+                    return <th>input</th>;
                     //   })
-
                   })}
-                
+
                 <th>output</th>
               </tr>
 
@@ -162,15 +183,15 @@ if(resul)
                 })}
             </table>
             <div className="challenge-bottun">
-            {/* <h1 onClick={gosolution}>الحلول</h1> */}
-            {/* {!openComment &&<h1 onClick={gocomment} className="go-comment">التعليقات</h1>} */}
-            <h1 onClick={gocomment} className="go-comment">التعليقات</h1>
-            
+              {/* <h1 onClick={gosolution}>الحلول</h1> */}
+              {/* {!openComment &&<h1 onClick={gocomment} className="go-comment">التعليقات</h1>} */}
+              <h1 onClick={gocomment} className="go-comment">
+                التعليقات
+              </h1>
             </div>
           </div>
           <div className="challenge-slide">
             <div className="chall-slide-header">
-              
               <h1>javascript</h1>
               <div className="chall-level">
                 <h1> المستوى:</h1>
@@ -204,40 +225,30 @@ if(resul)
                   tabSize: 2,
                 }}
               />
-              
-     
             </div>
             <button
-                onClick={(e) => {
-                  goTest(e);
-                }}
-             className="run" >
-                Run
-              </button>
+              onClick={(e) => {
+                goTest(e);
+              }}
+              className="run"
+            >
+              Run
+            </button>
           </div>
           <Modal isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader className="title">حاول مرة اخرى</ModalHeader>
-          <ModalBody>
-              {message}
-          </ModalBody>
-          <ModalFooter>
-            <Button colorScheme="blue" mr={3} onClick={onClose}>
-              إغلاق
-            </Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
+            <ModalOverlay />
+            <ModalContent>
+              <ModalHeader className="title">حاول مرة اخرى</ModalHeader>
+              <ModalBody>{message}</ModalBody>
+              <ModalFooter>
+                <Button colorScheme="blue" mr={3} onClick={onClose}>
+                  إغلاق
+                </Button>
+              </ModalFooter>
+            </ModalContent>
+          </Modal>
         </div>
-        
-      }
-      {/* <div>
-      {openComment &&<h1 onClick={gocomment} className="go-comment">التعليقات</h1>}
-      {openComment &&
-      <Comment id={challenge._id}/>}
-      </div>
-      </div> */}
+      )}
     </>
   );
 }
