@@ -30,6 +30,8 @@ function Challenge() {
   const navigate = useNavigate();
   const [challenge, setChallenge] = useState([]);
   const [message, setMessage] = useState("");
+  const [newInput,setNewinput]=useState([]);
+  const [newOutput,setNewOutput]=useState([]);
   let solution = "";
 
   const state = useSelector((state) => {
@@ -42,8 +44,29 @@ function Challenge() {
       `${process.env.REACT_APP_BASIC_URL}/challByLevel/${state.signIn.level}`,
       { headers: { Authorization: `Bearer ${state.signIn.token}` } }
     );
-    console.log("chall", chall.data);
+    let newint=[];
+    let newout=[];
+    // console.log("chall", chall.data);
     setChallenge(chall.data);
+    chall.data.input.forEach((item,i)=>{
+        // console.log("chall.data.output[i]",chall.data.output[i])
+         let out=chall.data.output[i];
+         out = out.replace(/'/g, '"');
+        //  console.log("out",out);
+         newout.push(JSON.parse(out));
+        item.forEach(x=>{
+            // console.log("x",x);
+      let int = x;
+      int = int.replace(/'/g, '"');
+    //   console.log(int);
+      newint.push(JSON.parse(int))
+      
+    
+    
+})
+    })
+    setNewOutput(newout);
+    setNewinput(newint);
   };
 
   //   const gosolution = () => {
@@ -62,14 +85,13 @@ function Challenge() {
     let resul = true;
     let ms = "";
     const result = code();
-    challenge.input.forEach((item, i) => {
+    newInput.forEach((item, i) => {
         // result(...item)
-      if (!(result(...item).toString() === challenge.output[i])) {
-          console.log("result(...item.toString())",result(...item));
-          console.log("challenge.output[i])",challenge.output[i]);
+        if (!(result(item).toString() === newOutput[i].toString())) {
+         
         ms +=
           `\n` +
-          `test number ${i + 1} output is ${result(...item)} expect output is ${
+          `test number ${i + 1} output is ${result(item)} expect output is ${
             challenge.output[i]
           }`;
         resul = false;

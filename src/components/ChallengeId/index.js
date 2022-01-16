@@ -54,13 +54,13 @@ function ChallengeId() {
         // console.log("chall.data.output[i]",chall.data.output[i])
          let out=chall.data.output[i];
          out = out.replace(/'/g, '"');
-         console.log("out",out);
+        //  console.log("out",out);
          newout.push(JSON.parse(out));
         item.forEach(x=>{
             // console.log("x",x);
       let int = x;
       int = int.replace(/'/g, '"');
-      console.log(int);
+    //   console.log(int);
       newint.push(JSON.parse(int))
       
     
@@ -85,7 +85,7 @@ function ChallengeId() {
       console.log("newInput",newInput);
       console.log("newOutput",newOutput)
     e.preventDefault();
-    // console.log("solution",solution);
+    console.log("solution",solution);
     let code = new Function("a", `return ${solution}`);
     let resul = true;
     let ms = "";
@@ -105,17 +105,17 @@ function ChallengeId() {
     //     })
         // console.log("newInput",...newInput);
         // console.log("newOutput",newOutput[i]);
-        // console.log("result(...newInput)", result(...newInput));
-        // console.log("newOutput[i].toString()", newOutput[i]);
+        console.log("result(...newInput)",result(item));
+        console.log("newOutput[i]", newOutput[i]);
 
-      if (!(result(...item) == newOutput[i])) {
+      if (!(result(item).toString() === newOutput[i].toString())) {
         // console.log("result(...item.toString())",result(...item));
         // console.log("challenge.output[i])",challenge.output[i]);
 
         ms +=
           `\n` +
-          `test number ${i + 1} output is ${result(...item)} expect output is ${
-            challenge.output[i]
+          `test number ${i + 1} output is ${result(item)} expect output is ${
+            newOutput[i]
           }`;
         resul = false;
       }
